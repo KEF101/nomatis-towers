@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOMATIS TOWERS - Documentation Complète</title>
+    <title>NOMATIS TOWERS - Documentation Complète V2.0</title>
     <meta name="description" content="Documentation stratégique complète du projet NOMATIS TOWERS - Infrastructure Télécommunications au Maroc">
     <style>
         :root {
@@ -213,6 +213,31 @@
             background: #f0f4f8;
         }
 
+        /* Special formatting for financial tables */
+        .financial-table th {
+            text-align: center;
+        }
+
+        .financial-table td {
+            text-align: right;
+        }
+
+        .financial-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .highlight-row {
+            background: #e6f7ff !important;
+            font-weight: 700;
+        }
+
+        .total-row {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+            font-weight: 700;
+            border-top: 2px solid var(--primary-navy);
+        }
+
         /* Buttons */
         .btn {
             display: inline-block;
@@ -320,6 +345,14 @@
             .kpi-grid {
                 grid-template-columns: 1fr;
             }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
         }
 
         /* Print Styles */
@@ -337,6 +370,7 @@
         /* Utility Classes */
         .text-center { text-align: center; }
         .text-right { text-align: right; }
+        .text-left { text-align: left; }
         .mt-1 { margin-top: 0.5rem; }
         .mt-2 { margin-top: 1rem; }
         .mt-3 { margin-top: 1.5rem; }
@@ -352,6 +386,10 @@
         .editable:focus {
             outline: 2px solid var(--bottle-green);
             background: white;
+        }
+
+        .number {
+            font-family: 'Courier New', monospace;
         }
     </style>
 </head>
@@ -519,28 +557,28 @@
                             <tr>
                                 <th>Type de Site</th>
                                 <th>Coût Déploiement</th>
-                                <th>Loyer Annuel</th>
-                                <th>Marge Opérationnelle</th>
+                                <th>Loyer Mensuel</th>
+                                <th>IMES One-Time</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Urbain</td>
-                                <td class="text-right">200.000 MAD</td>
-                                <td class="text-right">45.000 MAD</td>
-                                <td class="text-right">22,5%</td>
+                                <td class="text-right">939.000 MAD</td>
+                                <td class="text-right">20.000 MAD</td>
+                                <td class="text-right">187.800 MAD</td>
                             </tr>
                             <tr>
                                 <td>Périurbain</td>
-                                <td class="text-right">150.000 MAD</td>
-                                <td class="text-right">45.000 MAD</td>
-                                <td class="text-right">30%</td>
+                                <td class="text-right">713.000 MAD</td>
+                                <td class="text-right">15.500 MAD</td>
+                                <td class="text-right">142.600 MAD</td>
                             </tr>
                             <tr>
                                 <td>Rural</td>
-                                <td class="text-right">100.000 MAD</td>
-                                <td class="text-right">45.000 MAD</td>
-                                <td class="text-right">45%</td>
+                                <td class="text-right">494.000 MAD</td>
+                                <td class="text-right">11.000 MAD</td>
+                                <td class="text-right">98.800 MAD</td>
                             </tr>
                         </tbody>
                     </table>
@@ -556,39 +594,39 @@
                                 <th>Année</th>
                                 <th>Sites à Déployer</th>
                                 <th>Sites Cumulés</th>
-                                <th>Investissement (MMAD)</th>
+                                <th>Investissement (MAD)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Année 1</td>
-                                <td class="text-right">500</td>
-                                <td class="text-right">500</td>
-                                <td class="text-right">75</td>
+                                <td class="text-right">1.000</td>
+                                <td class="text-right">1.000</td>
+                                <td class="text-right">759.600.000</td>
                             </tr>
                             <tr>
                                 <td>Année 2</td>
                                 <td class="text-right">1.500</td>
-                                <td class="text-right">2.000</td>
-                                <td class="text-right">225</td>
+                                <td class="text-right">2.500</td>
+                                <td class="text-right">1.139.400.000</td>
                             </tr>
                             <tr>
                                 <td>Année 3</td>
-                                <td class="text-right">2.500</td>
+                                <td class="text-right">2.000</td>
                                 <td class="text-right">4.500</td>
-                                <td class="text-right">375</td>
+                                <td class="text-right">1.519.200.000</td>
                             </tr>
                             <tr>
                                 <td>Année 4</td>
-                                <td class="text-right">3.000</td>
-                                <td class="text-right">7.500</td>
-                                <td class="text-right">450</td>
+                                <td class="text-right">2.500</td>
+                                <td class="text-right">7.000</td>
+                                <td class="text-right">1.899.000.000</td>
                             </tr>
                             <tr>
                                 <td>Année 5</td>
-                                <td class="text-right">2.500</td>
+                                <td class="text-right">3.000</td>
                                 <td class="text-right">10.000</td>
-                                <td class="text-right">375</td>
+                                <td class="text-right">2.278.800.000</td>
                             </tr>
                         </tbody>
                     </table>
@@ -663,7 +701,7 @@
             </div>
         </div>
 
-        <!-- Tab 2: Modèle Financier -->
+        <!-- Tab 2: Modèle Financier COMPLET -->
         <div id="financier" class="tab-pane">
             <div class="control-panel">
                 <button class="btn btn-primary" onclick="toggleEditMode()">Mode Édition</button>
@@ -675,34 +713,34 @@
             <div class="content-section">
                 <div class="section-header">
                     <div class="section-icon">📊</div>
-                    <h2>Modèle Financier - Projections 5 Ans</h2>
+                    <h2>Modèle Financier Détaillé V2.0 - Projections 5 Ans</h2>
                 </div>
 
                 <!-- KPIs Principaux -->
                 <div class="kpi-grid">
                     <div class="kpi-card">
-                        <div class="kpi-label">ROI sur 3 ans</div>
-                        <div class="kpi-value editable" contenteditable="false">10,600%</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-label">TRI sur 5 ans</div>
-                        <div class="kpi-value editable" contenteditable="false">195%</div>
-                    </div>
-                    <div class="kpi-card">
                         <div class="kpi-label">Sites Déployés</div>
                         <div class="kpi-value editable" contenteditable="false">10,000</div>
                     </div>
                     <div class="kpi-card">
-                        <div class="kpi-label">Chiffre d'Affaires Année 5</div>
-                        <div class="kpi-value editable" contenteditable="false">450 MMAD</div>
+                        <div class="kpi-label">CA Année 5</div>
+                        <div class="kpi-value editable" contenteditable="false">2.36 Mds MAD</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">EBITDA Année 5</div>
+                        <div class="kpi-value editable" contenteditable="false">1.08 Md MAD</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">Marge EBITDA</div>
+                        <div class="kpi-value editable" contenteditable="false">45.57%</div>
                     </div>
                 </div>
 
-                <h3>Compte de Résultat Prévisionnel</h3>
-                <table>
+                <h3>Structure d'Investissement et Financement</h3>
+                <table class="financial-table">
                     <thead>
                         <tr>
-                            <th>En Millions MAD</th>
+                            <th class="text-left">Poste</th>
                             <th>Année 1</th>
                             <th>Année 2</th>
                             <th>Année 3</th>
@@ -711,86 +749,65 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>Chiffre d'Affaires</strong></td>
-                            <td class="text-right editable" contenteditable="false">22.5</td>
-                            <td class="text-right editable" contenteditable="false">90.0</td>
-                            <td class="text-right editable" contenteditable="false">202.5</td>
-                            <td class="text-right editable" contenteditable="false">337.5</td>
-                            <td class="text-right editable" contenteditable="false">450.0</td>
+                        <tr class="highlight-row">
+                            <td colspan="6"><strong>INVESTISSEMENT</strong></td>
                         </tr>
                         <tr>
-                            <td>Revenus Location</td>
-                            <td class="text-right editable" contenteditable="false">11.25</td>
-                            <td class="text-right editable" contenteditable="false">45.0</td>
-                            <td class="text-right editable" contenteditable="false">101.25</td>
-                            <td class="text-right editable" contenteditable="false">168.75</td>
-                            <td class="text-right editable" contenteditable="false">225.0</td>
+                            <td>Investissement/an</td>
+                            <td class="number editable" contenteditable="false">759,600,000</td>
+                            <td class="number editable" contenteditable="false">1,139,400,000</td>
+                            <td class="number editable" contenteditable="false">1,519,200,000</td>
+                            <td class="number editable" contenteditable="false">1,899,000,000</td>
+                            <td class="number editable" contenteditable="false">2,278,800,000</td>
                         </tr>
                         <tr>
-                            <td>Revenus Services</td>
-                            <td class="text-right editable" contenteditable="false">11.25</td>
-                            <td class="text-right editable" contenteditable="false">45.0</td>
-                            <td class="text-right editable" contenteditable="false">101.25</td>
-                            <td class="text-right editable" contenteditable="false">168.75</td>
-                            <td class="text-right editable" contenteditable="false">225.0</td>
+                            <td>Cash-flow Client</td>
+                            <td class="number editable" contenteditable="false">433,071,109</td>
+                            <td class="number editable" contenteditable="false">649,606,664</td>
+                            <td class="number editable" contenteditable="false">866,142,218</td>
+                            <td class="number editable" contenteditable="false">1,082,677,773</td>
+                            <td class="number editable" contenteditable="false">1,299,213,327</td>
                         </tr>
                         <tr>
-                            <td><strong>Charges d'Exploitation</strong></td>
-                            <td class="text-right editable" contenteditable="false">15.75</td>
-                            <td class="text-right editable" contenteditable="false">63.0</td>
-                            <td class="text-right editable" contenteditable="false">141.75</td>
-                            <td class="text-right editable" contenteditable="false">236.25</td>
-                            <td class="text-right editable" contenteditable="false">315.0</td>
+                            <td>Crédit-Fournisseur</td>
+                            <td class="number editable" contenteditable="false">326,528,891</td>
+                            <td class="number editable" contenteditable="false">489,793,336</td>
+                            <td class="number editable" contenteditable="false">653,057,782</td>
+                            <td class="number editable" contenteditable="false">816,322,227</td>
+                            <td class="number editable" contenteditable="false">979,586,673</td>
                         </tr>
                         <tr>
-                            <td>Coûts Opérationnels</td>
-                            <td class="text-right editable" contenteditable="false">7.5</td>
-                            <td class="text-right editable" contenteditable="false">30.0</td>
-                            <td class="text-right editable" contenteditable="false">67.5</td>
-                            <td class="text-right editable" contenteditable="false">112.5</td>
-                            <td class="text-right editable" contenteditable="false">150.0</td>
+                            <td>MBE/IMES & Loyer Année #1</td>
+                            <td class="number editable" contenteditable="false">210,880,000</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <td>Masse Salariale</td>
-                            <td class="text-right editable" contenteditable="false">4.8</td>
-                            <td class="text-right editable" contenteditable="false">19.2</td>
-                            <td class="text-right editable" contenteditable="false">43.2</td>
-                            <td class="text-right editable" contenteditable="false">72.0</td>
-                            <td class="text-right editable" contenteditable="false">96.0</td>
+                            <td>MBE/IMES & Loyer Année #3</td>
+                            <td class="number editable" contenteditable="false">368,320,000</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <td>Frais Généraux</td>
-                            <td class="text-right editable" contenteditable="false">3.45</td>
-                            <td class="text-right editable" contenteditable="false">13.8</td>
-                            <td class="text-right editable" contenteditable="false">31.05</td>
-                            <td class="text-right editable" contenteditable="false">51.75</td>
-                            <td class="text-right editable" contenteditable="false">69.0</td>
-                        </tr>
-                        <tr style="background: var(--light-gray);">
-                            <td><strong>EBITDA</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">6.75</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">27.0</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">60.75</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">101.25</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">135.0</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Marge EBITDA (%)</td>
-                            <td class="text-right editable" contenteditable="false">30%</td>
-                            <td class="text-right editable" contenteditable="false">30%</td>
-                            <td class="text-right editable" contenteditable="false">30%</td>
-                            <td class="text-right editable" contenteditable="false">30%</td>
-                            <td class="text-right editable" contenteditable="false">30%</td>
+                            <td>MBE/IMES & Loyer Année #7</td>
+                            <td class="number editable" contenteditable="false">683,200,000</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h3>Plan de Financement</h3>
-                <table>
+                <h3>Compte de Résultat Prévisionnel</h3>
+                <table class="financial-table">
                     <thead>
                         <tr>
-                            <th>En Millions MAD</th>
+                            <th class="text-left">Poste (MAD)</th>
                             <th>Année 1</th>
                             <th>Année 2</th>
                             <th>Année 3</th>
@@ -799,149 +816,501 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>Besoins</strong></td>
-                            <td class="text-right editable" contenteditable="false">75.0</td>
-                            <td class="text-right editable" contenteditable="false">225.0</td>
-                            <td class="text-right editable" contenteditable="false">375.0</td>
-                            <td class="text-right editable" contenteditable="false">450.0</td>
-                            <td class="text-right editable" contenteditable="false">375.0</td>
+                        <tr class="highlight-row">
+                            <td colspan="6"><strong>REVENUS</strong></td>
                         </tr>
                         <tr>
-                            <td>CAPEX Sites</td>
-                            <td class="text-right editable" contenteditable="false">75.0</td>
-                            <td class="text-right editable" contenteditable="false">225.0</td>
-                            <td class="text-right editable" contenteditable="false">375.0</td>
-                            <td class="text-right editable" contenteditable="false">450.0</td>
-                            <td class="text-right editable" contenteditable="false">375.0</td>
+                            <td>Revenus IMES</td>
+                            <td class="number editable" contenteditable="false">132,160,000</td>
+                            <td class="number editable" contenteditable="false">198,240,000</td>
+                            <td class="number editable" contenteditable="false">264,320,000</td>
+                            <td class="number editable" contenteditable="false">330,400,000</td>
+                            <td class="number editable" contenteditable="false">396,480,000</td>
                         </tr>
                         <tr>
-                            <td><strong>Ressources</strong></td>
-                            <td class="text-right editable" contenteditable="false">78.0</td>
-                            <td class="text-right editable" contenteditable="false">252.0</td>
-                            <td class="text-right editable" contenteditable="false">435.75</td>
-                            <td class="text-right editable" contenteditable="false">551.25</td>
-                            <td class="text-right editable" contenteditable="false">510.0</td>
+                            <td>Revenus Location</td>
+                            <td class="number editable" contenteditable="false">196,800,000</td>
+                            <td class="number editable" contenteditable="false">492,000,000</td>
+                            <td class="number editable" contenteditable="false">885,600,000</td>
+                            <td class="number editable" contenteditable="false">1,377,600,000</td>
+                            <td class="number editable" contenteditable="false">1,968,000,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>CA TOTAL</strong></td>
+                            <td class="number"><strong>328,960,000</strong></td>
+                            <td class="number"><strong>690,240,000</strong></td>
+                            <td class="number"><strong>1,149,920,000</strong></td>
+                            <td class="number"><strong>1,708,000,000</strong></td>
+                            <td class="number"><strong>2,364,480,000</strong></td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td colspan="6"><strong>CHARGES</strong></td>
                         </tr>
                         <tr>
-                            <td>Capital Initial</td>
-                            <td class="text-right editable" contenteditable="false">3.0</td>
-                            <td class="text-right editable" contenteditable="false">-</td>
-                            <td class="text-right editable" contenteditable="false">-</td>
-                            <td class="text-right editable" contenteditable="false">-</td>
-                            <td class="text-right editable" contenteditable="false">-</td>
+                            <td>Coût IMES</td>
+                            <td class="number editable" contenteditable="false">-52,864,000</td>
+                            <td class="number editable" contenteditable="false">-79,296,000</td>
+                            <td class="number editable" contenteditable="false">-105,728,000</td>
+                            <td class="number editable" contenteditable="false">-132,160,000</td>
+                            <td class="number editable" contenteditable="false">-158,592,000</td>
                         </tr>
                         <tr>
-                            <td>Dépôts Clients</td>
-                            <td class="text-right editable" contenteditable="false">75.0</td>
-                            <td class="text-right editable" contenteditable="false">225.0</td>
-                            <td class="text-right editable" contenteditable="false">375.0</td>
-                            <td class="text-right editable" contenteditable="false">450.0</td>
-                            <td class="text-right editable" contenteditable="false">375.0</td>
+                            <td>Coûts Maintenance</td>
+                            <td class="number editable" contenteditable="false">-118,080,000</td>
+                            <td class="number editable" contenteditable="false">-295,200,000</td>
+                            <td class="number editable" contenteditable="false">-531,360,000</td>
+                            <td class="number editable" contenteditable="false">-826,560,000</td>
+                            <td class="number editable" contenteditable="false">-1,180,800,000</td>
                         </tr>
                         <tr>
-                            <td>Cash Flow Opérationnel</td>
-                            <td class="text-right editable" contenteditable="false">-</td>
-                            <td class="text-right editable" contenteditable="false">27.0</td>
-                            <td class="text-right editable" contenteditable="false">60.75</td>
-                            <td class="text-right editable" contenteditable="false">101.25</td>
-                            <td class="text-right editable" contenteditable="false">135.0</td>
+                            <td>Masse Salariale</td>
+                            <td class="number editable" contenteditable="false">3,000,000</td>
+                            <td class="number editable" contenteditable="false">4,000,000</td>
+                            <td class="number editable" contenteditable="false">5,000,000</td>
+                            <td class="number editable" contenteditable="false">5,000,000</td>
+                            <td class="number editable" contenteditable="false">5,000,000</td>
                         </tr>
-                        <tr style="background: var(--light-gray);">
-                            <td><strong>Trésorerie Nette</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">3.0</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">30.0</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">90.75</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">192.0</strong></td>
-                            <td class="text-right"><strong class="editable" contenteditable="false">327.0</strong></td>
+                        <tr>
+                            <td>Frais Généraux</td>
+                            <td class="number editable" contenteditable="false">6,579,200</td>
+                            <td class="number editable" contenteditable="false">13,804,800</td>
+                            <td class="number editable" contenteditable="false">22,998,400</td>
+                            <td class="number editable" contenteditable="false">34,160,000</td>
+                            <td class="number editable" contenteditable="false">47,289,600</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Charges</strong></td>
+                            <td class="number"><strong>-161,364,800</strong></td>
+                            <td class="number"><strong>-356,691,200</strong></td>
+                            <td class="number"><strong>-609,089,600</strong></td>
+                            <td class="number"><strong>-919,560,000</strong></td>
+                            <td class="number"><strong>-1,287,102,400</strong></td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>EBITDA</strong></td>
+                            <td class="number"><strong>167,595,200</strong></td>
+                            <td class="number"><strong>333,548,800</strong></td>
+                            <td class="number"><strong>540,830,400</strong></td>
+                            <td class="number"><strong>788,440,000</strong></td>
+                            <td class="number"><strong>1,077,377,600</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Marge EBITDA %</td>
+                            <td class="number editable" contenteditable="false">50.95%</td>
+                            <td class="number editable" contenteditable="false">48.32%</td>
+                            <td class="number editable" contenteditable="false">47.03%</td>
+                            <td class="number editable" contenteditable="false">46.16%</td>
+                            <td class="number editable" contenteditable="false">45.57%</td>
+                        </tr>
+                        <tr>
+                            <td>Amortissements</td>
+                            <td class="number editable" contenteditable="false">-75,960,000</td>
+                            <td class="number editable" contenteditable="false">-189,900,000</td>
+                            <td class="number editable" contenteditable="false">-341,820,000</td>
+                            <td class="number editable" contenteditable="false">-531,720,000</td>
+                            <td class="number editable" contenteditable="false">-759,600,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EBIT</strong></td>
+                            <td class="number"><strong>91,635,200</strong></td>
+                            <td class="number"><strong>143,648,800</strong></td>
+                            <td class="number"><strong>199,010,400</strong></td>
+                            <td class="number"><strong>256,720,000</strong></td>
+                            <td class="number"><strong>317,777,600</strong></td>
+                        </tr>
+                        <tr>
+                            <td>IS (20%)</td>
+                            <td class="number editable" contenteditable="false">-18,327,040</td>
+                            <td class="number editable" contenteditable="false">-28,729,760</td>
+                            <td class="number editable" contenteditable="false">-39,802,080</td>
+                            <td class="number editable" contenteditable="false">-51,344,000</td>
+                            <td class="number editable" contenteditable="false">-63,555,520</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>RÉSULTAT NET</strong></td>
+                            <td class="number"><strong>73,308,160</strong></td>
+                            <td class="number"><strong>114,919,040</strong></td>
+                            <td class="number"><strong>159,208,320</strong></td>
+                            <td class="number"><strong>205,376,000</strong></td>
+                            <td class="number"><strong>254,222,080</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Marge Nette %</td>
+                            <td class="number editable" contenteditable="false">22.28%</td>
+                            <td class="number editable" contenteditable="false">16.65%</td>
+                            <td class="number editable" contenteditable="false">13.85%</td>
+                            <td class="number editable" contenteditable="false">12.02%</td>
+                            <td class="number editable" contenteditable="false">10.75%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Plan de Déploiement Détaillé</h3>
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Année</th>
+                            <th>Sites Nouveaux</th>
+                            <th>Urbains (40%)</th>
+                            <th>Périurbains (40%)</th>
+                            <th>Ruraux (20%)</th>
+                            <th>Sites Cumulés</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Année 1</td>
+                            <td class="number">1,000</td>
+                            <td class="number">400</td>
+                            <td class="number">400</td>
+                            <td class="number">200</td>
+                            <td class="number">1,000</td>
+                        </tr>
+                        <tr>
+                            <td>Année 2</td>
+                            <td class="number">1,500</td>
+                            <td class="number">600</td>
+                            <td class="number">600</td>
+                            <td class="number">300</td>
+                            <td class="number">2,500</td>
+                        </tr>
+                        <tr>
+                            <td>Année 3</td>
+                            <td class="number">2,000</td>
+                            <td class="number">800</td>
+                            <td class="number">800</td>
+                            <td class="number">400</td>
+                            <td class="number">4,500</td>
+                        </tr>
+                        <tr>
+                            <td>Année 4</td>
+                            <td class="number">2,500</td>
+                            <td class="number">1,000</td>
+                            <td class="number">1,000</td>
+                            <td class="number">500</td>
+                            <td class="number">7,000</td>
+                        </tr>
+                        <tr>
+                            <td>Année 5</td>
+                            <td class="number">3,000</td>
+                            <td class="number">1,200</td>
+                            <td class="number">1,200</td>
+                            <td class="number">600</td>
+                            <td class="number">10,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>TOTAL</strong></td>
+                            <td class="number"><strong>10,000</strong></td>
+                            <td class="number"><strong>4,000</strong></td>
+                            <td class="number"><strong>4,000</strong></td>
+                            <td class="number"><strong>2,000</strong></td>
+                            <td class="number"><strong>10,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Structure CAPEX par Site</h3>
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Composant (MAD)</th>
+                            <th>Urbain</th>
+                            <th>Périurbain</th>
+                            <th>Rural</th>
+                            <th>Moyenne Pondérée</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dépôt Garantie Propriétaire</td>
+                            <td class="number">24,000</td>
+                            <td class="number">18,000</td>
+                            <td class="number">9,000</td>
+                            <td class="number">19,200</td>
+                        </tr>
+                        <tr>
+                            <td>Génie Civil</td>
+                            <td class="number">100,000</td>
+                            <td class="number">70,000</td>
+                            <td class="number">50,000</td>
+                            <td class="number">78,000</td>
+                        </tr>
+                        <tr>
+                            <td>Solution Solaire - Équipements</td>
+                            <td class="number">300,000</td>
+                            <td class="number">225,000</td>
+                            <td class="number">150,000</td>
+                            <td class="number">240,000</td>
+                        </tr>
+                        <tr>
+                            <td>Solution Solaire - Installation</td>
+                            <td class="number">40,000</td>
+                            <td class="number">30,000</td>
+                            <td class="number">20,000</td>
+                            <td class="number">32,000</td>
+                        </tr>
+                        <tr>
+                            <td>Raccordement ONEE</td>
+                            <td class="number">150,000</td>
+                            <td class="number">100,000</td>
+                            <td class="number">50,000</td>
+                            <td class="number">110,000</td>
+                        </tr>
+                        <tr>
+                            <td>Autorisations Administratives</td>
+                            <td class="number">25,000</td>
+                            <td class="number">20,000</td>
+                            <td class="number">15,000</td>
+                            <td class="number">21,000</td>
+                        </tr>
+                        <tr>
+                            <td>Mât/Pylône 45m</td>
+                            <td class="number">300,000</td>
+                            <td class="number">250,000</td>
+                            <td class="number">200,000</td>
+                            <td class="number">260,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>TOTAL CAPEX</strong></td>
+                            <td class="number"><strong>939,000</strong></td>
+                            <td class="number"><strong>713,000</strong></td>
+                            <td class="number"><strong>494,000</strong></td>
+                            <td class="number"><strong>759,600</strong></td>
                         </tr>
                     </tbody>
                 </table>
 
                 <h3>Analyse de Sensibilité</h3>
-                <div class="article">
-                    <h4>Scénarios de Performance</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Scénario</th>
-                                <th>Sites Déployés</th>
-                                <th>CA Année 5 (MMAD)</th>
-                                <th>ROI 3 ans</th>
-                                <th>TRI 5 ans</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Pessimiste (-30%)</td>
-                                <td class="text-right editable" contenteditable="false">7,000</td>
-                                <td class="text-right editable" contenteditable="false">315</td>
-                                <td class="text-right editable" contenteditable="false">7,420%</td>
-                                <td class="text-right editable" contenteditable="false">137%</td>
-                            </tr>
-                            <tr style="background: var(--light-gray);">
-                                <td><strong>Base</strong></td>
-                                <td class="text-right"><strong class="editable" contenteditable="false">10,000</strong></td>
-                                <td class="text-right"><strong class="editable" contenteditable="false">450</strong></td>
-                                <td class="text-right"><strong class="editable" contenteditable="false">10,600%</strong></td>
-                                <td class="text-right"><strong class="editable" contenteditable="false">195%</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Optimiste (+30%)</td>
-                                <td class="text-right editable" contenteditable="false">13,000</td>
-                                <td class="text-right editable" contenteditable="false">585</td>
-                                <td class="text-right editable" contenteditable="false">13,780%</td>
-                                <td class="text-right editable" contenteditable="false">254%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Variable</th>
+                            <th>Variation</th>
+                            <th>Impact EBITDA</th>
+                            <th>Impact TRI</th>
+                            <th>Niveau Risque</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Volume Sites</td>
+                            <td>-20%</td>
+                            <td>-20%</td>
+                            <td>-39 pts</td>
+                            <td style="color: red;">ÉLEVÉ</td>
+                        </tr>
+                        <tr>
+                            <td>CAPEX par Site</td>
+                            <td>+20%</td>
+                            <td>-15%</td>
+                            <td>-30 pts</td>
+                            <td style="color: orange;">MOYEN</td>
+                        </tr>
+                        <tr>
+                            <td>Loyer Mensuel</td>
+                            <td>-20%</td>
+                            <td>-8%</td>
+                            <td>-20 pts</td>
+                            <td style="color: orange;">MOYEN</td>
+                        </tr>
+                        <tr>
+                            <td>Taux Crédit</td>
+                            <td>+2 pts</td>
+                            <td>-2%</td>
+                            <td>-5 pts</td>
+                            <td style="color: green;">FAIBLE</td>
+                        </tr>
+                        <tr>
+                            <td>Mix Rural</td>
+                            <td>+20 pts</td>
+                            <td>-5%</td>
+                            <td>-10 pts</td>
+                            <td style="color: green;">FAIBLE</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <h3>Structure de Coûts par Site</h3>
-                <div class="article">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Composant</th>
-                                <th>Urbain</th>
-                                <th>Périurbain</th>
-                                <th>Rural</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Pylône/Structure</td>
-                                <td class="text-right editable" contenteditable="false">80,000 MAD</td>
-                                <td class="text-right editable" contenteditable="false">60,000 MAD</td>
-                                <td class="text-right editable" contenteditable="false">40,000 MAD</td>
-                            </tr>
-                            <tr>
-                                <td>Système Énergie</td>
-                                <td class="text-right editable" contenteditable="false">50,000 MAD</td>
-                                <td class="text-right editable" contenteditable="false">40,000 MAD</td>
-                                <td class="text-right editable" contenteditable="false">30,000 MAD</td>
-                            </tr>
-                            <tr>
-                                <td>Infrastructure</td>
-                                <td class="text-right editable" contenteditable="false">40,000 MAD</td>
-                                <td class="text-right editable" contenteditable="false">30,000 MAD</td>
-                                <td class="text-right editable" contenteditable="false">20,000 MAD</td>
-                            </tr>
-                            <tr>
-                                <td>Installation</td>
-                                <td class="text-right editable" contenteditable="false">30,000 MAD</td>
-                                <td class="text-right editable" contenteditable="false">20,000 MAD</td>
-                                <td class="text-right editable" contenteditable="false">10,000 MAD</td>
-                            </tr>
-                            <tr style="background: var(--light-gray);">
-                                <td><strong>Total</strong></td>
-                                <td class="text-right"><strong class="editable" contenteditable="false">200,000 MAD</strong></td>
-                                <td class="text-right"><strong class="editable" contenteditable="false">150,000 MAD</strong></td>
-                                <td class="text-right"><strong class="editable" contenteditable="false">100,000 MAD</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <h3>Scénarios de Performance</h3>
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Scénario</th>
+                            <th>CA An 5 (M MAD)</th>
+                            <th>EBITDA An 5 (M MAD)</th>
+                            <th>Marge %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #d4edda;">
+                            <td>Optimiste (+20%)</td>
+                            <td class="number">2,837.4</td>
+                            <td class="number">1,292.9</td>
+                            <td class="number">45.57%</td>
+                        </tr>
+                        <tr>
+                            <td>Central</td>
+                            <td class="number">2,364.5</td>
+                            <td class="number">1,077.4</td>
+                            <td class="number">45.57%</td>
+                        </tr>
+                        <tr style="background-color: #f8d7da;">
+                            <td>Pessimiste (-20%)</td>
+                            <td class="number">1,891.6</td>
+                            <td class="number">861.9</td>
+                            <td class="number">45.57%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Tableau de Flux de Trésorerie</h3>
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Flux (Millions MAD)</th>
+                            <th>Année 1</th>
+                            <th>Année 2</th>
+                            <th>Année 3</th>
+                            <th>Année 4</th>
+                            <th>Année 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row">
+                            <td colspan="6"><strong>FLUX OPÉRATIONNELS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>EBITDA</td>
+                            <td class="number">167.6</td>
+                            <td class="number">333.5</td>
+                            <td class="number">540.8</td>
+                            <td class="number">788.4</td>
+                            <td class="number">1,077.4</td>
+                        </tr>
+                        <tr>
+                            <td>Dépôts Clients</td>
+                            <td class="number">433.1</td>
+                            <td class="number">649.6</td>
+                            <td class="number">866.1</td>
+                            <td class="number">1,082.7</td>
+                            <td class="number">1,299.2</td>
+                        </tr>
+                        <tr>
+                            <td>Variation BFR</td>
+                            <td class="number">0</td>
+                            <td class="number">0</td>
+                            <td class="number">0</td>
+                            <td class="number">0</td>
+                            <td class="number">0</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>CF Opérationnel</strong></td>
+                            <td class="number"><strong>600.7</strong></td>
+                            <td class="number"><strong>983.1</strong></td>
+                            <td class="number"><strong>1,406.9</strong></td>
+                            <td class="number"><strong>1,871.1</strong></td>
+                            <td class="number"><strong>2,376.6</strong></td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td colspan="6"><strong>FLUX D'INVESTISSEMENT</strong></td>
+                        </tr>
+                        <tr>
+                            <td>CAPEX Cash</td>
+                            <td class="number">-433.1</td>
+                            <td class="number">-649.6</td>
+                            <td class="number">-866.1</td>
+                            <td class="number">-1,082.7</td>
+                            <td class="number">-1,299.2</td>
+                        </tr>
+                        <tr>
+                            <td>Remb. Crédit Fourn.</td>
+                            <td class="number">-326.5</td>
+                            <td class="number">-489.8</td>
+                            <td class="number">-653.1</td>
+                            <td class="number">-816.3</td>
+                            <td class="number">-979.6</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>CF Investissement</strong></td>
+                            <td class="number"><strong>-759.6</strong></td>
+                            <td class="number"><strong>-1,139.4</strong></td>
+                            <td class="number"><strong>-1,519.2</strong></td>
+                            <td class="number"><strong>-1,899.0</strong></td>
+                            <td class="number"><strong>-2,278.8</strong></td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>CF LIBRE</strong></td>
+                            <td class="number"><strong>-158.9</strong></td>
+                            <td class="number"><strong>-156.3</strong></td>
+                            <td class="number"><strong>-112.3</strong></td>
+                            <td class="number"><strong>-27.9</strong></td>
+                            <td class="number"><strong>97.8</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Trésorerie Cumulée</td>
+                            <td class="number">-158.9</td>
+                            <td class="number">-315.2</td>
+                            <td class="number">-427.5</td>
+                            <td class="number">-455.4</td>
+                            <td class="number">-357.6</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Recommandations Fournisseurs</h3>
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Fournisseur</th>
+                            <th>Produit</th>
+                            <th>Prix (MAD)</th>
+                            <th>Conditions Crédit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row">
+                            <td colspan="4"><strong>SOLUTIONS SOLAIRES</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Huawei FusionSolar</td>
+                            <td>Système 30kWc complet</td>
+                            <td class="number">280,000</td>
+                            <td>30% cash, 70% sur 18 mois</td>
+                        </tr>
+                        <tr>
+                            <td>BYD Energy</td>
+                            <td>Batteries LFP + onduleurs</td>
+                            <td class="number">250,000</td>
+                            <td>40% cash, 60% sur 12 mois</td>
+                        </tr>
+                        <tr>
+                            <td>Sungrow</td>
+                            <td>Solution intégrée</td>
+                            <td class="number">260,000</td>
+                            <td>35% cash, 65% sur 15m @ 3.8%</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td colspan="4"><strong>MÂTS/PYLÔNES TÉLÉCOM</strong></td>
+                        </tr>
+                        <tr>
+                            <td>ZTE Corporation</td>
+                            <td>Tour 45m galvanisée</td>
+                            <td class="number">250,000</td>
+                            <td>40% cash, 60% sur 6 mois</td>
+                        </tr>
+                        <tr>
+                            <td>China Tower</td>
+                            <td>Tour autoportante</td>
+                            <td class="number">230,000</td>
+                            <td>35% cash, 65% sur 9 mois</td>
+                        </tr>
+                        <tr>
+                            <td>Valmont Industries</td>
+                            <td>Tour monopole premium</td>
+                            <td class="number">350,000</td>
+                            <td>50% cash, 50% sur 3 mois</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -962,24 +1331,24 @@
 
                 <h3>1. Résumé Exécutif</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false"><strong>NOMATIS TOWERS</strong> représente une opportunité d'investissement exceptionnelle dans le secteur des infrastructures télécommunications au Maroc. Notre joint-venture capitalise sur le programme national 5G de 80 milliards MAD pour établir le leader marocain des TowerCo.</p>
+                    <p class="editable" contenteditable="false"><strong>NOMATIS TOWERS</strong> représente une opportunité d'investissement exceptionnelle dans le secteur des infrastructures télécommunications au Maroc, avec un modèle économique révolutionnaire cash-positive dès le premier jour.</p>
                     
                     <div class="kpi-grid mt-3">
                         <div class="kpi-card">
-                            <div class="kpi-label">Marché Adressable</div>
-                            <div class="kpi-value editable" contenteditable="false">80 Mds MAD</div>
+                            <div class="kpi-label">Investissement Total</div>
+                            <div class="kpi-value editable" contenteditable="false">7.6 Mds MAD</div>
                         </div>
                         <div class="kpi-card">
-                            <div class="kpi-label">Part de Marché Visée</div>
-                            <div class="kpi-value editable" contenteditable="false">15%</div>
+                            <div class="kpi-label">CA Cumulé 5 ans</div>
+                            <div class="kpi-value editable" contenteditable="false">6.24 Mds MAD</div>
                         </div>
                         <div class="kpi-card">
-                            <div class="kpi-label">Création d'Emplois</div>
-                            <div class="kpi-value editable" contenteditable="false">500+</div>
+                            <div class="kpi-label">EBITDA Cumulé</div>
+                            <div class="kpi-value editable" contenteditable="false">2.91 Mds MAD</div>
                         </div>
                         <div class="kpi-card">
-                            <div class="kpi-label">Valorisation Année 5</div>
-                            <div class="kpi-value editable" contenteditable="false">1.08 Md MAD</div>
+                            <div class="kpi-label">Valorisation An 5</div>
+                            <div class="kpi-value editable" contenteditable="false">8.6 Mds MAD</div>
                         </div>
                     </div>
                 </div>
@@ -987,15 +1356,15 @@
                 <h3>2. Analyse de Marché</h3>
                 <div class="article">
                     <h4>2.1 Contexte du Marché Marocain</h4>
-                    <p class="editable" contenteditable="false">Le Maroc s'engage dans une transformation numérique majeure avec le déploiement de la 5G. Le marché des télécommunications représente 3% du PIB national avec une croissance annuelle de 8%.</p>
+                    <p class="editable" contenteditable="false">Le Maroc s'engage dans une transformation numérique majeure avec le déploiement de la 5G. Le marché des télécommunications représente 3% du PIB national avec une croissance annuelle de 8%. Le programme national d'investissement 5G de 80 milliards MAD sur 2025-2030 crée une opportunité sans précédent.</p>
                     
                     <h4>2.2 Drivers de Croissance</h4>
                     <ul>
-                        <li class="editable" contenteditable="false"><strong>Démographie :</strong> 37 millions d'habitants, 70% de pénétration smartphone</li>
+                        <li class="editable" contenteditable="false"><strong>Démographie :</strong> 37 millions d'habitants, 70% de pénétration smartphone, croissance de 15% par an</li>
                         <li class="editable" contenteditable="false"><strong>Urbanisation :</strong> 65% de population urbaine nécessitant une couverture dense</li>
-                        <li class="editable" contenteditable="false"><strong>Économie Digitale :</strong> Croissance de 25% par an du e-commerce</li>
-                        <li class="editable" contenteditable="false"><strong>Investissements 5G :</strong> 80 milliards MAD sur 5 ans</li>
-                        <li class="editable" contenteditable="false"><strong>Smart Cities :</strong> 12 villes intelligentes en développement</li>
+                        <li class="editable" contenteditable="false"><strong>Économie Digitale :</strong> Croissance de 25% par an du e-commerce et services digitaux</li>
+                        <li class="editable" contenteditable="false"><strong>Investissements 5G :</strong> 80 milliards MAD engagés par les opérateurs</li>
+                        <li class="editable" contenteditable="false"><strong>Smart Cities :</strong> 12 villes intelligentes en développement nécessitant infrastructure dense</li>
                     </ul>
 
                     <h4>2.3 Analyse Concurrentielle</h4>
@@ -1038,38 +1407,38 @@
                 <h3>3. Stratégie d'Entreprise</h3>
                 <div class="article">
                     <h4>3.1 Vision et Mission</h4>
-                    <p class="editable" contenteditable="false"><strong>Vision :</strong> Devenir le leader marocain de l'infrastructure télécommunications passive, facilitant la transformation digitale du Royaume.</p>
-                    <p class="editable mt-2" contenteditable="false"><strong>Mission :</strong> Fournir une infrastructure télécoms de classe mondiale, accessible et durable, permettant une connectivité universelle au Maroc.</p>
+                    <p class="editable" contenteditable="false"><strong>Vision :</strong> Devenir le leader marocain de l'infrastructure télécommunications passive, facilitant la transformation digitale du Royaume avec 10,000 sites déployés d'ici 2030.</p>
+                    <p class="editable mt-2" contenteditable="false"><strong>Mission :</strong> Fournir une infrastructure télécoms de classe mondiale, accessible et durable, permettant une connectivité universelle au Maroc tout en générant des rendements exceptionnels pour nos investisseurs.</p>
 
                     <h4>3.2 Objectifs Stratégiques</h4>
                     <ul>
-                        <li class="editable" contenteditable="false">Déployer 10,000 sites en 5 ans</li>
-                        <li class="editable" contenteditable="false">Atteindre 15% de part de marché</li>
-                        <li class="editable" contenteditable="false">Générer 450 MMAD de CA annuel en année 5</li>
-                        <li class="editable" contenteditable="false">Maintenir une marge EBITDA de 30%</li>
+                        <li class="editable" contenteditable="false">Déployer 10,000 sites en 5 ans selon le plan progressif</li>
+                        <li class="editable" contenteditable="false">Atteindre 15% de part de marché des sites télécoms</li>
+                        <li class="editable" contenteditable="false">Générer 2.36 milliards MAD de CA annuel en année 5</li>
+                        <li class="editable" contenteditable="false">Maintenir une marge EBITDA supérieure à 45%</li>
                         <li class="editable" contenteditable="false">Créer 500+ emplois directs et 2,000 indirects</li>
                     </ul>
 
-                    <h4>3.3 Avantages Compétitifs</h4>
+                    <h4>3.3 Avantages Compétitifs Uniques</h4>
                     <ul>
-                        <li class="editable" contenteditable="false"><strong>Expertise Technique :</strong> 19+ ans d'expérience via NOMATIS</li>
-                        <li class="editable" contenteditable="false"><strong>Relations Établies :</strong> Gestion actuelle de 4,000 sites Orange</li>
-                        <li class="editable" contenteditable="false"><strong>Modèle Cash-Positive :</strong> Aucun besoin en fonds de roulement</li>
-                        <li class="editable" contenteditable="false"><strong>Agilité Locale :</strong> Connaissance approfondie du marché</li>
-                        <li class="editable" contenteditable="false"><strong>Synergie Partenariat :</strong> Complémentarité technique et financière</li>
+                        <li class="editable" contenteditable="false"><strong>Modèle Cash-Positive :</strong> Dépôts clients = 100% CAPEX, zéro besoin en FDR</li>
+                        <li class="editable" contenteditable="false"><strong>Expertise NOMATIS :</strong> 19+ ans, gestion de 4,000 sites Orange (57% du réseau)</li>
+                        <li class="editable" contenteditable="false"><strong>Relations Établies :</strong> Accès direct aux décideurs Orange, IAM, Inwi</li>
+                        <li class="editable" contenteditable="false"><strong>Financement Innovant :</strong> Crédit fournisseur 55% du CAPEX sur 12-18 mois</li>
+                        <li class="editable" contenteditable="false"><strong>Excellence Opérationnelle :</strong> Processus optimisés, déploiement en 16-20 semaines</li>
                     </ul>
                 </div>
 
                 <h3>4. Plan Opérationnel</h3>
                 <div class="article">
                     <h4>4.1 Organisation et Structure</h4>
-                    <p class="editable" contenteditable="false">Structure organisationnelle optimisée avec 5 départements clés :</p>
+                    <p class="editable" contenteditable="false">Structure organisationnelle lean avec 20-25 employés permanents et réseau de sous-traitants certifiés :</p>
                     <ul>
-                        <li class="editable" contenteditable="false"><strong>Business Development :</strong> Acquisition clients et expansion marché</li>
-                        <li class="editable" contenteditable="false"><strong>Network Management :</strong> Opérations techniques et maintenance</li>
-                        <li class="editable" contenteditable="false"><strong>Finance & Control :</strong> Gestion financière et reporting</li>
-                        <li class="editable" contenteditable="false"><strong>External Relations :</strong> Relations institutionnelles et réglementaires</li>
-                        <li class="editable" contenteditable="false"><strong>Real Estate Management :</strong> Acquisition et gestion des sites</li>
+                        <li class="editable" contenteditable="false"><strong>Business Development (3) :</strong> Acquisition clients et expansion marché</li>
+                        <li class="editable" contenteditable="false"><strong>Network Management (5) :</strong> Opérations techniques et maintenance</li>
+                        <li class="editable" contenteditable="false"><strong>Finance & Control (4) :</strong> Gestion financière et reporting</li>
+                        <li class="editable" contenteditable="false"><strong>External Relations (3) :</strong> Relations institutionnelles et réglementaires</li>
+                        <li class="editable" contenteditable="false"><strong>Real Estate Management (5) :</strong> Acquisition et gestion des sites</li>
                     </ul>
 
                     <h4>4.2 Plan de Déploiement Régional</h4>
@@ -1088,68 +1457,68 @@
                         <tbody>
                             <tr>
                                 <td>Casablanca-Settat</td>
-                                <td class="text-right">150</td>
+                                <td class="text-right">300</td>
                                 <td class="text-right">450</td>
+                                <td class="text-right">600</td>
                                 <td class="text-right">750</td>
                                 <td class="text-right">900</td>
-                                <td class="text-right">750</td>
                                 <td class="text-right">3,000</td>
                             </tr>
                             <tr>
                                 <td>Rabat-Salé-Kénitra</td>
-                                <td class="text-right">100</td>
+                                <td class="text-right">200</td>
                                 <td class="text-right">300</td>
+                                <td class="text-right">400</td>
                                 <td class="text-right">500</td>
                                 <td class="text-right">600</td>
-                                <td class="text-right">500</td>
                                 <td class="text-right">2,000</td>
                             </tr>
                             <tr>
                                 <td>Marrakech-Safi</td>
-                                <td class="text-right">75</td>
+                                <td class="text-right">150</td>
                                 <td class="text-right">225</td>
+                                <td class="text-right">300</td>
                                 <td class="text-right">375</td>
                                 <td class="text-right">450</td>
-                                <td class="text-right">375</td>
                                 <td class="text-right">1,500</td>
                             </tr>
                             <tr>
                                 <td>Tanger-Tétouan</td>
-                                <td class="text-right">75</td>
+                                <td class="text-right">150</td>
                                 <td class="text-right">225</td>
+                                <td class="text-right">300</td>
                                 <td class="text-right">375</td>
                                 <td class="text-right">450</td>
-                                <td class="text-right">375</td>
                                 <td class="text-right">1,500</td>
                             </tr>
                             <tr>
                                 <td>Autres Régions</td>
-                                <td class="text-right">100</td>
+                                <td class="text-right">200</td>
                                 <td class="text-right">300</td>
+                                <td class="text-right">400</td>
                                 <td class="text-right">500</td>
                                 <td class="text-right">600</td>
-                                <td class="text-right">500</td>
                                 <td class="text-right">2,000</td>
                             </tr>
                             <tr style="background: var(--light-gray);">
                                 <td><strong>Total</strong></td>
-                                <td class="text-right"><strong>500</strong></td>
+                                <td class="text-right"><strong>1,000</strong></td>
                                 <td class="text-right"><strong>1,500</strong></td>
+                                <td class="text-right"><strong>2,000</strong></td>
                                 <td class="text-right"><strong>2,500</strong></td>
                                 <td class="text-right"><strong>3,000</strong></td>
-                                <td class="text-right"><strong>2,500</strong></td>
                                 <td class="text-right"><strong>10,000</strong></td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <h4>4.3 Processus Opérationnels</h4>
+                    <h4>4.3 Processus Opérationnels Optimisés</h4>
                     <ul>
-                        <li class="editable" contenteditable="false"><strong>Phase 1 - Identification :</strong> Analyse de couverture et sélection des sites (2-4 semaines)</li>
-                        <li class="editable" contenteditable="false"><strong>Phase 2 - Acquisition :</strong> Négociation foncière et autorisations (4-8 semaines)</li>
-                        <li class="editable" contenteditable="false"><strong>Phase 3 - Construction :</strong> Déploiement infrastructure (8-12 semaines)</li>
-                        <li class="editable" contenteditable="false"><strong>Phase 4 - Commissioning :</strong> Tests et mise en service (2-4 semaines)</li>
-                        <li class="editable" contenteditable="false"><strong>Phase 5 - Exploitation :</strong> Maintenance et optimisation continue</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 1 - Identification (2-3 semaines) :</strong> Analyse de couverture et sélection des sites</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 2 - Acquisition (4-6 semaines) :</strong> Négociation foncière et autorisations</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 3 - Construction (8-10 semaines) :</strong> Déploiement infrastructure</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 4 - Commissioning (2-3 semaines) :</strong> Tests et mise en service</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 5 - Exploitation :</strong> Maintenance préventive et optimisation continue</li>
                     </ul>
                 </div>
 
@@ -1157,12 +1526,12 @@
                 <div class="article">
                     <h4>5.1 Segmentation Clients</h4>
                     <ul>
-                        <li class="editable" contenteditable="false"><strong>Opérateurs Télécoms :</strong> Orange, IAM, Inwi (80% du CA)</li>
-                        <li class="editable" contenteditable="false"><strong>ISP et MVNO :</strong> Fournisseurs Internet et opérateurs virtuels (15%)</li>
-                        <li class="editable" contenteditable="false"><strong>Entreprises :</strong> Réseaux privés et IoT (5%)</li>
+                        <li class="editable" contenteditable="false"><strong>Opérateurs Télécoms (80% du CA) :</strong> Orange, IAM, Inwi - contrats 10-15 ans</li>
+                        <li class="editable" contenteditable="false"><strong>ISP et MVNO (15%) :</strong> Fournisseurs Internet et opérateurs virtuels</li>
+                        <li class="editable" contenteditable="false"><strong>Entreprises (5%) :</strong> Réseaux privés, IoT industriel, smart cities</li>
                     </ul>
 
-                    <h4>5.2 Proposition de Valeur</h4>
+                    <h4>5.2 Proposition de Valeur Différenciée</h4>
                     <table>
                         <thead>
                             <tr>
@@ -1188,23 +1557,88 @@
                             <tr>
                                 <td>Entreprises</td>
                                 <td>Fiabilité réseau</td>
-                                <td>SLA 99.9%</td>
+                                <td>SLA 99.95%</td>
                                 <td>Continuité business garantie</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <h4>5.3 Stratégie de Prix</h4>
-                    <p class="editable" contenteditable="false">Tarification compétitive avec structure transparente :</p>
+                    <h4>5.3 Stratégie de Prix Compétitive</h4>
+                    <p class="editable" contenteditable="false">Structure tarifaire transparente et compétitive avec économies d'échelle :</p>
                     <ul>
-                        <li class="editable" contenteditable="false"><strong>Location Espace :</strong> 1,500-2,500 MAD/mois selon typologie</li>
-                        <li class="editable" contenteditable="false"><strong>Services Énergie :</strong> 1,000-1,500 MAD/mois</li>
-                        <li class="editable" contenteditable="false"><strong>Maintenance :</strong> 500-750 MAD/mois</li>
-                        <li class="editable" contenteditable="false"><strong>Services Additionnels :</strong> Sur devis personnalisé</li>
+                        <li class="editable" contenteditable="false"><strong>Location Espace :</strong> 8,000-10,000 MAD/mois (urbain), 6,000-8,000 (périurbain), 4,000-6,000 (rural)</li>
+                        <li class="editable" contenteditable="false"><strong>Services Énergie :</strong> 6,000-8,000 MAD/mois incluant backup solaire</li>
+                        <li class="editable" contenteditable="false"><strong>Maintenance :</strong> 3,000-5,000 MAD/mois avec SLA garanti</li>
+                        <li class="editable" contenteditable="false"><strong>IMES :</strong> 20% du CAPEX, payable à la mise en service</li>
                     </ul>
                 </div>
 
-                <h3>6. Plan de Gestion des Risques</h3>
+                <h3>6. Projections Financières Détaillées</h3>
+                <div class="article">
+                    <h4>6.1 Synthèse Financière 5 Ans</h4>
+                    <table class="financial-table">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Métrique (M MAD)</th>
+                                <th>Année 1</th>
+                                <th>Année 2</th>
+                                <th>Année 3</th>
+                                <th>Année 4</th>
+                                <th>Année 5</th>
+                                <th>Cumulé</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chiffre d'Affaires</td>
+                                <td class="text-right">329</td>
+                                <td class="text-right">690</td>
+                                <td class="text-right">1,150</td>
+                                <td class="text-right">1,708</td>
+                                <td class="text-right">2,364</td>
+                                <td class="text-right">6,241</td>
+                            </tr>
+                            <tr>
+                                <td>EBITDA</td>
+                                <td class="text-right">168</td>
+                                <td class="text-right">334</td>
+                                <td class="text-right">541</td>
+                                <td class="text-right">788</td>
+                                <td class="text-right">1,077</td>
+                                <td class="text-right">2,908</td>
+                            </tr>
+                            <tr>
+                                <td>Résultat Net</td>
+                                <td class="text-right">73</td>
+                                <td class="text-right">115</td>
+                                <td class="text-right">159</td>
+                                <td class="text-right">205</td>
+                                <td class="text-right">254</td>
+                                <td class="text-right">806</td>
+                            </tr>
+                            <tr>
+                                <td>Investissement</td>
+                                <td class="text-right">760</td>
+                                <td class="text-right">1,139</td>
+                                <td class="text-right">1,519</td>
+                                <td class="text-right">1,899</td>
+                                <td class="text-right">2,279</td>
+                                <td class="text-right">7,596</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>6.2 Ratios Financiers Clés</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>ROE Année 5 :</strong> 8,474% (254M résultat / 3M capital)</li>
+                        <li class="editable" contenteditable="false"><strong>ROCE Année 5 :</strong> 14.2% (EBIT / Capital Employé)</li>
+                        <li class="editable" contenteditable="false"><strong>Payback Period :</strong> 3.2 ans</li>
+                        <li class="editable" contenteditable="false"><strong>VAN (10%) :</strong> 4.8 milliards MAD</li>
+                        <li class="editable" contenteditable="false"><strong>TRI :</strong> 89% sur 5 ans</li>
+                    </ul>
+                </div>
+
+                <h3>7. Plan de Gestion des Risques</h3>
                 <div class="article">
                     <table>
                         <thead>
@@ -1220,57 +1654,60 @@
                                 <td>Retards réglementaires</td>
                                 <td>Moyenne</td>
                                 <td>Élevé</td>
-                                <td>Relations proactives avec ANRT, pipeline de sites</td>
+                                <td>Relations proactives ANRT, pipeline 150% objectifs</td>
                             </tr>
                             <tr>
                                 <td>Concurrence accrue</td>
                                 <td>Élevée</td>
                                 <td>Moyen</td>
-                                <td>Différenciation service, contrats long terme</td>
+                                <td>Contrats exclusifs 10-15 ans, first-mover advantage</td>
                             </tr>
                             <tr>
                                 <td>Évolution technologique</td>
                                 <td>Faible</td>
                                 <td>Moyen</td>
-                                <td>Infrastructure évolutive, veille technologique</td>
+                                <td>Infrastructure évolutive 5G-ready, R&D continue</td>
                             </tr>
                             <tr>
                                 <td>Défaut client</td>
                                 <td>Faible</td>
                                 <td>Élevé</td>
-                                <td>Dépôts garantie, diversification portefeuille</td>
+                                <td>Dépôts garantie 100%, diversification 3 opérateurs</td>
                             </tr>
                             <tr>
-                                <td>Pénurie ressources</td>
+                                <td>Pénurie équipements</td>
                                 <td>Moyenne</td>
                                 <td>Moyen</td>
-                                <td>Partenariats fournisseurs, stocks stratégiques</td>
+                                <td>Multi-sourcing, stocks 3 mois, contrats cadres</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3>7. Impact ESG et Développement Durable</h3>
+                <h3>8. Impact ESG et Développement Durable</h3>
                 <div class="article">
-                    <h4>7.1 Impact Environnemental</h4>
+                    <h4>8.1 Impact Environnemental</h4>
                     <ul>
-                        <li class="editable" contenteditable="false">100% énergie renouvelable d'ici 2030</li>
+                        <li class="editable" contenteditable="false">100% sites alimentés par énergie solaire hybride</li>
                         <li class="editable" contenteditable="false">Réduction de 40% des émissions CO2 par mutualisation</li>
-                        <li class="editable" contenteditable="false">Programme de recyclage des équipements</li>
+                        <li class="editable" contenteditable="false">Programme de recyclage des équipements en fin de vie</li>
+                        <li class="editable" contenteditable="false">Certification ISO 14001 visée en année 2</li>
                     </ul>
 
-                    <h4>7.2 Impact Social</h4>
+                    <h4>8.2 Impact Social</h4>
                     <ul>
-                        <li class="editable" contenteditable="false">Création de 500+ emplois directs</li>
-                        <li class="editable" contenteditable="false">Formation de 1,000 techniciens locaux</li>
+                        <li class="editable" contenteditable="false">Création de 500+ emplois directs qualifiés</li>
+                        <li class="editable" contenteditable="false">Formation de 1,000 techniciens locaux sur 5 ans</li>
                         <li class="editable" contenteditable="false">Connectivité pour 2 millions de ruraux</li>
+                        <li class="editable" contenteditable="false">Programme de stages avec universités techniques</li>
                     </ul>
 
-                    <h4>7.3 Gouvernance</h4>
+                    <h4>8.3 Gouvernance</h4>
                     <ul>
-                        <li class="editable" contenteditable="false">Transparence totale dans la gestion</li>
+                        <li class="editable" contenteditable="false">Transparence totale, reporting trimestriel</li>
                         <li class="editable" contenteditable="false">Comité d'éthique indépendant</li>
-                        <li class="editable" contenteditable="false">Certification ISO 9001 et 14001</li>
+                        <li class="editable" contenteditable="false">Certification ISO 9001 et ISO 27001</li>
+                        <li class="editable" contenteditable="false">Politique anti-corruption stricte</li>
                     </ul>
                 </div>
             </div>
@@ -1308,8 +1745,8 @@
                                 <div class="kpi-label">Sites en 5 ans</div>
                             </div>
                             <div class="kpi-card">
-                                <div class="kpi-value">195%</div>
-                                <div class="kpi-label">TRI</div>
+                                <div class="kpi-value">2.36 Mds</div>
+                                <div class="kpi-label">CA Année 5</div>
                             </div>
                         </div>
                     </div>
@@ -1345,13 +1782,13 @@
 
                 <!-- Slide 3: Notre Solution -->
                 <div class="article" style="min-height: 400px;">
-                    <h3>Notre Solution Unique</h3>
-                    <h4>Modèle Économique Révolutionnaire</h4>
+                    <h3>Modèle Économique Révolutionnaire</h3>
+                    <h4>100% Cash-Positive dès le Jour 1</h4>
                     <ul>
-                        <li class="editable" contenteditable="false"><strong>Cash-Positive dès J1 :</strong> Dépôts clients = 100% CAPEX</li>
+                        <li class="editable" contenteditable="false"><strong>Dépôts Clients = 100% CAPEX :</strong> Financement complet par les clients</li>
                         <li class="editable" contenteditable="false"><strong>Zéro Besoin FDR :</strong> Clients paient avant déploiement</li>
-                        <li class="editable" contenteditable="false"><strong>Revenus Garantis :</strong> Contrats 10-15 ans</li>
-                        <li class="editable" contenteditable="false"><strong>Scalabilité Infinie :</strong> Croissance sans dilution</li>
+                        <li class="editable" contenteditable="false"><strong>Revenus Garantis :</strong> Contrats 10-15 ans, paiements mensuels</li>
+                        <li class="editable" contenteditable="false"><strong>Crédit Fournisseur :</strong> 55% CAPEX sur 12-18 mois</li>
                     </ul>
                     
                     <table class="mt-3">
@@ -1368,7 +1805,7 @@
                             </tr>
                             <tr>
                                 <td>ROI en 5-7 ans</td>
-                                <td>ROI immédiat</td>
+                                <td>ROI immédiat (année 1)</td>
                             </tr>
                             <tr>
                                 <td>Risque de défaut élevé</td>
@@ -1380,7 +1817,7 @@
 
                 <!-- Slide 4: Partenariat Stratégique -->
                 <div class="article" style="min-height: 400px;">
-                    <h3>Un Partenariat Complémentaire</h3>
+                    <h3>Un Partenariat Synergique Unique</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                         <div>
                             <h4>NOMATIS S.A.R.L</h4>
@@ -1404,17 +1841,17 @@
                         </div>
                     </div>
                     <p class="text-center mt-3 editable" contenteditable="false" style="font-size: 1.1rem; color: var(--bottle-green);">
-                        <strong>Synergie Parfaite = Expertise Technique + Puissance Financière</strong>
+                        <strong>Expertise Technique + Puissance Financière = Succès Garanti</strong>
                     </p>
                 </div>
 
-                <!-- Slide 5: Projections Financières -->
+                <!-- Slide 5: Performance Financière -->
                 <div class="article" style="min-height: 400px;">
-                    <h3>Projections Financières Exceptionnelles</h3>
-                    <table>
+                    <h3>Performance Financière Exceptionnelle</h3>
+                    <table class="financial-table">
                         <thead>
                             <tr>
-                                <th>Métrique</th>
+                                <th class="text-left">Métrique</th>
                                 <th>Année 1</th>
                                 <th>Année 3</th>
                                 <th>Année 5</th>
@@ -1423,43 +1860,43 @@
                         <tbody>
                             <tr>
                                 <td>Sites Déployés</td>
-                                <td class="text-right">500</td>
+                                <td class="text-right">1,000</td>
                                 <td class="text-right">4,500</td>
                                 <td class="text-right">10,000</td>
                             </tr>
                             <tr>
-                                <td>Chiffre d'Affaires (MMAD)</td>
-                                <td class="text-right">22.5</td>
-                                <td class="text-right">202.5</td>
-                                <td class="text-right">450</td>
+                                <td>Chiffre d'Affaires (M MAD)</td>
+                                <td class="text-right">329</td>
+                                <td class="text-right">1,150</td>
+                                <td class="text-right">2,364</td>
                             </tr>
                             <tr>
-                                <td>EBITDA (MMAD)</td>
-                                <td class="text-right">6.75</td>
-                                <td class="text-right">60.75</td>
-                                <td class="text-right">135</td>
+                                <td>EBITDA (M MAD)</td>
+                                <td class="text-right">168</td>
+                                <td class="text-right">541</td>
+                                <td class="text-right">1,077</td>
                             </tr>
                             <tr>
                                 <td>Marge EBITDA</td>
-                                <td class="text-right">30%</td>
-                                <td class="text-right">30%</td>
-                                <td class="text-right">30%</td>
+                                <td class="text-right">51%</td>
+                                <td class="text-right">47%</td>
+                                <td class="text-right">46%</td>
                             </tr>
                             <tr style="background: var(--light-gray);">
-                                <td><strong>Valorisation (MMAD)</strong></td>
-                                <td class="text-right"><strong>54</strong></td>
-                                <td class="text-right"><strong>486</strong></td>
-                                <td class="text-right"><strong>1,080</strong></td>
+                                <td><strong>Valorisation (M MAD)</strong></td>
+                                <td class="text-right"><strong>1,344</strong></td>
+                                <td class="text-right"><strong>4,328</strong></td>
+                                <td class="text-right"><strong>8,619</strong></td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="kpi-grid mt-3">
                         <div class="kpi-card">
-                            <div class="kpi-value">10,600%</div>
-                            <div class="kpi-label">ROI 3 ans</div>
+                            <div class="kpi-value">x2,870</div>
+                            <div class="kpi-label">Multiple sur Capital</div>
                         </div>
                         <div class="kpi-card">
-                            <div class="kpi-value">195%</div>
+                            <div class="kpi-value">89%</div>
                             <div class="kpi-label">TRI 5 ans</div>
                         </div>
                     </div>
@@ -1468,25 +1905,22 @@
                 <!-- Slide 6: Stratégie de Déploiement -->
                 <div class="article" style="min-height: 400px;">
                     <h3>Stratégie de Déploiement Progressive</h3>
-                    <h4>Phase 1 (Années 1-2): Foundation</h4>
+                    <h4>Phase 1 (Années 1-2): Foundation - 2,500 sites</h4>
                     <ul>
                         <li class="editable" contenteditable="false">Focus sur zones urbaines haute densité</li>
-                        <li class="editable" contenteditable="false">2,000 sites stratégiques</li>
                         <li class="editable" contenteditable="false">Partenariat ancré avec Orange</li>
                     </ul>
                     
-                    <h4>Phase 2 (Années 3-4): Expansion</h4>
+                    <h4>Phase 2 (Années 3-4): Expansion - 4,500 sites</h4>
                     <ul>
                         <li class="editable" contenteditable="false">Extension périurbaine et corridors</li>
-                        <li class="editable" contenteditable="false">5,500 sites additionnels</li>
                         <li class="editable" contenteditable="false">Multi-opérateurs (IAM, Inwi)</li>
                     </ul>
                     
-                    <h4>Phase 3 (Année 5): Consolidation</h4>
+                    <h4>Phase 3 (Année 5): Consolidation - 3,000 sites</h4>
                     <ul>
                         <li class="editable" contenteditable="false">Couverture rurale et zones blanches</li>
-                        <li class="editable" contenteditable="false">2,500 sites finaux</li>
-                        <li class="editable" contenteditable="false">Services à valeur ajoutée</li>
+                        <li class="editable" contenteditable="false">Services à valeur ajoutée (IoT, Edge)</li>
                     </ul>
                 </div>
 
@@ -1518,6 +1952,7 @@
                         <li class="editable" contenteditable="false">Réduction fracture numérique</li>
                         <li class="editable" contenteditable="false">Attractivité investissements étrangers</li>
                         <li class="editable" contenteditable="false">Souveraineté infrastructure télécoms</li>
+                        <li class="editable" contenteditable="false">Développement durable (100% solaire)</li>
                     </ul>
                 </div>
 
@@ -1527,30 +1962,30 @@
                     
                     <div class="text-center mt-3">
                         <p class="editable" contenteditable="false" style="font-size: 1.2rem;">
-                            <strong>Investissement Recherché:</strong> Partenaires Stratégiques
+                            <strong>Opportunité d'Investissement Unique</strong>
                         </p>
                         <p class="editable" contenteditable="false" style="font-size: 1.1rem;">
                             Capital Initial: 3 MMAD (Déployé)<br>
-                            Extension: Selon Croissance
+                            Extension Progressive selon Croissance
                         </p>
                     </div>
                     
                     <div class="kpi-grid mt-3" style="max-width: 800px; margin: 0 auto;">
                         <div class="kpi-card">
-                            <div class="kpi-label">Retour sur Investissement</div>
-                            <div class="kpi-value">10,600%</div>
+                            <div class="kpi-label">Valorisation x2,870</div>
+                            <div class="kpi-value">En 5 ans</div>
                         </div>
                         <div class="kpi-card">
-                            <div class="kpi-label">Valorisation x360</div>
-                            <div class="kpi-value">5 ans</div>
+                            <div class="kpi-label">Dividendes</div>
+                            <div class="kpi-value">Dès An 2</div>
                         </div>
                         <div class="kpi-card">
                             <div class="kpi-label">Exit Stratégique</div>
                             <div class="kpi-value">IPO/M&A</div>
                         </div>
                         <div class="kpi-card">
-                            <div class="kpi-label">Dividendes Annuels</div>
-                            <div class="kpi-value">Dès An 2</div>
+                            <div class="kpi-label">TRI Projet</div>
+                            <div class="kpi-value">89%</div>
                         </div>
                     </div>
                     
@@ -1690,7 +2125,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'nomatis_towers_documentation.html';
+            a.download = 'nomatis_towers_documentation_v2.html';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -1724,6 +2159,17 @@
             }, 3000);
         }
 
+        // Format numbers
+        function formatNumbers() {
+            const numbers = document.querySelectorAll('.number');
+            numbers.forEach(num => {
+                const value = num.textContent.replace(/[^\d.-]/g, '');
+                if (value && !isNaN(value)) {
+                    num.textContent = Number(value).toLocaleString('fr-FR');
+                }
+            });
+        }
+
         // Add CSS animations
         const style = document.createElement('style');
         style.textContent = `
@@ -1741,6 +2187,7 @@
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             loadFromLocalStorage();
+            formatNumbers();
             
             // Auto-save on input
             document.addEventListener('input', function(e) {
