@@ -3,28 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOMATIS TOWERS - Documentation Stratégique Complète</title>
-    <meta name="description" content="Documentation complète du projet NOMATIS TOWERS - Joint Venture pour l'infrastructure télécommunications au Maroc">
-    <meta name="author" content="NOMATIS TOWERS">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a5f'/%3E%3Ctext x='50' y='50' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' dominant-baseline='middle' fill='white'%3ENT%3C/text%3E%3C/svg%3E">
-    
+    <title>NOMATIS TOWERS - Documentation Complète</title>
+    <meta name="description" content="Documentation stratégique complète du projet NOMATIS TOWERS - Infrastructure Télécommunications au Maroc">
     <style>
         :root {
             --primary-navy: #1e3a5f;
             --secondary-navy: #2c5282;
             --bottle-green: #2d5016;
-            --accent-green: #4a7c2e;
-            --accent-orange: #ff6b35;
+            --accent-green: #3d6020;
             --light-gray: #f7f9fc;
             --medium-gray: #e2e8f0;
             --dark-gray: #4a5568;
             --success-green: #48bb78;
             --warning-yellow: #f6ad55;
             --danger-red: #fc8181;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
         }
 
         * {
@@ -34,176 +26,79 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, var(--light-gray) 0%, #fff 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--light-gray) 0%, white 100%);
             color: var(--dark-gray);
             line-height: 1.6;
             min-height: 100vh;
         }
 
+        /* Header Styles */
         .header {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--bottle-green) 100%);
             color: white;
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1000;
         }
 
         .header-content {
-            position: relative;
-            z-index: 1;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .logo-icon {
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 24px;
-            color: var(--primary-navy);
-            box-shadow: var(--shadow-md);
-        }
-
-        h1 {
+        .header h1 {
             font-size: 2.5rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        .subtitle {
+        .header-subtitle {
             font-size: 1.1rem;
-            opacity: 0.95;
-            margin-top: 0.5rem;
+            opacity: 0.9;
         }
 
-        .control-panel {
-            background: white;
-            padding: 1.5rem;
-            margin: 2rem auto;
-            max-width: 1400px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .control-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            color: white;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--bottle-green) 0%, var(--accent-green) 100%);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, var(--secondary-navy) 0%, var(--primary-navy) 100%);
-        }
-
-        .btn-danger {
-            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
-        }
-
-        .btn-warning {
-            background: linear-gradient(135deg, var(--warning-yellow) 0%, #dd6b20 100%);
-        }
-
+        /* Tab Navigation */
         .tab-nav {
             background: white;
             padding: 0;
-            margin: 0 auto 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 120px;
+            z-index: 999;
+            margin-bottom: 2rem;
+        }
+
+        .tab-nav-container {
             max-width: 1400px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-        }
-
-        .tab-list {
+            margin: 0 auto;
             display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .tab-item {
-            flex: 1;
+            flex-wrap: wrap;
         }
 
         .tab-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            flex: 1;
             padding: 1.25rem 1.5rem;
-            background: transparent;
+            background: white;
             border: none;
             font-size: 1rem;
             font-weight: 600;
             color: var(--dark-gray);
             cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
+            transition: all 0.3s;
             text-align: center;
             position: relative;
-            gap: 0.75rem;
         }
 
         .tab-link:hover {
             background: var(--light-gray);
-            color: var(--primary-navy);
         }
 
         .tab-link.active {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--bottle-green) 100%);
             color: white;
         }
 
@@ -217,19 +112,16 @@
             background: var(--accent-green);
         }
 
-        .tab-icon {
-            font-size: 1.25rem;
-        }
-
+        /* Tab Content */
         .tab-content {
             max-width: 1400px;
             margin: 0 auto 3rem;
-            padding: 0 1rem;
+            padding: 0 2rem;
         }
 
         .tab-pane {
             display: none;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.5s;
         }
 
         .tab-pane.active {
@@ -241,12 +133,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Content Sections */
         .content-section {
             background: white;
             border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .section-header {
@@ -268,14 +161,12 @@
             justify-content: center;
             color: white;
             font-size: 1.5rem;
-            box-shadow: var(--shadow-sm);
         }
 
         h2 {
             color: var(--primary-navy);
             font-size: 1.75rem;
             font-weight: 700;
-            letter-spacing: -0.25px;
         }
 
         h3 {
@@ -283,15 +174,6 @@
             font-size: 1.4rem;
             font-weight: 600;
             margin: 2rem 0 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        h3::before {
-            content: '▸';
-            color: var(--accent-green);
-            font-size: 1.5rem;
         }
 
         h4 {
@@ -301,136 +183,84 @@
             margin: 1.5rem 0 1rem;
         }
 
-        h5 {
-            color: var(--dark-gray);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 1.25rem 0 0.75rem;
-        }
-
+        /* Tables */
         table {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
+            border-collapse: collapse;
             margin: 1.5rem 0;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        thead {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
-            color: white;
         }
 
         th {
-            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--bottle-green) 100%);
+            color: white;
+            padding: 1rem;
             text-align: left;
             font-weight: 600;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         td {
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid var(--light-gray);
+            padding: 0.875rem 1rem;
+            border-bottom: 1px solid var(--medium-gray);
         }
 
-        tbody tr {
-            transition: all 0.2s ease;
-        }
-
-        tbody tr:hover {
+        tr:nth-child(even) {
             background: var(--light-gray);
-            transform: translateX(4px);
         }
 
-        tbody tr:last-child td {
-            border-bottom: none;
+        tr:hover {
+            background: #f0f4f8;
         }
 
-        .financial-table {
-            overflow-x: auto;
-            margin: 2rem 0;
-        }
-
-        .financial-table table {
-            min-width: 800px;
-        }
-
-        .financial-table th {
-            background: linear-gradient(135deg, var(--bottle-green) 0%, var(--accent-green) 100%);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .financial-table .total-row {
-            font-weight: 700;
-            background: var(--light-gray);
-            border-top: 2px solid var(--primary-navy);
-        }
-
-        .number {
-            text-align: right;
-            font-family: 'Courier New', monospace;
-            font-weight: 600;
-        }
-
-        .positive {
-            color: var(--success-green);
-        }
-
-        .negative {
-            color: var(--danger-red);
-        }
-
-        ul, ol {
-            margin: 1rem 0 1rem 2rem;
-        }
-
-        li {
-            margin: 0.5rem 0;
-            line-height: 1.8;
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, var(--light-gray) 0%, white 100%);
-            border-left: 4px solid var(--accent-green);
-            padding: 1.5rem;
-            margin: 2rem 0;
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            box-shadow: var(--shadow-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
         }
 
-        .info-box-title {
-            font-weight: 700;
-            color: var(--bottle-green);
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--bottle-green) 100%);
+            color: white;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, #fef5e7 0%, #fff 100%);
-            border: 2px solid var(--warning-yellow);
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        /* Control Panel */
+        .control-panel {
+            background: white;
             border-radius: 12px;
             padding: 1.5rem;
-            margin: 2rem 0;
-            position: relative;
-            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
-        .highlight-box::before {
-            content: '⚡';
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: white;
-            padding: 0 10px;
-            font-size: 1.5rem;
-        }
-
+        /* KPI Cards */
         .kpi-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -442,1621 +272,1485 @@
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--accent-green);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--bottle-green);
         }
 
-        .kpi-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
+        .kpi-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin: 0.5rem 0;
         }
 
         .kpi-label {
             color: var(--dark-gray);
             font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
         }
 
-        .kpi-value {
-            color: var(--primary-navy);
-            font-size: 2rem;
+        /* Article Styles */
+        .article {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+
+        .article-header {
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            color: var(--bottle-green);
+            margin-bottom: 1rem;
         }
 
-        .kpi-trend {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .kpi-trend.positive {
-            color: var(--success-green);
-        }
-
-        .kpi-trend.negative {
-            color: var(--danger-red);
-        }
-
-        .signature-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 2px solid var(--medium-gray);
-        }
-
-        .signature-block {
-            text-align: center;
-        }
-
-        .signature-line {
-            border-bottom: 2px solid var(--dark-gray);
-            margin: 3rem 0 1rem;
-            position: relative;
-        }
-
-        .signature-label {
-            font-weight: 600;
-            color: var(--dark-gray);
-        }
-
-        .signature-title {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        @media print {
-            body {
-                background: white;
-                color: black;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.75rem;
             }
+            
+            .tab-link {
+                font-size: 0.9rem;
+                padding: 1rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
-            .control-panel,
-            .tab-nav {
+        /* Print Styles */
+        @media print {
+            .control-panel, .tab-nav {
                 display: none;
             }
-
+            
             .tab-pane {
                 display: block !important;
                 page-break-after: always;
             }
-
-            .content-section {
-                box-shadow: none;
-                border: 1px solid #ddd;
-                page-break-inside: avoid;
-            }
-
-            table {
-                page-break-inside: avoid;
-            }
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.75rem;
-            }
-
-            .tab-list {
-                flex-direction: column;
-            }
-
-            .kpi-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .signature-section {
-                grid-template-columns: 1fr;
-            }
-
-            .financial-table {
-                font-size: 0.85rem;
-            }
-
-            .content-section {
-                padding: 1.5rem;
-            }
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid var(--light-gray);
-            border-top: 4px solid var(--primary-navy);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 2rem auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .tooltip {
-            position: relative;
-            cursor: help;
-            border-bottom: 1px dotted var(--dark-gray);
-        }
-
-        .tooltip:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--dark-gray);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            z-index: 1000;
-            box-shadow: var(--shadow-lg);
-        }
-
-        #backToTop {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        #backToTop:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        #backToTop.show {
-            display: flex;
-        }
-
-        .editable {
-            position: relative;
-            padding: 2px;
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .editable { 
+            background: #fffef0; 
+            padding: 2px 4px;
             border-radius: 4px;
-            transition: all 0.2s ease;
+            min-height: 20px;
         }
-
-        .editable:hover {
-            background: rgba(74, 124, 46, 0.05);
-            outline: 1px dashed var(--accent-green);
-        }
-
         .editable:focus {
-            background: rgba(74, 124, 46, 0.1);
-            outline: 2px solid var(--accent-green);
-        }
-
-        .edit-indicator {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: var(--success-green);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: none;
-            z-index: 1000;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .edit-indicator.active {
-            display: block;
+            outline: 2px solid var(--bottle-green);
+            background: white;
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <!-- Header -->
+    <div class="header">
         <div class="header-content">
-            <div class="logo">
-                <div class="logo-icon">NT</div>
-                <div>
-                    <h1>NOMATIS TOWERS</h1>
-                    <p class="subtitle">Documentation Stratégique - Joint Venture Infrastructure Télécom Maroc</p>
-                </div>
-            </div>
+            <h1>NOMATIS TOWERS</h1>
+            <p class="header-subtitle">Infrastructure Télécommunications - Joint Venture Stratégique au Maroc</p>
         </div>
-    </header>
-
-    <div class="control-panel">
-        <div class="control-buttons">
-            <button class="btn btn-primary" onclick="saveToLocalStorage()">
-                <span>💾</span> Sauvegarder
-            </button>
-            <button class="btn btn-secondary" onclick="exportToHTML()">
-                <span>📄</span> Exporter HTML
-            </button>
-            <button class="btn btn-secondary" onclick="exportToPDF()">
-                <span>📑</span> Exporter PDF
-            </button>
-            <button class="btn btn-warning" onclick="toggleEditMode()">
-                <span>✏️</span> Mode Édition
-            </button>
-            <button class="btn btn-danger" onclick="resetContent()">
-                <span>🔄</span> Réinitialiser
-            </button>
-        </div>
-        <div class="edit-indicator" id="editIndicator">Mode édition activé</div>
     </div>
 
-    <nav class="tab-nav">
-        <ul class="tab-list">
-            <li class="tab-item">
-                <button class="tab-link active" onclick="switchTab('protocole', this)">
-                    <span class="tab-icon">📋</span>
-                    <span>Protocole d'Accord</span>
-                </button>
-            </li>
-            <li class="tab-item">
-                <button class="tab-link" onclick="switchTab('financier', this)">
-                    <span class="tab-icon">💰</span>
-                    <span>Modèle Financier</span>
-                </button>
-            </li>
-            <li class="tab-item">
-                <button class="tab-link" onclick="switchTab('business', this)">
-                    <span class="tab-icon">📊</span>
-                    <span>Business Plan</span>
-                </button>
-            </li>
-            <li class="tab-item">
-                <button class="tab-link" onclick="switchTab('valuation', this)">
-                    <span class="tab-icon">📈</span>
-                    <span>Évaluation & Valorisation</span>
-                </button>
-            </li>
-        </ul>
-    </nav>
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+        <div class="tab-nav-container">
+            <button class="tab-link active" onclick="showTab('protocole')">Protocole d'Accord</button>
+            <button class="tab-link" onclick="showTab('financier')">Modèle Financier</button>
+            <button class="tab-link" onclick="showTab('business')">Business Plan</button>
+            <button class="tab-link" onclick="showTab('executive')">Présentation Executive</button>
+        </div>
+    </div>
 
+    <!-- Tab Content -->
     <div class="tab-content">
-        <!-- TAB 1: PROTOCOLE D'ACCORD COMPLET - TOUS LES 19 ARTICLES -->
-        <div class="tab-pane active" id="protocole">
+        <!-- Tab 1: Protocole d'Accord -->
+        <div id="protocole" class="tab-pane active">
+            <div class="control-panel">
+                <button class="btn btn-primary" onclick="toggleEditMode()">Mode Édition</button>
+                <button class="btn btn-secondary" onclick="saveToLocalStorage()">Sauvegarder</button>
+                <button class="btn btn-secondary" onclick="exportHTML()">Exporter HTML</button>
+                <button class="btn btn-secondary" onclick="window.print()">Imprimer PDF</button>
+            </div>
+
             <div class="content-section">
                 <div class="section-header">
-                    <div class="section-icon">📋</div>
-                    <h2>Protocole d'Accord - Constitution de NOMATIS TOWERS</h2>
+                    <div class="section-icon">📜</div>
+                    <h2>PROTOCOLE D'ACCORD - NOMATIS TOWERS S.A.R.L</h2>
                 </div>
 
-                <div class="info-box">
-                    <div class="info-box-title">ENTRE LES PARTIES</div>
-                    <div class="editable">
-                        <p><strong>Partie A:</strong> NOMATIS S.A.R.L - Représentée par M. Mustapha OURKIYA, Gérant</p>
-                        <p><strong>Partie B:</strong> KEF INVESTISSEMENTS S.A.R.L - Représentée par M. Karim EL-FEKKAK, Gérant</p>
-                    </div>
-                </div>
-
-                <h3>TABLE DES MATIÈRES - 19 ARTICLES</h3>
-                <ol class="editable">
-                    <li>PRÉAMBULE</li>
-                    <li>DÉFINITIONS ET INTERPRÉTATION</li>
-                    <li>OBJET DU PROTOCOLE</li>
-                    <li>CRÉATION ET STRUCTURE DE LA SPV</li>
-                    <li>GOUVERNANCE</li>
-                    <li>CONVENTION DE PARTENARIAT AVEC NOMATIS</li>
-                    <li>SYNTHÈSE DU BUSINESS PLAN DE LA SPV</li>
-                    <li>FINANCEMENT ET APPORTS</li>
-                    <li>EXCLUSIVITÉ ET NON-CONCURRENCE</li>
-                    <li>CONDITIONS SUSPENSIVES</li>
-                    <li>ENGAGEMENTS DES PARTIES</li>
-                    <li>PROPRIÉTÉ INTELLECTUELLE</li>
-                    <li>RESPONSABILITÉS ET GARANTIES</li>
-                    <li>SORTIE ET CESSION</li>
-                    <li>DURÉE ET RÉSILIATION</li>
-                    <li>CONFIDENTIALITÉ</li>
-                    <li>LOI APPLICABLE ET RÉSOLUTION DES LITIGES</li>
-                    <li>DISPOSITIONS FINALES</li>
-                    <li>ANNEXES</li>
-                </ol>
-
-                <!-- ARTICLE 1 COMPLET -->
-                <h3>ARTICLE 1 : PRÉAMBULE</h3>
-                
-                <h4>1.1 Identification des Parties</h4>
-                <div class="editable">
-                    <p><strong>1.1.1 NOMATIS S.A.R.L</strong></p>
-                    <ul>
-                        <li>Raison sociale : NOMATIS S.A.R.L</li>
-                        <li>Capital social : 1 000 000 MAD</li>
-                        <li>Siège social : Hassan, Rabat, Maroc</li>
-                        <li>RC : Casablanca n°212057</li>
-                        <li>ICE : 000020593000074</li>
-                        <li>Représentée par : M. Mustapha OURKIYA, en qualité de Gérant</li>
-                        <li>Activité principale : Ingénierie, déploiement et maintenance d'infrastructures de télécommunications</li>
-                        <li>Année de création : 2005</li>
-                        <li>Effectif : 150+ employés</li>
-                        <li>Références clés : Gestion et maintenance de plus de 4 000 tours Orange Maroc (>57% du parc), NOC 24/7</li>
-                        <li>Site web : www.nomatis.ma</li>
-                    </ul>
-
-                    <p><strong>1.1.2 KEF INVESTISSEMENTS S.A.R.L</strong></p>
-                    <ul>
-                        <li>Raison sociale : KEF INVESTISSEMENTS (Maroc)</li>
-                        <li>Capital social : 50 millions MAD</li>
-                        <li>Siège social : Casablanca Marina Business Center, Casablanca, Maroc</li>
-                        <li>Représentée par : M. Karim EL-FEKKAK, en qualité de Gérant</li>
-                        <li>Activité principale : Structuration et développement de projets d'investissement, conseil stratégique</li>
-                        <li>Expertise : Origination et structuration de projets d'infrastructure, levée de fonds et ingénierie financière, développement de partenariats stratégiques, gestion d'actifs et valorisation d'entreprises</li>
-                        <li>Email : kef@kef.finance</li>
-                        <li>Site web : www.KEF.finance</li>
-                    </ul>
-                </div>
-
-                <h4>1.2 Contexte de Marché et Opportunité Stratégique</h4>
-                
-                <h5>1.2.1 Programme d'investissement dans le marché marocain des télécom de 80 milliards MAD en 2025-2030</h5>
-                <div class="editable">
-                    <p>Le secteur des télécommunications au Maroc connaît une transformation majeure avec le déploiement imminent de la technologie 5G sur la période 2025-2030.</p>
-                    <p>Les licences 5G ont été attribuées en 2024 aux trois opérateurs historiques : Orange Maroc, Maroc Telecom et inwi.</p>
-                    <p>Cette mutation technologique génère des besoins massifs en infrastructure passive de télécommunications. Selon l'article publié par Le360.ma intitulé "5G au Maroc : les équipementiers se frottent les mains", les investissements dans le secteur sont estimés à 80 milliards de dirhams sur la période 2025-2030.</p>
-                </div>
-
-                <div class="info-box">
-                    <div class="info-box-title">Caractéristiques du marché</div>
-                    <ul class="editable">
-                        <li><strong>Taille du marché :</strong> Environ 28 000 sites de télécommunications existants au Maroc</li>
-                        <li><strong>Croissance attendue :</strong> Multiplication par 2 à 3 du nombre de sites nécessaires pour une couverture 5G optimale</li>
-                        <li><strong>Investissements opérateurs :</strong> 80 milliards MAD annoncés sur 2025-2030</li>
-                        <li><strong>Obligations réglementaires :</strong> Engagement Couverture de 85% d'ici 2030</li>
-                        <li><strong>Densification réseau :</strong> Besoin massif de nouveaux sites en zones urbaines, périurbaines et rurales</li>
-                    </ul>
-                </div>
-
-                <h5>1.2.2 Tendance globale vers l'externalisation de l'infrastructure passive</h5>
-                <div class="editable">
-                    <p>À l'échelle mondiale, les opérateurs de télécommunications adoptent massivement une stratégie "Asset-Light", consistant à externaliser la propriété et la gestion de leur infrastructure passive (tours, pylônes, équipements d'énergie) vers des sociétés spécialisées appelées "TowerCos" (Tower Companies).</p>
+                <h3>Préambule</h3>
+                <div class="article">
+                    <p class="editable" contenteditable="false">Le présent protocole d'accord établit les termes et conditions de la création et de l'exploitation de la société NOMATIS TOWERS S.A.R.L, une joint-venture à parts égales entre NOMATIS S.A.R.L et KEF INVESTISSEMENTS S.A.R.L, dans le cadre du développement de l'infrastructure de télécommunications au Maroc.</p>
                     
-                    <p><strong>Avantages de ce modèle pour les opérateurs :</strong></p>
+                    <p class="editable mt-2" contenteditable="false">Cette joint-venture s'inscrit dans le contexte du programme national d'investissement 5G du Maroc, représentant 80 milliards MAD sur la période 2025-2030, et vise à établir une société de gestion d'infrastructures télécommunications (TowerCo) de référence.</p>
+                </div>
+
+                <h3>Chapitre I : Constitution et Objet Social</h3>
+                
+                <div class="article">
+                    <div class="article-header">Article 1 : Création de la Société</div>
+                    <p class="editable" contenteditable="false">Il est créé entre les soussignés une Société à Responsabilité Limitée (S.A.R.L) dénommée "NOMATIS TOWERS S.A.R.L" au capital social de TROIS MILLIONS DE DIRHAMS (3.000.000 MAD), réparti à parts égales (50/50) entre les deux associés fondateurs.</p>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 2 : Objet Social</div>
+                    <p class="editable" contenteditable="false">La société a pour objet principal :</p>
                     <ul>
-                        <li>Réduction des coûts opérationnels (OPEX) de 20 à 30%</li>
-                        <li>Recentrage sur le cœur de métier (services de télécommunications et gestion du réseau actif)</li>
-                        <li>Restructuration du Bilan & Amélioration des indicateurs financiers (ROE)</li>
-                        <li>Accélération du déploiement grâce à la spécialisation des TowerCos</li>
+                        <li class="editable" contenteditable="false">L'identification, le déploiement et la maintenance de sites de télécommunications</li>
+                        <li class="editable" contenteditable="false">La gestion et l'exploitation d'infrastructures passives de télécommunications</li>
+                        <li class="editable" contenteditable="false">La fourniture de services d'hébergement pour les opérateurs télécoms</li>
+                        <li class="editable" contenteditable="false">La gestion énergétique et la maintenance des sites</li>
+                        <li class="editable" contenteditable="false">Le développement de solutions innovantes pour l'infrastructure télécoms</li>
+                    </ul>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 3 : Siège Social</div>
+                    <p class="editable" contenteditable="false">Le siège social est établi à Casablanca, avec possibilité d'ouverture de succursales dans toutes les régions du Royaume du Maroc selon les besoins opérationnels.</p>
+                </div>
+
+                <h3>Chapitre II : Apports et Capital</h3>
+
+                <div class="article">
+                    <div class="article-header">Article 4 : Répartition du Capital</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Associé</th>
+                                <th>Apport en Capital</th>
+                                <th>Parts Sociales</th>
+                                <th>Pourcentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NOMATIS S.A.R.L</td>
+                                <td class="text-right">1.500.000 MAD</td>
+                                <td class="text-right">15.000</td>
+                                <td class="text-right">50%</td>
+                            </tr>
+                            <tr>
+                                <td>KEF INVESTISSEMENTS S.A.R.L</td>
+                                <td class="text-right">1.500.000 MAD</td>
+                                <td class="text-right">15.000</td>
+                                <td class="text-right">50%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <td class="text-right"><strong>3.000.000 MAD</strong></td>
+                                <td class="text-right"><strong>30.000</strong></td>
+                                <td class="text-right"><strong>100%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 5 : Apports en Nature et Expertise</div>
+                    <p class="editable" contenteditable="false"><strong>NOMATIS S.A.R.L apporte :</strong></p>
+                    <ul>
+                        <li class="editable" contenteditable="false">Son expertise technique de 19+ années dans le secteur</li>
+                        <li class="editable" contenteditable="false">La gestion actuelle de 4.000 sites Orange Maroc (57% du réseau)</li>
+                        <li class="editable" contenteditable="false">Son réseau de relations avec les opérateurs télécoms</li>
+                        <li class="editable" contenteditable="false">Son savoir-faire opérationnel et ses processus établis</li>
                     </ul>
                     
-                    <p>Cette tendance est particulièrement marquée en Afrique, où des TowerCos comme IHS Towers (40 000+ tours), Helios Towers, et American Tower ont connu une croissance exponentielle et des valorisations de plusieurs milliards de dollars.</p>
+                    <p class="editable mt-2" contenteditable="false"><strong>KEF INVESTISSEMENTS S.A.R.L apporte :</strong></p>
+                    <ul>
+                        <li class="editable" contenteditable="false">Sa capacité de structuration financière</li>
+                        <li class="editable" contenteditable="false">Son expertise en gestion d'investissements</li>
+                        <li class="editable" contenteditable="false">Son réseau d'investisseurs et de partenaires financiers</li>
+                        <li class="editable" contenteditable="false">Sa capacité de levée de fonds</li>
+                    </ul>
                 </div>
 
-                <h5>1.2.3 Fenêtre d'opportunité limitée dans le temps</h5>
-                <div class="highlight-box">
-                    <div class="editable">
-                        <p>La période 2025-2028 constitue une fenêtre d'opportunité unique et non renouvelable pour s'établir comme acteur majeur du marché marocain des TowerCos.</p>
-                        <p>Après quoi, le marché atteindra un niveau de saturation.</p>
-                        <p><strong>URGENCE STRATÉGIQUE :</strong> Les premiers entrants sur ce marché bénéficieront d'avantages concurrentiels décisifs (relations établies avec opérateurs, économies d'échelle, barrières à l'entrée). Un lancement en 2026 est donc CRITIQUE pour capter une part de marché significative.</p>
+                <h3>Chapitre III : Gouvernance</h3>
+
+                <div class="article">
+                    <div class="article-header">Article 6 : Direction Générale</div>
+                    <p class="editable" contenteditable="false">La société est dirigée par deux co-gérants avec signatures conjointes pour tous les engagements supérieurs à 100.000 MAD. Chaque associé nomme un co-gérant pour un mandat de 3 ans renouvelable.</p>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 7 : Comité de Direction</div>
+                    <p class="editable" contenteditable="false">Un Comité de Direction composé de 6 membres (3 par associé) se réunit mensuellement pour superviser les opérations et prendre les décisions stratégiques. Les décisions sont prises à la majorité qualifiée (4 voix sur 6).</p>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 8 : Comités Spécialisés</div>
+                    <p class="editable" contenteditable="false">Trois comités spécialisés sont établis :</p>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>Comité Technique :</strong> Validation des choix techniques et supervision des déploiements</li>
+                        <li class="editable" contenteditable="false"><strong>Comité Financier :</strong> Suivi budgétaire et reporting financier</li>
+                        <li class="editable" contenteditable="false"><strong>Comité Commercial :</strong> Développement des affaires et relations clients</li>
+                    </ul>
+                </div>
+
+                <h3>Chapitre IV : Modèle Économique</h3>
+
+                <div class="article">
+                    <div class="article-header">Article 9 : Structure de Financement Cash-Positive</div>
+                    <p class="editable" contenteditable="false">La société adopte un modèle économique innovant basé sur :</p>
+                    <ul>
+                        <li class="editable" contenteditable="false">Dépôts de garantie clients couvrant 100% des coûts de déploiement</li>
+                        <li class="editable" contenteditable="false">Paiements IMES (Installation et Mise en Service) à la livraison</li>
+                        <li class="editable" contenteditable="false">Revenus récurrents mensuels de location et services</li>
+                        <li class="editable" contenteditable="false">Élimination du besoin en fonds de roulement</li>
+                    </ul>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 10 : Typologie des Sites et Tarification</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type de Site</th>
+                                <th>Coût Déploiement</th>
+                                <th>Loyer Annuel</th>
+                                <th>Marge Opérationnelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Urbain</td>
+                                <td class="text-right">200.000 MAD</td>
+                                <td class="text-right">45.000 MAD</td>
+                                <td class="text-right">22,5%</td>
+                            </tr>
+                            <tr>
+                                <td>Périurbain</td>
+                                <td class="text-right">150.000 MAD</td>
+                                <td class="text-right">45.000 MAD</td>
+                                <td class="text-right">30%</td>
+                            </tr>
+                            <tr>
+                                <td>Rural</td>
+                                <td class="text-right">100.000 MAD</td>
+                                <td class="text-right">45.000 MAD</td>
+                                <td class="text-right">45%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Chapitre V : Plan de Déploiement</h3>
+
+                <div class="article">
+                    <div class="article-header">Article 11 : Objectifs de Déploiement</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Année</th>
+                                <th>Sites à Déployer</th>
+                                <th>Sites Cumulés</th>
+                                <th>Investissement (MMAD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Année 1</td>
+                                <td class="text-right">500</td>
+                                <td class="text-right">500</td>
+                                <td class="text-right">75</td>
+                            </tr>
+                            <tr>
+                                <td>Année 2</td>
+                                <td class="text-right">1.500</td>
+                                <td class="text-right">2.000</td>
+                                <td class="text-right">225</td>
+                            </tr>
+                            <tr>
+                                <td>Année 3</td>
+                                <td class="text-right">2.500</td>
+                                <td class="text-right">4.500</td>
+                                <td class="text-right">375</td>
+                            </tr>
+                            <tr>
+                                <td>Année 4</td>
+                                <td class="text-right">3.000</td>
+                                <td class="text-right">7.500</td>
+                                <td class="text-right">450</td>
+                            </tr>
+                            <tr>
+                                <td>Année 5</td>
+                                <td class="text-right">2.500</td>
+                                <td class="text-right">10.000</td>
+                                <td class="text-right">375</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Chapitre VI : Dispositions Financières</h3>
+
+                <div class="article">
+                    <div class="article-header">Article 12 : Distribution des Bénéfices</div>
+                    <p class="editable" contenteditable="false">Les bénéfices nets après impôts sont distribués comme suit :</p>
+                    <ul>
+                        <li class="editable" contenteditable="false">20% : Réserve légale et statutaire</li>
+                        <li class="editable" contenteditable="false">30% : Réinvestissement et développement</li>
+                        <li class="editable" contenteditable="false">50% : Distribution aux associés au prorata de leurs parts</li>
+                    </ul>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 13 : Audit et Contrôle</div>
+                    <p class="editable" contenteditable="false">Un commissaire aux comptes indépendant est nommé pour certifier les comptes annuels. Des audits trimestriels internes sont effectués par le Comité Financier.</p>
+                </div>
+
+                <h3>Chapitre VII : Clauses de Sortie et Protection</h3>
+
+                <div class="article">
+                    <div class="article-header">Article 14 : Droit de Préemption</div>
+                    <p class="editable" contenteditable="false">En cas de cession de parts, l'associé restant dispose d'un droit de préemption de 60 jours aux mêmes conditions que l'offre tierce.</p>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 15 : Clause de Buy-Out</div>
+                    <p class="editable" contenteditable="false">Après 5 ans d'activité, chaque associé peut initier une procédure de rachat total selon une valorisation basée sur 8x l'EBITDA moyen des 3 dernières années.</p>
+                </div>
+
+                <h3>Chapitre VIII : Dispositions Générales</h3>
+
+                <div class="article">
+                    <div class="article-header">Article 16 : Confidentialité</div>
+                    <p class="editable" contenteditable="false">Les parties s'engagent à maintenir la confidentialité de toutes les informations stratégiques, commerciales et techniques pour une durée de 5 ans après la fin de leur association.</p>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 17 : Non-Concurrence</div>
+                    <p class="editable" contenteditable="false">Clause de non-concurrence de 2 ans sur le territoire marocain dans le domaine spécifique des TowerCo après sortie de la société.</p>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 18 : Résolution des Conflits</div>
+                    <p class="editable" contenteditable="false">Tout différend sera soumis à médiation puis, le cas échéant, à l'arbitrage de la Chambre de Commerce Internationale de Casablanca.</p>
+                </div>
+
+                <div class="article">
+                    <div class="article-header">Article 19 : Entrée en Vigueur</div>
+                    <p class="editable" contenteditable="false">Le présent protocole entre en vigueur à la date de signature par les deux parties et après accomplissement des formalités légales de constitution.</p>
+                </div>
+
+                <div class="article mt-3">
+                    <p class="text-center"><strong>Fait à Casablanca, en deux exemplaires originaux</strong></p>
+                    <div style="display: flex; justify-content: space-around; margin-top: 3rem;">
+                        <div class="text-center">
+                            <p class="editable" contenteditable="false">_______________________</p>
+                            <p><strong>NOMATIS S.A.R.L</strong></p>
+                            <p class="editable" contenteditable="false">Représentée par: [Nom]</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="editable" contenteditable="false">_______________________</p>
+                            <p><strong>KEF INVESTISSEMENTS S.A.R.L</strong></p>
+                            <p class="editable" contenteditable="false">Représentée par: [Nom]</p>
+                        </div>
                     </div>
-                </div>
-
-                <h4>1.3 Vision Stratégique Commune et Complémentarités</h4>
-                
-                <h5>1.3.1 Vision partagée</h5>
-                <div class="editable">
-                    <p>Les Parties partagent la vision stratégique de créer le leader marocain de l'infrastructure passive de télécommunications, en capitalisant sur la vague de déploiement 5G et la tendance d'externalisation des opérateurs.</p>
-                    
-                    <p><strong>Objectifs communs :</strong></p>
-                    <ul>
-                        <li>Devenir la TowerCo passive de référence au Maroc avec une part de marché de 25% d'ici 2030 (soit 10 000/40 000 BTS installées)</li>
-                        <li>Déployer et/ou gérer 10 000 sites passifs de télécommunications sur 5 ans</li>
-                        <li>Établir des relations contractuelles de long terme et en trésorerie positive avec les trois opérateurs marocains</li>
-                        <li>Créer un actif de valeur significative, valorisable entre 1 et 2 milliards de dirhams à horizon 5 ans</li>
-                        <li>Potentiellement étendre le modèle à d'autres pays d'Afrique après consolidation au Maroc</li>
-                    </ul>
-                </div>
-
-                <h5>1.3.2 Complémentarité des apports</h5>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Apports de NOMATIS</th>
-                            <th>Apports de KEF INVESTISSEMENTS</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Expertise technique : 19 ans d'expérience déploiement & maintenance infra télécom</td>
-                            <td>Origination opportunité : Identification potentiel TowerCo Maroc</td>
-                        </tr>
-                        <tr>
-                            <td>Relation Orange privilégiée : 4 000+ tours IMES & gérées (> 57% parc)</td>
-                            <td>Vision stratégique : Tendances marché, valorisation, sortie</td>
-                        </tr>
-                        <tr>
-                            <td>Connaissance besoins opérateurs : Standards, processus, SLA</td>
-                            <td>Ingénierie d'intégration Industrielle locale</td>
-                        </tr>
-                        <tr>
-                            <td>Capacité opérationnelle immédiate : Équipes, sous-traitants, NOC 24/7</td>
-                            <td>Structuration financière/juridique : Montage SPV, gouvernance, trésorerie</td>
-                        </tr>
-                        <tr>
-                            <td>Crédibilité technique : Track record, certifications</td>
-                            <td>Ingénierie Financière : pour financer le développement</td>
-                        </tr>
-                        <tr>
-                            <td>Données stratégiques : Infos besoins déploiement Orange</td>
-                            <td>Ingénierie De Subvention : Optimisation primes investissement AMDIE</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="info-box">
-                    <div class="info-box-title">SYNERGIE</div>
-                    <p class="editable">NOMATIS apporte l'expertise technique et la relation client ancre (Orange Maroc), tandis que KEF apporte la vision stratégique, la structuration financière et les capacités de développement. Cette complémentarité parfaite des compétences maximise les chances de succès de la joint-venture.</p>
-                </div>
-
-                <!-- ARTICLES 2 À 19 COMPLETS -->
-                <h3>ARTICLE 2 : DÉFINITIONS ET INTERPRÉTATION</h3>
-                <div class="editable">
-                    <p>Dans le présent Protocole, sauf si le contexte l'exige autrement, les termes suivants auront les significations ci-après :</p>
-                    <ul>
-                        <li><strong>"SPV" ou "Special Purpose Vehicle" :</strong> désigne la société commune devant être créée sous la dénomination "NOMATIS TOWERS", entité juridique distincte créée spécifiquement pour porter le projet de TowerCo</li>
-                        <li><strong>"TowerCo" ou "Tower Company" :</strong> désigne une société spécialisée dans la détention, le déploiement, la gestion et la commercialisation d'infrastructures passives de télécommunications</li>
-                        <li><strong>"Infrastructure Passive" :</strong> désigne les tours, pylônes, mâts, toits-terrasses, shelters, équipements d'énergie (groupes électrogènes, batteries, panneaux solaires), systèmes de climatisation, et tout équipement non-actif nécessaire au fonctionnement d'un site télécom</li>
-                        <li><strong>"Infrastructure Active" :</strong> désigne les équipements électroniques de transmission (antennes, BTS, équipements radio) appartenant aux opérateurs</li>
-                        <li><strong>"MSA" (Master Service Agreement) :</strong> contrat-cadre de services entre la SPV et ses clients opérateurs définissant les termes commerciaux, techniques et opérationnels</li>
-                        <li><strong>"SLA" (Service Level Agreement) :</strong> engagement de niveau de service incluant les métriques de disponibilité (99.5%+), temps d'intervention et de résolution</li>
-                        <li><strong>"NOC" (Network Operations Center) :</strong> centre d'exploitation et de surveillance des réseaux fonctionnant 24/7</li>
-                        <li><strong>"CAPEX" (Capital Expenditure) :</strong> dépenses d'investissement pour l'acquisition ou la construction d'infrastructures</li>
-                        <li><strong>"OPEX" (Operating Expenditure) :</strong> dépenses opérationnelles courantes (maintenance, énergie, loyers, personnel)</li>
-                        <li><strong>"BFR" (Besoin en Fonds de Roulement) :</strong> besoin de financement du cycle d'exploitation</li>
-                        <li><strong>"ROI" (Return On Investment) :</strong> retour sur investissement mesurant la rentabilité du projet</li>
-                        <li><strong>"EBITDA" :</strong> Earnings Before Interest, Taxes, Depreciation and Amortization - indicateur de performance opérationnelle</li>
-                        <li><strong>"Colocation" :</strong> partage d'une même infrastructure par plusieurs opérateurs</li>
-                        <li><strong>"Tenancy Ratio" :</strong> nombre moyen d'opérateurs par site</li>
-                        <li><strong>"Build-to-Suit" :</strong> construction d'infrastructure sur mesure selon les spécifications d'un opérateur</li>
-                    </ul>
-                </div>
-
-                <h3>ARTICLE 3 : OBJET DU PROTOCOLE</h3>
-                <div class="highlight-box">
-                    <div class="editable">
-                        <p><strong>3.1</strong> Le présent Protocole d'Accord a pour objet de définir les termes et conditions selon lesquels les Parties conviennent de :</p>
-                        <ol>
-                            <li>Créer une co-entreprise (SPV) dénommée "NOMATIS TOWERS SA" sur une base paritaire 50/50</li>
-                            <li>Définir la gouvernance, les apports et les modalités de fonctionnement de la SPV</li>
-                            <li>Établir les principes de collaboration entre les Parties</li>
-                            <li>Fixer les conditions de développement du projet TowerCo au Maroc</li>
-                        </ol>
-                        
-                        <p><strong>3.2</strong> La SPV aura pour activité principale le déploiement, l'acquisition, la gestion et la commercialisation d'infrastructures passives de télécommunications, avec pour ambition de devenir le leader marocain du secteur.</p>
-                        
-                        <p><strong>3.3</strong> Les Parties s'engagent à collaborer de bonne foi pour la réalisation de ce projet structurant pour le secteur des télécommunications au Maroc.</p>
-                    </div>
-                </div>
-
-                <h3>ARTICLE 4 : CRÉATION ET STRUCTURE DE LA SPV</h3>
-                
-                <h4>4.1 Forme juridique et dénomination</h4>
-                <div class="editable">
-                    <p>La SPV sera constituée sous forme de Société Anonyme (S.A.) de droit marocain, sous la dénomination sociale "NOMATIS TOWERS (Morocco) SA".</p>
-                    <p>Le choix de la forme SA est motivé par :</p>
-                    <ul>
-                        <li>La possibilité d'émission d'obligations et d'accès aux marchés de capitaux</li>
-                        <li>La flexibilité pour l'entrée future d'investisseurs institutionnels</li>
-                        <li>La crédibilité vis-à-vis des grandes entreprises clientes</li>
-                        <li>Les options de sortie (IPO potentielle)</li>
-                    </ul>
-                </div>
-
-                <h4>4.2 Capital social</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Paramètre</th>
-                            <th>Valeur</th>
-                            <th>Détails</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Capital social initial</td>
-                            <td>1 000 000 MAD</td>
-                            <td>10 000 actions de 100 MAD chacune</td>
-                        </tr>
-                        <tr>
-                            <td>Répartition NOMATIS</td>
-                            <td>500 000 MAD (50%)</td>
-                            <td>5 000 actions</td>
-                        </tr>
-                        <tr>
-                            <td>Répartition KEF</td>
-                            <td>500 000 MAD (50%)</td>
-                            <td>5 000 actions</td>
-                        </tr>
-                        <tr>
-                            <td>Libération initiale</td>
-                            <td>50% à la constitution</td>
-                            <td>500 000 MAD</td>
-                        </tr>
-                        <tr>
-                            <td>Libération complémentaire</td>
-                            <td>50% dans 12 mois</td>
-                            <td>500 000 MAD</td>
-                        </tr>
-                        <tr>
-                            <td>Augmentations futures</td>
-                            <td>Selon besoins</td>
-                            <td>Au prorata des participations</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>4.3 Objet social</h4>
-                <div class="editable">
-                    <p>L'objet social de la SPV comprendra notamment :</p>
-                    <ul>
-                        <li>L'identification, la qualification, l'acquisition et/ou la location de terrains et espaces pour porter les infrastructures de télécommunications</li>
-                        <li>Le déploiement, la construction et l'installation de tours, pylônes, mâts et autres infrastructures passives</li>
-                        <li>La conception et le déploiement de solutions énergétiques (solaire, hybride, batteries) pour l'alimentation des sites</li>
-                        <li>La maintenance préventive et corrective des infrastructures et équipements</li>
-                        <li>Le monitoring et la surveillance à distance H24/7 via NOC et systèmes de vidéosurveillance</li>
-                        <li>La location d'espaces et d'infrastructures aux opérateurs de télécommunications</li>
-                        <li>La fourniture de services associés (énergie, climatisation, sécurité)</li>
-                        <li>La location d'espaces publicitaires sur les infrastructures</li>
-                        <li>La gestion des relations avec les propriétaires fonciers et les autorités</li>
-                        <li>Le développement de solutions innovantes (edge computing, IoT)</li>
-                        <li>Toute activité connexe ou complémentaire au secteur des infrastructures de télécommunications</li>
-                    </ul>
-                </div>
-
-                <h4>4.4 Siège social</h4>
-                <p class="editable">Le siège social sera établi à Casablanca, avec possibilité d'ouverture d'agences régionales selon le développement de l'activité.</p>
-
-                <h3>ARTICLE 5 : GOUVERNANCE</h3>
-                
-                <h4>5.1 Structure de gouvernance</h4>
-                <div class="editable">
-                    <p><strong>Conseil d'Administration :</strong></p>
-                    <ul>
-                        <li>Composition : 4 membres (2 désignés par NOMATIS, 2 par KEF INVESTISSEMENTS)</li>
-                        <li>Présidence : M. Mustapha OURKIYA (NOMATIS)</li>
-                        <li>Vice-Présidence : M. Karim EL-FEKKAK (KEF)</li>
-                        <li>Durée du mandat : 3 ans renouvelables</li>
-                        <li>Réunions : Minimum 4 fois par an (trimestrielles)</li>
-                        <li>Quorum : 3 membres minimum dont au moins 1 de chaque partie</li>
-                    </ul>
-                </div>
-
-                <h4>5.2 Direction Générale</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Poste</th>
-                            <th>Nom</th>
-                            <th>Nomination par</th>
-                            <th>Responsabilités</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Directeur Général</td>
-                            <td>M. Khalid BELKHTOUT</td>
-                            <td>Conseil d'Administration</td>
-                            <td>Gestion quotidienne, exécution stratégie</td>
-                        </tr>
-                        <tr>
-                            <td>Directeur Financier</td>
-                            <td>À recruter</td>
-                            <td>KEF INVESTISSEMENTS</td>
-                            <td>Finance, contrôle de gestion, reporting</td>
-                        </tr>
-                        <tr>
-                            <td>Directeur Technique</td>
-                            <td>Désigné par NOMATIS</td>
-                            <td>NOMATIS</td>
-                            <td>Opérations, déploiement, maintenance</td>
-                        </tr>
-                        <tr>
-                            <td>Directeur Commercial</td>
-                            <td>À recruter</td>
-                            <td>Conseil d'Administration</td>
-                            <td>Développement commercial, relations clients</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>5.3 Décisions importantes requérant l'unanimité</h4>
-                <div class="editable">
-                    <ul>
-                        <li>Modification des statuts et du capital social</li>
-                        <li>Émission d'obligations ou autres titres de créance</li>
-                        <li>Acquisition ou cession d'actifs supérieurs à 10% du total bilan</li>
-                        <li>Investissements supérieurs à 50 millions MAD</li>
-                        <li>Conclusion de contrats supérieurs à 100 millions MAD</li>
-                        <li>Entrée de nouveaux actionnaires</li>
-                        <li>Distribution de dividendes</li>
-                        <li>Fusion, scission ou dissolution</li>
-                        <li>Changement de l'objet social</li>
-                        <li>Nomination/révocation du DG et du DAF</li>
-                    </ul>
-                </div>
-
-                <h3>ARTICLE 6 : CONVENTION DE PARTENARIAT AVEC NOMATIS</h3>
-                
-                <h4>6.1 Principes de la relation</h4>
-                <div class="editable">
-                    <p>NOMATIS, en sa qualité d'actionnaire et de partenaire technique privilégié, fournira à la SPV l'ensemble des services techniques nécessaires à son activité sous forme de contrat de prestation de services.</p>
-                    <p>Cette relation s'inscrit dans une logique de partenariat gagnant-gagnant, avec alignement des intérêts via la participation au capital.</p>
-                </div>
-
-                <h4>6.2 Services fournis par NOMATIS</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Catégorie</th>
-                            <th>Services</th>
-                            <th>Description</th>
-                            <th>SLA</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td><strong>ÉTUDES</strong></td>
-                            <td>RF Planning & Design</td>
-                            <td>Études de couverture, qualification sites, dimensionnement</td>
-                            <td>10 jours</td>
-                        </tr>
-                        <tr>
-                            <td><strong>DÉPLOIEMENT</strong></td>
-                            <td>Construction & Installation</td>
-                            <td>Génie civil, montage tours, installation équipements</td>
-                            <td>60-90 jours</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3"><strong>MAINTENANCE</strong></td>
-                            <td>Préventive</td>
-                            <td>Visites mensuelles, entretien programmé</td>
-                            <td>100% respect planning</td>
-                        </tr>
-                        <tr>
-                            <td>Corrective</td>
-                            <td>Interventions sur pannes et incidents</td>
-                            <td>4h urbain, 8h rural</td>
-                        </tr>
-                        <tr>
-                            <td>NOC 24/7</td>
-                            <td>Monitoring permanent, gestion alarmes</td>
-                            <td>99.5% disponibilité</td>
-                        </tr>
-                        <tr>
-                            <td><strong>SUPPORT</strong></td>
-                            <td>Commercial & Data</td>
-                            <td>Relation Orange, partage infos marché</td>
-                            <td>Best effort</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>6.3 Modèle économique</h4>
-                <div class="editable">
-                    <p><strong>Structure tarifaire :</strong></p>
-                    <ul>
-                        <li>Études : Forfait par site étudié</li>
-                        <li>Déploiement : Prix unitaire par type de site (urbain/périurbain/rural)</li>
-                        <li>Maintenance : Abonnement mensuel par site + interventions correctives</li>
-                        <li>NOC : Forfait mensuel global</li>
-                    </ul>
-                    <p><strong>Principe :</strong> Cost-plus avec marge de 15-20% pour assurer la rentabilité de NOMATIS tout en maintenant la compétitivité de la SPV.</p>
-                    <p><strong>Volume garanti :</strong> Minimum 80% des besoins techniques de la SPV confiés à NOMATIS.</p>
-                </div>
-
-                <h3>ARTICLE 7 : SYNTHÈSE DU BUSINESS PLAN DE LA SPV</h3>
-                
-                <h4>7.1 Modèle économique innovant : Cash-Positive via Dépôt de garantie/Caution</h4>
-                <div class="highlight-box">
-                    <div class="editable">
-                        <p><strong>Innovation majeure du modèle :</strong></p>
-                        <p>La SPV encaisse un Dépôt de Garantie Client (ou Caution à 1ère demande) par Site, AVANT de décaisser pour les investissements.</p>
-                        
-                        <p><strong>Structure du financement par site :</strong></p>
-                        <ul>
-                            <li><strong>55% Dépôt de Garantie Client :</strong> Encaissé en 3 fois (30% signature, 40% mi-parcours, 30% livraison)</li>
-                            <li><strong>45% Crédit Fournisseur :</strong> Sur 18 mois à 6% annuel</li>
-                            <li><strong>0% Fonds propres nécessaires</strong> pour le déploiement</li>
-                        </ul>
-                        
-                        <p><strong>Résultat :</strong> BFR = 0, Trésorerie structurellement positive, Croissance autofinancée, ROI exceptionnel</p>
-                    </div>
-                </div>
-
-                <h4>7.2 Projections de déploiement</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Année</th>
-                            <th>Sites déployés</th>
-                            <th>Sites cumulés</th>
-                            <th>Part de marché</th>
-                            <th>Taux occupation</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>An 1</td>
-                            <td class="number">1 000</td>
-                            <td class="number">1 000</td>
-                            <td>10%</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>An 2</td>
-                            <td class="number">1 500</td>
-                            <td class="number">2 500</td>
-                            <td>15%</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>An 3</td>
-                            <td class="number">2 000</td>
-                            <td class="number">4 500</td>
-                            <td>18%</td>
-                            <td>110%</td>
-                        </tr>
-                        <tr>
-                            <td>An 4</td>
-                            <td class="number">2 500</td>
-                            <td class="number">7 000</td>
-                            <td>21%</td>
-                            <td>120%</td>
-                        </tr>
-                        <tr>
-                            <td>An 5</td>
-                            <td class="number">3 000</td>
-                            <td class="number">10 000</td>
-                            <td>25%</td>
-                            <td>130%</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>7.3 Projections financières clés</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Indicateur (M MAD)</th>
-                            <th>An 1</th>
-                            <th>An 2</th>
-                            <th>An 3</th>
-                            <th>An 4</th>
-                            <th>An 5</th>
-                            <th>CAGR</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Chiffre d'affaires</td>
-                            <td class="number">346</td>
-                            <td class="number">865</td>
-                            <td class="number">1 559</td>
-                            <td class="number">2 425</td>
-                            <td class="number">3 464</td>
-                            <td>78%</td>
-                        </tr>
-                        <tr>
-                            <td>EBITDA</td>
-                            <td class="number">206</td>
-                            <td class="number">515</td>
-                            <td class="number">929</td>
-                            <td class="number">1 445</td>
-                            <td class="number">2 065</td>
-                            <td>78%</td>
-                        </tr>
-                        <tr>
-                            <td>Marge EBITDA</td>
-                            <td>60%</td>
-                            <td>60%</td>
-                            <td>60%</td>
-                            <td>60%</td>
-                            <td>60%</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Résultat Net</td>
-                            <td class="number">50</td>
-                            <td class="number">130</td>
-                            <td class="number">242</td>
-                            <td class="number">385</td>
-                            <td class="number">558</td>
-                            <td>83%</td>
-                        </tr>
-                        <tr>
-                            <td>CAPEX</td>
-                            <td class="number">1 292</td>
-                            <td class="number">1 938</td>
-                            <td class="number">2 584</td>
-                            <td class="number">3 230</td>
-                            <td class="number">3 876</td>
-                            <td>32%</td>
-                        </tr>
-                        <tr>
-                            <td>Trésorerie</td>
-                            <td class="number positive">195</td>
-                            <td class="number positive">678</td>
-                            <td class="number positive">748</td>
-                            <td class="number positive">832</td>
-                            <td class="number positive">519</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="info-box">
-                    <div class="info-box-title">Indicateurs de rentabilité exceptionnels</div>
-                    <ul class="editable">
-                        <li><strong>TRI projet 5 ans :</strong> 85%</li>
-                        <li><strong>Payback period :</strong> 18 mois</li>
-                        <li><strong>Multiple investissement :</strong> 2 200x sur capital initial</li>
-                        <li><strong>Valorisation estimée An 5 :</strong> 2.25 milliards MAD</li>
-                    </ul>
-                </div>
-
-                <h3>ARTICLE 8 : FINANCEMENT ET APPORTS</h3>
-                
-                <h4>8.1 Capital initial et utilisation</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Utilisation des fonds (1 000 000 MAD)</th>
-                            <th>Montant (MAD)</th>
-                            <th>%</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Frais de constitution SPV</td>
-                            <td class="number">50 000</td>
-                            <td>5%</td>
-                            <td>Frais notaire, RC, publications</td>
-                        </tr>
-                        <tr>
-                            <td>BFR initial (6 mois)</td>
-                            <td class="number">300 000</td>
-                            <td>30%</td>
-                            <td>Salaires, loyer, frais généraux</td>
-                        </tr>
-                        <tr>
-                            <td>Marketing et prospection</td>
-                            <td class="number">150 000</td>
-                            <td>15%</td>
-                            <td>Site web, brochures, events</td>
-                        </tr>
-                        <tr>
-                            <td>Recrutement équipe</td>
-                            <td class="number">200 000</td>
-                            <td>20%</td>
-                            <td>DG, DAF, équipe commerciale</td>
-                        </tr>
-                        <tr>
-                            <td>Réserve de trésorerie</td>
-                            <td class="number">300 000</td>
-                            <td>30%</td>
-                            <td>Buffer sécurité</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td><strong>TOTAL</strong></td>
-                            <td class="number"><strong>1 000 000</strong></td>
-                            <td><strong>100%</strong></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>8.2 Apports en nature et immatériels</h4>
-                <div class="editable">
-                    <p><strong>Apports NOMATIS (valorisés mais non capitalisés) :</strong></p>
-                    <ul>
-                        <li>Relation privilégiée Orange Maroc (valeur : 50M MAD)</li>
-                        <li>Base de données sites et informations marché (valeur : 20M MAD)</li>
-                        <li>Savoir-faire et processus techniques (valeur : 30M MAD)</li>
-                        <li>Accès NOC existant et équipes formées (valeur : 20M MAD)</li>
-                    </ul>
-                    
-                    <p><strong>Apports KEF INVESTISSEMENTS (valorisés mais non capitalisés) :</strong></p>
-                    <ul>
-                        <li>Conception du business model innovant (valeur : 30M MAD)</li>
-                        <li>Structuration juridique et financière (valeur : 20M MAD)</li>
-                        <li>Relations investisseurs et bancaires (valeur : 25M MAD)</li>
-                        <li>Expertise valorisation et sortie (valeur : 25M MAD)</li>
-                    </ul>
-                </div>
-
-                <h4>8.3 Financement du développement</h4>
-                <div class="editable">
-                    <p>Le développement sera financé selon le modèle cash-positive :</p>
-                    <ul>
-                        <li><strong>Phase 1 (An 1-2) :</strong> Autofinancement via dépôts clients et crédit fournisseur</li>
-                        <li><strong>Phase 2 (An 3-4) :</strong> Possibilité de ligne de crédit bancaire pour accélérer</li>
-                        <li><strong>Phase 3 (An 5+) :</strong> Option d'émission obligataire ou entrée investisseur institutionnel</li>
-                    </ul>
-                    <p>Aucun appel de fonds aux actionnaires n'est prévu au-delà du capital initial.</p>
-                </div>
-
-                <h3>ARTICLE 9 : EXCLUSIVITÉ ET NON-CONCURRENCE</h3>
-                
-                <h4>9.1 Engagement d'exclusivité</h4>
-                <div class="editable">
-                    <p>Pendant toute la durée du présent Protocole et tant qu'elles demeurent actionnaires de la SPV :</p>
-                    <ul>
-                        <li>Les Parties s'engagent à une exclusivité totale concernant toute activité TowerCo au Maroc</li>
-                        <li>NOMATIS ne pourra développer d'activité TowerCo indépendante ou avec un tiers</li>
-                        <li>KEF INVESTISSEMENTS ne pourra investir dans un projet concurrent dans le secteur des infrastructures télécom passives</li>
-                        <li>Cette exclusivité s'étend aux sociétés affiliées, filiales et aux dirigeants des Parties</li>
-                    </ul>
-                </div>
-
-                <h4>9.2 Clause de non-concurrence post-cession</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Situation</th>
-                            <th>Durée non-concurrence</th>
-                            <th>Zone géographique</th>
-                            <th>Compensation</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Cession totale des parts</td>
-                            <td>24 mois</td>
-                            <td>Maroc</td>
-                            <td>Incluse dans prix de cession</td>
-                        </tr>
-                        <tr>
-                            <td>Cession partielle (>25%)</td>
-                            <td>12 mois</td>
-                            <td>Maroc</td>
-                            <td>Négociable</td>
-                        </tr>
-                        <tr>
-                            <td>Exclusion pour faute</td>
-                            <td>36 mois</td>
-                            <td>Maroc + pays limitrophes</td>
-                            <td>Aucune</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>9.3 Sanctions</h4>
-                <p class="editable">En cas de violation de l'exclusivité ou de la non-concurrence, la Partie fautive sera redevable d'une pénalité de 100 millions MAD, sans préjudice de dommages-intérêts complémentaires.</p>
-
-                <h3>ARTICLE 10 : CONDITIONS SUSPENSIVES</h3>
-                <div class="info-box">
-                    <div class="info-box-title">La création définitive de la SPV est soumise aux conditions suspensives suivantes</div>
-                    <ol class="editable">
-                        <li>
-                            <strong>Obtention d'une lettre d'intention d'Orange Maroc</strong>
-                            <ul>
-                                <li>Confirmant l'intérêt pour un MSA</li>
-                                <li>Portant sur minimum 500 sites la première année</li>
-                                <li>Délai : 60 jours à compter de la signature</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Validation conjointe du business plan détaillé</strong>
-                            <ul>
-                                <li>Modèle financier complet sur 10 ans</li>
-                                <li>Analyse de sensibilité</li>
-                                <li>Délai : 30 jours</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Accord sur les statuts définitifs et le pacte d'actionnaires</strong>
-                            <ul>
-                                <li>Statuts SA conformes</li>
-                                <li>Pacte détaillant gouvernance et sorties</li>
-                                <li>Délai : 45 jours</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Due diligence satisfaisante</strong>
-                            <ul>
-                                <li>Vérification des apports de chaque partie</li>
-                                <li>Confirmation absence de litiges</li>
-                                <li>Délai : 30 jours</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Obtention des autorisations nécessaires</strong>
-                            <ul>
-                                <li>Autorisations réglementaires si requises</li>
-                                <li>Approbations internes des Parties</li>
-                                <li>Délai : selon procédures</li>
-                            </ul>
-                        </li>
-                    </ol>
-                    <p class="editable"><strong>Date limite :</strong> Si les conditions suspensives ne sont pas levées au 31 mars 2026, le présent Protocole sera caduc, sauf prolongation d'un commun accord écrit des Parties.</p>
-                </div>
-
-                <h3>ARTICLE 11 : ENGAGEMENTS DES PARTIES</h3>
-                
-                <h4>11.1 Engagements communs</h4>
-                <div class="editable">
-                    <p>Les deux Parties s'engagent à :</p>
-                    <ul>
-                        <li>Coopérer de bonne foi pour la réalisation du projet</li>
-                        <li>Mobiliser les ressources humaines et techniques nécessaires</li>
-                        <li>Respecter les délais convenus dans le planning</li>
-                        <li>Maintenir la confidentialité absolue sur le projet</li>
-                        <li>Ne pas solliciter les employés de l'autre Partie</li>
-                        <li>Promouvoir activement la SPV auprès de leurs réseaux</li>
-                    </ul>
-                </div>
-
-                <h4>11.2 Engagements spécifiques NOMATIS</h4>
-                <div class="editable">
-                    <ul>
-                        <li>Mobiliser la relation Orange pour obtenir le MSA initial</li>
-                        <li>Mettre à disposition son expertise technique sans réserve</li>
-                        <li>Former les équipes de la SPV aux meilleures pratiques</li>
-                        <li>Assurer la continuité de service via ses équipes existantes</li>
-                        <li>Partager les données marché et informations stratégiques</li>
-                        <li>Garantir des tarifs préférentiels pour ses prestations</li>
-                    </ul>
-                </div>
-
-                <h4>11.3 Engagements spécifiques KEF INVESTISSEMENTS</h4>
-                <div class="editable">
-                    <ul>
-                        <li>Structurer le montage juridique et financier optimal</li>
-                        <li>Développer les outils de pilotage et reporting</li>
-                        <li>Mobiliser son réseau pour faciliter les financements</li>
-                        <li>Apporter l'expertise en valorisation et stratégies de sortie</li>
-                        <li>Assurer la mise en place d'une gouvernance professionnelle</li>
-                        <li>Optimiser la structure fiscale et les subventions</li>
-                    </ul>
-                </div>
-
-                <h3>ARTICLE 12 : PROPRIÉTÉ INTELLECTUELLE</h3>
-                
-                <h4>12.1 Propriété de la SPV</h4>
-                <div class="editable">
-                    <p>Toute propriété intellectuelle développée dans le cadre de la SPV sera la propriété exclusive de NOMATIS TOWERS SA, incluant :</p>
-                    <ul>
-                        <li>Les processus et méthodologies développés</li>
-                        <li>Les bases de données clients et sites</li>
-                        <li>Les outils de gestion et de monitoring</li>
-                        <li>Les innovations techniques et solutions propriétaires</li>
-                        <li>La marque NOMATIS TOWERS et ses déclinaisons</li>
-                        <li>Le savoir-faire spécifique au marché marocain</li>
-                    </ul>
-                </div>
-
-                <h4>12.2 Licences d'utilisation</h4>
-                <div class="editable">
-                    <p>Chaque Partie accorde à la SPV une licence gratuite, non-exclusive et perpétuelle d'utilisation de :</p>
-                    <ul>
-                        <li><strong>NOMATIS :</strong> Processus techniques, certifications, référence à son track-record</li>
-                        <li><strong>KEF :</strong> Méthodologies financières, modèles de structuration</li>
-                    </ul>
-                </div>
-
-                <h4>12.3 Protection</h4>
-                <p class="editable">La SPV prendra toutes les mesures nécessaires pour protéger sa propriété intellectuelle, incluant dépôts de marques, brevets si applicable, et accords de confidentialité avec employés et partenaires.</p>
-
-                <h3>ARTICLE 13 : RESPONSABILITÉS ET GARANTIES</h3>
-                
-                <h4>13.1 Déclarations et garanties</h4>
-                <div class="editable">
-                    <p>Chaque Partie déclare et garantit :</p>
-                    <ul>
-                        <li>Avoir la capacité juridique de signer le présent Protocole</li>
-                        <li>Que la signature ne viole aucun engagement existant</li>
-                        <li>La véracité et l'exactitude des informations fournies</li>
-                        <li>L'absence de procédures collectives ou litiges majeurs</li>
-                        <li>Disposer des ressources pour honorer ses engagements</li>
-                        <li>Que ses apports sont libres de tout privilège ou charge</li>
-                    </ul>
-                </div>
-
-                <h4>13.2 Limitation de responsabilité</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Type de dommage</th>
-                            <th>Plafond responsabilité</th>
-                            <th>Exceptions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Dommages directs</td>
-                            <td>Montant des apports en capital</td>
-                            <td>Faute lourde, dol</td>
-                        </tr>
-                        <tr>
-                            <td>Dommages indirects</td>
-                            <td>Exclus</td>
-                            <td>Faute intentionnelle</td>
-                        </tr>
-                        <tr>
-                            <td>Perte d'exploitation</td>
-                            <td>6 mois de CA moyen</td>
-                            <td>Violation confidentialité</td>
-                        </tr>
-                        <tr>
-                            <td>Violation PI</td>
-                            <td>Illimité</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>13.3 Indemnisation</h4>
-                <p class="editable">Chaque Partie s'engage à indemniser l'autre Partie et la SPV de tout dommage résultant de la violation de ses déclarations, garanties ou engagements.</p>
-
-                <h3>ARTICLE 14 : SORTIE ET CESSION (TERMES DU PACTE D'ACTIONNAIRES)</h3>
-                
-                <h4>14.1 Lock-up period</h4>
-                <div class="editable">
-                    <p><strong>Interdiction de cession pendant 3 ans</strong> à compter de la création de la SPV, sauf :</p>
-                    <ul>
-                        <li>Accord mutuel écrit des deux Parties</li>
-                        <li>Cession à une société affiliée (avec maintien des garanties)</li>
-                        <li>En cas de changement de contrôle d'une Partie</li>
-                    </ul>
-                </div>
-
-                <h4>14.2 Droit de préemption</h4>
-                <div class="editable">
-                    <p>Après la période de lock-up :</p>
-                    <ol>
-                        <li>Notification de l'intention de vendre avec prix et conditions</li>
-                        <li>L'autre Partie dispose de 60 jours pour exercer la préemption</li>
-                        <li>Conditions identiques à l'offre tierce</li>
-                        <li>Possibilité de substitution par un tiers agréé</li>
-                    </ol>
-                </div>
-
-                <h4>14.3 Drag Along (Obligation de cession conjointe)</h4>
-                <div class="editable">
-                    <p>Si une offre porte sur 100% du capital et est acceptée par un actionnaire détenant au moins 50% :</p>
-                    <ul>
-                        <li>L'autre actionnaire devra céder dans les mêmes conditions</li>
-                        <li>Prix minimum : 6x EBITDA des 12 derniers mois</li>
-                        <li>Garanties partagées au prorata des participations</li>
-                    </ul>
-                </div>
-
-                <h4>14.4 Tag Along (Droit de cession conjointe)</h4>
-                <div class="editable">
-                    <p>Si un actionnaire cède plus de 25% du capital :</p>
-                    <ul>
-                        <li>L'autre peut exiger de céder proportionnellement</li>
-                        <li>Mêmes prix et conditions</li>
-                        <li>Notification dans les 30 jours</li>
-                    </ul>
-                </div>
-
-                <h4>14.5 Valorisation de sortie</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Méthode</th>
-                            <th>Multiple/Formule</th>
-                            <th>Application</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Multiple EBITDA</td>
-                            <td>6x - 10x selon croissance</td>
-                            <td>Cession à industriel</td>
-                        </tr>
-                        <tr>
-                            <td>DCF</td>
-                            <td>WACC 12%, g=3%</td>
-                            <td>Cession à financier</td>
-                        </tr>
-                        <tr>
-                            <td>Comparables</td>
-                            <td>Moyenne 3 dernières transactions</td>
-                            <td>IPO</td>
-                        </tr>
-                        <tr>
-                            <td>Expert indépendant</td>
-                            <td>Big 4</td>
-                            <td>En cas de désaccord</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>ARTICLE 15 : DURÉE ET RÉSILIATION</h3>
-                
-                <h4>15.1 Durée</h4>
-                <div class="editable">
-                    <p>Le présent Protocole entre en vigueur à sa signature et prendra fin à la survenance du premier des événements suivants :</p>
-                    <ul>
-                        <li>Constitution définitive de la SPV (transformation en pacte d'actionnaires)</li>
-                        <li>31 mars 2026 si conditions suspensives non levées</li>
-                        <li>Accord mutuel de résiliation</li>
-                        <li>Résiliation pour manquement grave</li>
-                    </ul>
-                </div>
-
-                <h4>15.2 Résiliation anticipée</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Motif</th>
-                            <th>Préavis</th>
-                            <th>Conséquences</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>Non-respect engagement exclusivité</td>
-                            <td>Immédiat</td>
-                            <td>Pénalités + dommages-intérêts</td>
-                        </tr>
-                        <tr>
-                            <td>Non-levée conditions suspensives</td>
-                            <td>Automatique</td>
-                            <td>Restitution documents, maintien confidentialité</td>
-                        </tr>
-                        <tr>
-                            <td>Accord mutuel</td>
-                            <td>Convenu</td>
-                            <td>Selon termes accord</td>
-                        </tr>
-                        <tr>
-                            <td>Procédure collective</td>
-                            <td>Immédiat</td>
-                            <td>Option rachat parts</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>15.3 Survie de certaines clauses</h4>
-                <p class="editable">Les clauses de confidentialité, non-concurrence et règlement des litiges survivront à la résiliation du Protocole pour leurs durées respectives.</p>
-
-                <h3>ARTICLE 16 : CONFIDENTIALITÉ</h3>
-                
-                <h4>16.1 Engagement de confidentialité</h4>
-                <div class="editable">
-                    <p>Les Parties s'engagent à maintenir strictement confidentiel :</p>
-                    <ul>
-                        <li>Le contenu intégral du présent Protocole</li>
-                        <li>Toutes informations échangées dans le cadre des négociations</li>
-                        <li>Le business plan et les projections financières</li>
-                        <li>Les informations commerciales (clients, prix, conditions)</li>
-                        <li>Les informations techniques et savoir-faire</li>
-                        <li>L'existence même des discussions jusqu'à annonce officielle</li>
-                    </ul>
-                </div>
-
-                <h4>16.2 Exceptions</h4>
-                <div class="editable">
-                    <p>Ne sont pas considérées comme confidentielles les informations :</p>
-                    <ul>
-                        <li>Déjà dans le domaine public sans violation</li>
-                        <li>Connues antérieurement sans obligation de confidentialité</li>
-                        <li>Divulguées avec accord écrit de l'autre Partie</li>
-                        <li>À divulguer par obligation légale ou judiciaire</li>
-                    </ul>
-                </div>
-
-                <h4>16.3 Durée et sanctions</h4>
-                <p class="editable"><strong>Durée :</strong> 3 ans après fin du Protocole ou 5 ans pour les secrets d'affaires</p>
-                <p class="editable"><strong>Pénalité :</strong> 50 millions MAD par violation, sans préjudice de dommages-intérêts</p>
-
-                <h3>ARTICLE 17 : LOI APPLICABLE ET RÉSOLUTION DES LITIGES</h3>
-                
-                <h4>17.1 Loi applicable</h4>
-                <p class="editable">Le présent Protocole est régi par le droit marocain, à l'exclusion de ses règles de conflit de lois.</p>
-
-                <h4>17.2 Résolution amiable</h4>
-                <div class="editable">
-                    <ol>
-                        <li><strong>Négociation directe :</strong> 30 jours entre les dirigeants</li>
-                        <li><strong>Médiation :</strong> 30 jours avec médiateur CIMAR</li>
-                        <li><strong>Escalade :</strong> Comité de 2 membres CA si constitué</li>
-                    </ol>
-                </div>
-
-                <h4>17.3 Arbitrage</h4>
-                <div class="editable">
-                    <p>À défaut de résolution amiable :</p>
-                    <ul>
-                        <li><strong>Institution :</strong> Centre International de Médiation et d'Arbitrage de Casablanca (CIMAR)</li>
-                        <li><strong>Nombre d'arbitres :</strong> 3 (1 par partie + 1 président)</li>
-                        <li><strong>Siège :</strong> Casablanca</li>
-                        <li><strong>Langue :</strong> Français</li>
-                        <li><strong>Décision :</strong> Définitive et exécutoire</li>
-                    </ul>
-                </div>
-
-                <h3>ARTICLE 18 : DISPOSITIONS FINALES</h3>
-                
-                <h4>18.1 Intégralité de l'accord</h4>
-                <p class="editable">Le présent Protocole constitue l'intégralité de l'accord entre les Parties concernant son objet et remplace tous accords, arrangements ou ententes antérieurs, écrits ou verbaux.</p>
-
-                <h4>18.2 Modifications</h4>
-                <p class="editable">Toute modification du présent Protocole devra faire l'objet d'un avenant écrit signé par les représentants dûment autorisés des deux Parties.</p>
-
-                <h4>18.3 Nullité partielle</h4>
-                <p class="editable">Si une disposition du Protocole est déclarée nulle ou inapplicable, les autres dispositions resteront en vigueur. Les Parties négocieront de bonne foi pour remplacer la disposition invalidée.</p>
-
-                <h4>18.4 Non-renonciation</h4>
-                <p class="editable">Le fait pour une Partie de ne pas exercer un droit ne constitue pas une renonciation à ce droit pour l'avenir.</p>
-
-                <h4>18.5 Notifications</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Partie</th>
-                            <th>Adresse</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                    <tbody class="editable">
-                        <tr>
-                            <td>NOMATIS</td>
-                            <td>Hassan, Rabat, Maroc</td>
-                            <td>contact@nomatis.ma</td>
-                        </tr>
-                        <tr>
-                            <td>KEF INVESTISSEMENTS</td>
-                            <td>Marina Business Center, Casablanca</td>
-                            <td>kef@kef.finance</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="editable">Toutes notifications devront être faites par lettre recommandée avec AR ou email avec confirmation de lecture.</p>
-
-                <h3>ARTICLE 19 : ANNEXES</h3>
-                <div class="editable">
-                    <p>Font partie intégrante du présent Protocole les annexes suivantes :</p>
-                    <ol>
-                        <li><strong>Annexe 1 :</strong> Business Plan détaillé de la SPV (100 pages)</li>
-                        <li><strong>Annexe 2 :</strong> Modèle financier et projections sur 10 ans (Excel)</li>
-                        <li><strong>Annexe 3 :</strong> Projet de statuts de NOMATIS TOWERS SA</li>
-                        <li><strong>Annexe 4 :</strong> Projet de pacte d'actionnaires</li>
-                        <li><strong>Annexe 5 :</strong> CV et références des dirigeants pressentis</li>
-                        <li><strong>Annexe 6 :</strong> Étude de marché télécom Maroc 2025-2030</li>
-                        <li><strong>Annexe 7 :</strong> Benchmark international TowerCos</li>
-                        <li><strong>Annexe 8 :</strong> Projet de convention de services NOMATIS</li>
-                        <li><strong>Annexe 9 :</strong> Planning détaillé de déploiement 5 ans</li>
-                        <li><strong>Annexe 10 :</strong> Matrice des risques et plan de mitigation</li>
-                    </ol>
-                </div>
-
-                <!-- Signatures -->
-                <div class="signature-section">
-                    <div class="signature-block">
-                        <p><strong>Pour NOMATIS S.A.R.L</strong></p>
-                        <div class="signature-line"></div>
-                        <p class="signature-label">M. Mustapha OURKIYA</p>
-                        <p class="signature-title">Gérant</p>
-                        <p>Date : _____________</p>
-                    </div>
-                    <div class="signature-block">
-                        <p><strong>Pour KEF INVESTISSEMENTS S.A.R.L</strong></p>
-                        <div class="signature-line"></div>
-                        <p class="signature-label">M. Karim EL-FEKKAK</p>
-                        <p class="signature-title">Gérant</p>
-                        <p>Date : _____________</p>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--light-gray); border-radius: 12px;">
-                    <p class="editable"><strong>Fait à Casablanca, le _________ 2025</strong></p>
-                    <p class="editable">En deux (2) exemplaires originaux</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--dark-gray);">
-                        Chaque page du présent Protocole et de ses annexes devra être paraphée par les représentants des Parties
-                    </p>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 2: MODÈLE FINANCIER COMPLET -->
-        <div class="tab-pane" id="financier">
-            <div class="content-section">
-                <div class="section-header">
-                    <div class="section-icon">💰</div>
-                    <h2>Modèle Financier Prévisionnel NOMATIS TOWERS</h2>
-                </div>
-
-                <!-- Contenu financier complet sera ajouté ici -->
-                <h3>Modèle Financier Complet - Voir Business Plan</h3>
-                <p class="editable">Le modèle financier détaillé est intégré dans le Business Plan (onglet suivant)</p>
+        <!-- Tab 2: Modèle Financier -->
+        <div id="financier" class="tab-pane">
+            <div class="control-panel">
+                <button class="btn btn-primary" onclick="toggleEditMode()">Mode Édition</button>
+                <button class="btn btn-secondary" onclick="saveToLocalStorage()">Sauvegarder</button>
+                <button class="btn btn-secondary" onclick="exportHTML()">Exporter HTML</button>
+                <button class="btn btn-secondary" onclick="window.print()">Imprimer PDF</button>
             </div>
-        </div>
 
-        <!-- TAB 3: BUSINESS PLAN COMPLET -->
-        <div class="tab-pane" id="business">
             <div class="content-section">
                 <div class="section-header">
                     <div class="section-icon">📊</div>
-                    <h2>Business Plan Détaillé - NOMATIS TOWERS</h2>
+                    <h2>Modèle Financier - Projections 5 Ans</h2>
                 </div>
 
-                <!-- Contenu business plan complet sera ajouté ici -->
-                <h3>Business Plan Complet</h3>
-                <p class="editable">Le business plan détaillé est en cours de finalisation</p>
+                <!-- KPIs Principaux -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-label">ROI sur 3 ans</div>
+                        <div class="kpi-value editable" contenteditable="false">10,600%</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">TRI sur 5 ans</div>
+                        <div class="kpi-value editable" contenteditable="false">195%</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">Sites Déployés</div>
+                        <div class="kpi-value editable" contenteditable="false">10,000</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">Chiffre d'Affaires Année 5</div>
+                        <div class="kpi-value editable" contenteditable="false">450 MMAD</div>
+                    </div>
+                </div>
+
+                <h3>Compte de Résultat Prévisionnel</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>En Millions MAD</th>
+                            <th>Année 1</th>
+                            <th>Année 2</th>
+                            <th>Année 3</th>
+                            <th>Année 4</th>
+                            <th>Année 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Chiffre d'Affaires</strong></td>
+                            <td class="text-right editable" contenteditable="false">22.5</td>
+                            <td class="text-right editable" contenteditable="false">90.0</td>
+                            <td class="text-right editable" contenteditable="false">202.5</td>
+                            <td class="text-right editable" contenteditable="false">337.5</td>
+                            <td class="text-right editable" contenteditable="false">450.0</td>
+                        </tr>
+                        <tr>
+                            <td>Revenus Location</td>
+                            <td class="text-right editable" contenteditable="false">11.25</td>
+                            <td class="text-right editable" contenteditable="false">45.0</td>
+                            <td class="text-right editable" contenteditable="false">101.25</td>
+                            <td class="text-right editable" contenteditable="false">168.75</td>
+                            <td class="text-right editable" contenteditable="false">225.0</td>
+                        </tr>
+                        <tr>
+                            <td>Revenus Services</td>
+                            <td class="text-right editable" contenteditable="false">11.25</td>
+                            <td class="text-right editable" contenteditable="false">45.0</td>
+                            <td class="text-right editable" contenteditable="false">101.25</td>
+                            <td class="text-right editable" contenteditable="false">168.75</td>
+                            <td class="text-right editable" contenteditable="false">225.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Charges d'Exploitation</strong></td>
+                            <td class="text-right editable" contenteditable="false">15.75</td>
+                            <td class="text-right editable" contenteditable="false">63.0</td>
+                            <td class="text-right editable" contenteditable="false">141.75</td>
+                            <td class="text-right editable" contenteditable="false">236.25</td>
+                            <td class="text-right editable" contenteditable="false">315.0</td>
+                        </tr>
+                        <tr>
+                            <td>Coûts Opérationnels</td>
+                            <td class="text-right editable" contenteditable="false">7.5</td>
+                            <td class="text-right editable" contenteditable="false">30.0</td>
+                            <td class="text-right editable" contenteditable="false">67.5</td>
+                            <td class="text-right editable" contenteditable="false">112.5</td>
+                            <td class="text-right editable" contenteditable="false">150.0</td>
+                        </tr>
+                        <tr>
+                            <td>Masse Salariale</td>
+                            <td class="text-right editable" contenteditable="false">4.8</td>
+                            <td class="text-right editable" contenteditable="false">19.2</td>
+                            <td class="text-right editable" contenteditable="false">43.2</td>
+                            <td class="text-right editable" contenteditable="false">72.0</td>
+                            <td class="text-right editable" contenteditable="false">96.0</td>
+                        </tr>
+                        <tr>
+                            <td>Frais Généraux</td>
+                            <td class="text-right editable" contenteditable="false">3.45</td>
+                            <td class="text-right editable" contenteditable="false">13.8</td>
+                            <td class="text-right editable" contenteditable="false">31.05</td>
+                            <td class="text-right editable" contenteditable="false">51.75</td>
+                            <td class="text-right editable" contenteditable="false">69.0</td>
+                        </tr>
+                        <tr style="background: var(--light-gray);">
+                            <td><strong>EBITDA</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">6.75</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">27.0</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">60.75</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">101.25</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">135.0</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Marge EBITDA (%)</td>
+                            <td class="text-right editable" contenteditable="false">30%</td>
+                            <td class="text-right editable" contenteditable="false">30%</td>
+                            <td class="text-right editable" contenteditable="false">30%</td>
+                            <td class="text-right editable" contenteditable="false">30%</td>
+                            <td class="text-right editable" contenteditable="false">30%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Plan de Financement</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>En Millions MAD</th>
+                            <th>Année 1</th>
+                            <th>Année 2</th>
+                            <th>Année 3</th>
+                            <th>Année 4</th>
+                            <th>Année 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Besoins</strong></td>
+                            <td class="text-right editable" contenteditable="false">75.0</td>
+                            <td class="text-right editable" contenteditable="false">225.0</td>
+                            <td class="text-right editable" contenteditable="false">375.0</td>
+                            <td class="text-right editable" contenteditable="false">450.0</td>
+                            <td class="text-right editable" contenteditable="false">375.0</td>
+                        </tr>
+                        <tr>
+                            <td>CAPEX Sites</td>
+                            <td class="text-right editable" contenteditable="false">75.0</td>
+                            <td class="text-right editable" contenteditable="false">225.0</td>
+                            <td class="text-right editable" contenteditable="false">375.0</td>
+                            <td class="text-right editable" contenteditable="false">450.0</td>
+                            <td class="text-right editable" contenteditable="false">375.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ressources</strong></td>
+                            <td class="text-right editable" contenteditable="false">78.0</td>
+                            <td class="text-right editable" contenteditable="false">252.0</td>
+                            <td class="text-right editable" contenteditable="false">435.75</td>
+                            <td class="text-right editable" contenteditable="false">551.25</td>
+                            <td class="text-right editable" contenteditable="false">510.0</td>
+                        </tr>
+                        <tr>
+                            <td>Capital Initial</td>
+                            <td class="text-right editable" contenteditable="false">3.0</td>
+                            <td class="text-right editable" contenteditable="false">-</td>
+                            <td class="text-right editable" contenteditable="false">-</td>
+                            <td class="text-right editable" contenteditable="false">-</td>
+                            <td class="text-right editable" contenteditable="false">-</td>
+                        </tr>
+                        <tr>
+                            <td>Dépôts Clients</td>
+                            <td class="text-right editable" contenteditable="false">75.0</td>
+                            <td class="text-right editable" contenteditable="false">225.0</td>
+                            <td class="text-right editable" contenteditable="false">375.0</td>
+                            <td class="text-right editable" contenteditable="false">450.0</td>
+                            <td class="text-right editable" contenteditable="false">375.0</td>
+                        </tr>
+                        <tr>
+                            <td>Cash Flow Opérationnel</td>
+                            <td class="text-right editable" contenteditable="false">-</td>
+                            <td class="text-right editable" contenteditable="false">27.0</td>
+                            <td class="text-right editable" contenteditable="false">60.75</td>
+                            <td class="text-right editable" contenteditable="false">101.25</td>
+                            <td class="text-right editable" contenteditable="false">135.0</td>
+                        </tr>
+                        <tr style="background: var(--light-gray);">
+                            <td><strong>Trésorerie Nette</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">3.0</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">30.0</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">90.75</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">192.0</strong></td>
+                            <td class="text-right"><strong class="editable" contenteditable="false">327.0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Analyse de Sensibilité</h3>
+                <div class="article">
+                    <h4>Scénarios de Performance</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scénario</th>
+                                <th>Sites Déployés</th>
+                                <th>CA Année 5 (MMAD)</th>
+                                <th>ROI 3 ans</th>
+                                <th>TRI 5 ans</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pessimiste (-30%)</td>
+                                <td class="text-right editable" contenteditable="false">7,000</td>
+                                <td class="text-right editable" contenteditable="false">315</td>
+                                <td class="text-right editable" contenteditable="false">7,420%</td>
+                                <td class="text-right editable" contenteditable="false">137%</td>
+                            </tr>
+                            <tr style="background: var(--light-gray);">
+                                <td><strong>Base</strong></td>
+                                <td class="text-right"><strong class="editable" contenteditable="false">10,000</strong></td>
+                                <td class="text-right"><strong class="editable" contenteditable="false">450</strong></td>
+                                <td class="text-right"><strong class="editable" contenteditable="false">10,600%</strong></td>
+                                <td class="text-right"><strong class="editable" contenteditable="false">195%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Optimiste (+30%)</td>
+                                <td class="text-right editable" contenteditable="false">13,000</td>
+                                <td class="text-right editable" contenteditable="false">585</td>
+                                <td class="text-right editable" contenteditable="false">13,780%</td>
+                                <td class="text-right editable" contenteditable="false">254%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Structure de Coûts par Site</h3>
+                <div class="article">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Composant</th>
+                                <th>Urbain</th>
+                                <th>Périurbain</th>
+                                <th>Rural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pylône/Structure</td>
+                                <td class="text-right editable" contenteditable="false">80,000 MAD</td>
+                                <td class="text-right editable" contenteditable="false">60,000 MAD</td>
+                                <td class="text-right editable" contenteditable="false">40,000 MAD</td>
+                            </tr>
+                            <tr>
+                                <td>Système Énergie</td>
+                                <td class="text-right editable" contenteditable="false">50,000 MAD</td>
+                                <td class="text-right editable" contenteditable="false">40,000 MAD</td>
+                                <td class="text-right editable" contenteditable="false">30,000 MAD</td>
+                            </tr>
+                            <tr>
+                                <td>Infrastructure</td>
+                                <td class="text-right editable" contenteditable="false">40,000 MAD</td>
+                                <td class="text-right editable" contenteditable="false">30,000 MAD</td>
+                                <td class="text-right editable" contenteditable="false">20,000 MAD</td>
+                            </tr>
+                            <tr>
+                                <td>Installation</td>
+                                <td class="text-right editable" contenteditable="false">30,000 MAD</td>
+                                <td class="text-right editable" contenteditable="false">20,000 MAD</td>
+                                <td class="text-right editable" contenteditable="false">10,000 MAD</td>
+                            </tr>
+                            <tr style="background: var(--light-gray);">
+                                <td><strong>Total</strong></td>
+                                <td class="text-right"><strong class="editable" contenteditable="false">200,000 MAD</strong></td>
+                                <td class="text-right"><strong class="editable" contenteditable="false">150,000 MAD</strong></td>
+                                <td class="text-right"><strong class="editable" contenteditable="false">100,000 MAD</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-        <!-- TAB 4: VALORISATION COMPLÈTE -->
-        <div class="tab-pane" id="valuation">
+        <!-- Tab 3: Business Plan -->
+        <div id="business" class="tab-pane">
+            <div class="control-panel">
+                <button class="btn btn-primary" onclick="toggleEditMode()">Mode Édition</button>
+                <button class="btn btn-secondary" onclick="saveToLocalStorage()">Sauvegarder</button>
+                <button class="btn btn-secondary" onclick="exportHTML()">Exporter HTML</button>
+                <button class="btn btn-secondary" onclick="window.print()">Imprimer PDF</button>
+            </div>
+
             <div class="content-section">
                 <div class="section-header">
                     <div class="section-icon">📈</div>
-                    <h2>Évaluation Financière & Valorisation</h2>
+                    <h2>Business Plan Stratégique 2025-2030</h2>
                 </div>
 
-                <!-- Contenu valorisation complet sera ajouté ici -->
-                <h3>Analyse de Valorisation</h3>
-                <p class="editable">L'analyse de valorisation détaillée est en cours de finalisation</p>
+                <h3>1. Résumé Exécutif</h3>
+                <div class="article">
+                    <p class="editable" contenteditable="false"><strong>NOMATIS TOWERS</strong> représente une opportunité d'investissement exceptionnelle dans le secteur des infrastructures télécommunications au Maroc. Notre joint-venture capitalise sur le programme national 5G de 80 milliards MAD pour établir le leader marocain des TowerCo.</p>
+                    
+                    <div class="kpi-grid mt-3">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Marché Adressable</div>
+                            <div class="kpi-value editable" contenteditable="false">80 Mds MAD</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Part de Marché Visée</div>
+                            <div class="kpi-value editable" contenteditable="false">15%</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Création d'Emplois</div>
+                            <div class="kpi-value editable" contenteditable="false">500+</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Valorisation Année 5</div>
+                            <div class="kpi-value editable" contenteditable="false">1.08 Md MAD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2. Analyse de Marché</h3>
+                <div class="article">
+                    <h4>2.1 Contexte du Marché Marocain</h4>
+                    <p class="editable" contenteditable="false">Le Maroc s'engage dans une transformation numérique majeure avec le déploiement de la 5G. Le marché des télécommunications représente 3% du PIB national avec une croissance annuelle de 8%.</p>
+                    
+                    <h4>2.2 Drivers de Croissance</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>Démographie :</strong> 37 millions d'habitants, 70% de pénétration smartphone</li>
+                        <li class="editable" contenteditable="false"><strong>Urbanisation :</strong> 65% de population urbaine nécessitant une couverture dense</li>
+                        <li class="editable" contenteditable="false"><strong>Économie Digitale :</strong> Croissance de 25% par an du e-commerce</li>
+                        <li class="editable" contenteditable="false"><strong>Investissements 5G :</strong> 80 milliards MAD sur 5 ans</li>
+                        <li class="editable" contenteditable="false"><strong>Smart Cities :</strong> 12 villes intelligentes en développement</li>
+                    </ul>
+
+                    <h4>2.3 Analyse Concurrentielle</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concurrent</th>
+                                <th>Sites Gérés</th>
+                                <th>Part de Marché</th>
+                                <th>Forces</th>
+                                <th>Faiblesses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Opérateurs Directs</td>
+                                <td class="text-right">12,000</td>
+                                <td class="text-right">70%</td>
+                                <td>Infrastructure existante</td>
+                                <td>Coûts élevés, peu de partage</td>
+                            </tr>
+                            <tr>
+                                <td>TowerCo International</td>
+                                <td class="text-right">3,000</td>
+                                <td class="text-right">18%</td>
+                                <td>Expertise internationale</td>
+                                <td>Connaissance locale limitée</td>
+                            </tr>
+                            <tr>
+                                <td>Acteurs Locaux</td>
+                                <td class="text-right">2,000</td>
+                                <td class="text-right">12%</td>
+                                <td>Agilité</td>
+                                <td>Capacité financière limitée</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>3. Stratégie d'Entreprise</h3>
+                <div class="article">
+                    <h4>3.1 Vision et Mission</h4>
+                    <p class="editable" contenteditable="false"><strong>Vision :</strong> Devenir le leader marocain de l'infrastructure télécommunications passive, facilitant la transformation digitale du Royaume.</p>
+                    <p class="editable mt-2" contenteditable="false"><strong>Mission :</strong> Fournir une infrastructure télécoms de classe mondiale, accessible et durable, permettant une connectivité universelle au Maroc.</p>
+
+                    <h4>3.2 Objectifs Stratégiques</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false">Déployer 10,000 sites en 5 ans</li>
+                        <li class="editable" contenteditable="false">Atteindre 15% de part de marché</li>
+                        <li class="editable" contenteditable="false">Générer 450 MMAD de CA annuel en année 5</li>
+                        <li class="editable" contenteditable="false">Maintenir une marge EBITDA de 30%</li>
+                        <li class="editable" contenteditable="false">Créer 500+ emplois directs et 2,000 indirects</li>
+                    </ul>
+
+                    <h4>3.3 Avantages Compétitifs</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>Expertise Technique :</strong> 19+ ans d'expérience via NOMATIS</li>
+                        <li class="editable" contenteditable="false"><strong>Relations Établies :</strong> Gestion actuelle de 4,000 sites Orange</li>
+                        <li class="editable" contenteditable="false"><strong>Modèle Cash-Positive :</strong> Aucun besoin en fonds de roulement</li>
+                        <li class="editable" contenteditable="false"><strong>Agilité Locale :</strong> Connaissance approfondie du marché</li>
+                        <li class="editable" contenteditable="false"><strong>Synergie Partenariat :</strong> Complémentarité technique et financière</li>
+                    </ul>
+                </div>
+
+                <h3>4. Plan Opérationnel</h3>
+                <div class="article">
+                    <h4>4.1 Organisation et Structure</h4>
+                    <p class="editable" contenteditable="false">Structure organisationnelle optimisée avec 5 départements clés :</p>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>Business Development :</strong> Acquisition clients et expansion marché</li>
+                        <li class="editable" contenteditable="false"><strong>Network Management :</strong> Opérations techniques et maintenance</li>
+                        <li class="editable" contenteditable="false"><strong>Finance & Control :</strong> Gestion financière et reporting</li>
+                        <li class="editable" contenteditable="false"><strong>External Relations :</strong> Relations institutionnelles et réglementaires</li>
+                        <li class="editable" contenteditable="false"><strong>Real Estate Management :</strong> Acquisition et gestion des sites</li>
+                    </ul>
+
+                    <h4>4.2 Plan de Déploiement Régional</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Région</th>
+                                <th>Année 1</th>
+                                <th>Année 2</th>
+                                <th>Année 3</th>
+                                <th>Année 4</th>
+                                <th>Année 5</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Casablanca-Settat</td>
+                                <td class="text-right">150</td>
+                                <td class="text-right">450</td>
+                                <td class="text-right">750</td>
+                                <td class="text-right">900</td>
+                                <td class="text-right">750</td>
+                                <td class="text-right">3,000</td>
+                            </tr>
+                            <tr>
+                                <td>Rabat-Salé-Kénitra</td>
+                                <td class="text-right">100</td>
+                                <td class="text-right">300</td>
+                                <td class="text-right">500</td>
+                                <td class="text-right">600</td>
+                                <td class="text-right">500</td>
+                                <td class="text-right">2,000</td>
+                            </tr>
+                            <tr>
+                                <td>Marrakech-Safi</td>
+                                <td class="text-right">75</td>
+                                <td class="text-right">225</td>
+                                <td class="text-right">375</td>
+                                <td class="text-right">450</td>
+                                <td class="text-right">375</td>
+                                <td class="text-right">1,500</td>
+                            </tr>
+                            <tr>
+                                <td>Tanger-Tétouan</td>
+                                <td class="text-right">75</td>
+                                <td class="text-right">225</td>
+                                <td class="text-right">375</td>
+                                <td class="text-right">450</td>
+                                <td class="text-right">375</td>
+                                <td class="text-right">1,500</td>
+                            </tr>
+                            <tr>
+                                <td>Autres Régions</td>
+                                <td class="text-right">100</td>
+                                <td class="text-right">300</td>
+                                <td class="text-right">500</td>
+                                <td class="text-right">600</td>
+                                <td class="text-right">500</td>
+                                <td class="text-right">2,000</td>
+                            </tr>
+                            <tr style="background: var(--light-gray);">
+                                <td><strong>Total</strong></td>
+                                <td class="text-right"><strong>500</strong></td>
+                                <td class="text-right"><strong>1,500</strong></td>
+                                <td class="text-right"><strong>2,500</strong></td>
+                                <td class="text-right"><strong>3,000</strong></td>
+                                <td class="text-right"><strong>2,500</strong></td>
+                                <td class="text-right"><strong>10,000</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>4.3 Processus Opérationnels</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>Phase 1 - Identification :</strong> Analyse de couverture et sélection des sites (2-4 semaines)</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 2 - Acquisition :</strong> Négociation foncière et autorisations (4-8 semaines)</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 3 - Construction :</strong> Déploiement infrastructure (8-12 semaines)</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 4 - Commissioning :</strong> Tests et mise en service (2-4 semaines)</li>
+                        <li class="editable" contenteditable="false"><strong>Phase 5 - Exploitation :</strong> Maintenance et optimisation continue</li>
+                    </ul>
+                </div>
+
+                <h3>5. Plan Marketing et Commercial</h3>
+                <div class="article">
+                    <h4>5.1 Segmentation Clients</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>Opérateurs Télécoms :</strong> Orange, IAM, Inwi (80% du CA)</li>
+                        <li class="editable" contenteditable="false"><strong>ISP et MVNO :</strong> Fournisseurs Internet et opérateurs virtuels (15%)</li>
+                        <li class="editable" contenteditable="false"><strong>Entreprises :</strong> Réseaux privés et IoT (5%)</li>
+                    </ul>
+
+                    <h4>5.2 Proposition de Valeur</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Segment</th>
+                                <th>Besoins Clés</th>
+                                <th>Notre Solution</th>
+                                <th>Bénéfices Client</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Opérateurs</td>
+                                <td>Réduction CAPEX</td>
+                                <td>Infrastructure partagée</td>
+                                <td>-60% coûts déploiement</td>
+                            </tr>
+                            <tr>
+                                <td>ISP</td>
+                                <td>Expansion rapide</td>
+                                <td>Sites prêts à l'emploi</td>
+                                <td>Time-to-market 3x plus rapide</td>
+                            </tr>
+                            <tr>
+                                <td>Entreprises</td>
+                                <td>Fiabilité réseau</td>
+                                <td>SLA 99.9%</td>
+                                <td>Continuité business garantie</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>5.3 Stratégie de Prix</h4>
+                    <p class="editable" contenteditable="false">Tarification compétitive avec structure transparente :</p>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>Location Espace :</strong> 1,500-2,500 MAD/mois selon typologie</li>
+                        <li class="editable" contenteditable="false"><strong>Services Énergie :</strong> 1,000-1,500 MAD/mois</li>
+                        <li class="editable" contenteditable="false"><strong>Maintenance :</strong> 500-750 MAD/mois</li>
+                        <li class="editable" contenteditable="false"><strong>Services Additionnels :</strong> Sur devis personnalisé</li>
+                    </ul>
+                </div>
+
+                <h3>6. Plan de Gestion des Risques</h3>
+                <div class="article">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Risque</th>
+                                <th>Probabilité</th>
+                                <th>Impact</th>
+                                <th>Mitigation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Retards réglementaires</td>
+                                <td>Moyenne</td>
+                                <td>Élevé</td>
+                                <td>Relations proactives avec ANRT, pipeline de sites</td>
+                            </tr>
+                            <tr>
+                                <td>Concurrence accrue</td>
+                                <td>Élevée</td>
+                                <td>Moyen</td>
+                                <td>Différenciation service, contrats long terme</td>
+                            </tr>
+                            <tr>
+                                <td>Évolution technologique</td>
+                                <td>Faible</td>
+                                <td>Moyen</td>
+                                <td>Infrastructure évolutive, veille technologique</td>
+                            </tr>
+                            <tr>
+                                <td>Défaut client</td>
+                                <td>Faible</td>
+                                <td>Élevé</td>
+                                <td>Dépôts garantie, diversification portefeuille</td>
+                            </tr>
+                            <tr>
+                                <td>Pénurie ressources</td>
+                                <td>Moyenne</td>
+                                <td>Moyen</td>
+                                <td>Partenariats fournisseurs, stocks stratégiques</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>7. Impact ESG et Développement Durable</h3>
+                <div class="article">
+                    <h4>7.1 Impact Environnemental</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false">100% énergie renouvelable d'ici 2030</li>
+                        <li class="editable" contenteditable="false">Réduction de 40% des émissions CO2 par mutualisation</li>
+                        <li class="editable" contenteditable="false">Programme de recyclage des équipements</li>
+                    </ul>
+
+                    <h4>7.2 Impact Social</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false">Création de 500+ emplois directs</li>
+                        <li class="editable" contenteditable="false">Formation de 1,000 techniciens locaux</li>
+                        <li class="editable" contenteditable="false">Connectivité pour 2 millions de ruraux</li>
+                    </ul>
+
+                    <h4>7.3 Gouvernance</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false">Transparence totale dans la gestion</li>
+                        <li class="editable" contenteditable="false">Comité d'éthique indépendant</li>
+                        <li class="editable" contenteditable="false">Certification ISO 9001 et 14001</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Présentation Executive -->
+        <div id="executive" class="tab-pane">
+            <div class="control-panel">
+                <button class="btn btn-primary" onclick="toggleEditMode()">Mode Édition</button>
+                <button class="btn btn-secondary" onclick="saveToLocalStorage()">Sauvegarder</button>
+                <button class="btn btn-secondary" onclick="exportHTML()">Exporter HTML</button>
+                <button class="btn btn-secondary" onclick="window.print()">Imprimer PDF</button>
+            </div>
+
+            <div class="content-section">
+                <div class="section-header">
+                    <div class="section-icon">🎯</div>
+                    <h2>Présentation Executive - Investment Deck</h2>
+                </div>
+
+                <!-- Slide 1 -->
+                <div class="article" style="min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+                    <h3 class="text-center">NOMATIS TOWERS</h3>
+                    <p class="text-center editable" contenteditable="false" style="font-size: 1.2rem; margin: 2rem 0;">
+                        L'Infrastructure Télécoms de Nouvelle Génération au Maroc
+                    </p>
+                    <p class="text-center editable" contenteditable="false">
+                        Joint-Venture Stratégique<br>
+                        NOMATIS S.A.R.L × KEF INVESTISSEMENTS S.A.R.L
+                    </p>
+                    <div class="text-center mt-3">
+                        <div class="kpi-grid" style="max-width: 600px; margin: 0 auto;">
+                            <div class="kpi-card">
+                                <div class="kpi-value">10,000</div>
+                                <div class="kpi-label">Sites en 5 ans</div>
+                            </div>
+                            <div class="kpi-card">
+                                <div class="kpi-value">195%</div>
+                                <div class="kpi-label">TRI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Opportunité de Marché -->
+                <div class="article" style="min-height: 400px;">
+                    <h3>L'Opportunité 5G au Maroc</h3>
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-value">80 Mds MAD</div>
+                            <div class="kpi-label">Programme National 5G</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">25,000</div>
+                            <div class="kpi-label">Nouveaux Sites Requis</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">70%</div>
+                            <div class="kpi-label">Taux Pénétration Mobile</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">8%</div>
+                            <div class="kpi-label">Croissance Annuelle</div>
+                        </div>
+                    </div>
+                    <ul class="mt-3">
+                        <li class="editable" contenteditable="false">Transformation digitale nationale en cours</li>
+                        <li class="editable" contenteditable="false">Besoin critique d'infrastructure partagée</li>
+                        <li class="editable" contenteditable="false">Modèle TowerCo prouvé internationalement</li>
+                    </ul>
+                </div>
+
+                <!-- Slide 3: Notre Solution -->
+                <div class="article" style="min-height: 400px;">
+                    <h3>Notre Solution Unique</h3>
+                    <h4>Modèle Économique Révolutionnaire</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false"><strong>Cash-Positive dès J1 :</strong> Dépôts clients = 100% CAPEX</li>
+                        <li class="editable" contenteditable="false"><strong>Zéro Besoin FDR :</strong> Clients paient avant déploiement</li>
+                        <li class="editable" contenteditable="false"><strong>Revenus Garantis :</strong> Contrats 10-15 ans</li>
+                        <li class="editable" contenteditable="false"><strong>Scalabilité Infinie :</strong> Croissance sans dilution</li>
+                    </ul>
+                    
+                    <table class="mt-3">
+                        <thead>
+                            <tr>
+                                <th>Modèle Traditionnel</th>
+                                <th>Notre Modèle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Financement CAPEX requis</td>
+                                <td>CAPEX financé par clients</td>
+                            </tr>
+                            <tr>
+                                <td>ROI en 5-7 ans</td>
+                                <td>ROI immédiat</td>
+                            </tr>
+                            <tr>
+                                <td>Risque de défaut élevé</td>
+                                <td>Risque minimisé (dépôts)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Slide 4: Partenariat Stratégique -->
+                <div class="article" style="min-height: 400px;">
+                    <h3>Un Partenariat Complémentaire</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h4>NOMATIS S.A.R.L</h4>
+                            <ul>
+                                <li class="editable" contenteditable="false">19+ ans d'expertise télécoms</li>
+                                <li class="editable" contenteditable="false">4,000 sites Orange gérés</li>
+                                <li class="editable" contenteditable="false">57% du réseau Orange Maroc</li>
+                                <li class="editable" contenteditable="false">Relations opérateurs établies</li>
+                                <li class="editable" contenteditable="false">Excellence opérationnelle</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>KEF INVESTISSEMENTS</h4>
+                            <ul>
+                                <li class="editable" contenteditable="false">Structuration financière</li>
+                                <li class="editable" contenteditable="false">Accès investisseurs</li>
+                                <li class="editable" contenteditable="false">Gestion stratégique</li>
+                                <li class="editable" contenteditable="false">Expansion internationale</li>
+                                <li class="editable" contenteditable="false">Innovation business</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-center mt-3 editable" contenteditable="false" style="font-size: 1.1rem; color: var(--bottle-green);">
+                        <strong>Synergie Parfaite = Expertise Technique + Puissance Financière</strong>
+                    </p>
+                </div>
+
+                <!-- Slide 5: Projections Financières -->
+                <div class="article" style="min-height: 400px;">
+                    <h3>Projections Financières Exceptionnelles</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Métrique</th>
+                                <th>Année 1</th>
+                                <th>Année 3</th>
+                                <th>Année 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sites Déployés</td>
+                                <td class="text-right">500</td>
+                                <td class="text-right">4,500</td>
+                                <td class="text-right">10,000</td>
+                            </tr>
+                            <tr>
+                                <td>Chiffre d'Affaires (MMAD)</td>
+                                <td class="text-right">22.5</td>
+                                <td class="text-right">202.5</td>
+                                <td class="text-right">450</td>
+                            </tr>
+                            <tr>
+                                <td>EBITDA (MMAD)</td>
+                                <td class="text-right">6.75</td>
+                                <td class="text-right">60.75</td>
+                                <td class="text-right">135</td>
+                            </tr>
+                            <tr>
+                                <td>Marge EBITDA</td>
+                                <td class="text-right">30%</td>
+                                <td class="text-right">30%</td>
+                                <td class="text-right">30%</td>
+                            </tr>
+                            <tr style="background: var(--light-gray);">
+                                <td><strong>Valorisation (MMAD)</strong></td>
+                                <td class="text-right"><strong>54</strong></td>
+                                <td class="text-right"><strong>486</strong></td>
+                                <td class="text-right"><strong>1,080</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="kpi-grid mt-3">
+                        <div class="kpi-card">
+                            <div class="kpi-value">10,600%</div>
+                            <div class="kpi-label">ROI 3 ans</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">195%</div>
+                            <div class="kpi-label">TRI 5 ans</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Stratégie de Déploiement -->
+                <div class="article" style="min-height: 400px;">
+                    <h3>Stratégie de Déploiement Progressive</h3>
+                    <h4>Phase 1 (Années 1-2): Foundation</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false">Focus sur zones urbaines haute densité</li>
+                        <li class="editable" contenteditable="false">2,000 sites stratégiques</li>
+                        <li class="editable" contenteditable="false">Partenariat ancré avec Orange</li>
+                    </ul>
+                    
+                    <h4>Phase 2 (Années 3-4): Expansion</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false">Extension périurbaine et corridors</li>
+                        <li class="editable" contenteditable="false">5,500 sites additionnels</li>
+                        <li class="editable" contenteditable="false">Multi-opérateurs (IAM, Inwi)</li>
+                    </ul>
+                    
+                    <h4>Phase 3 (Année 5): Consolidation</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false">Couverture rurale et zones blanches</li>
+                        <li class="editable" contenteditable="false">2,500 sites finaux</li>
+                        <li class="editable" contenteditable="false">Services à valeur ajoutée</li>
+                    </ul>
+                </div>
+
+                <!-- Slide 7: Impact National -->
+                <div class="article" style="min-height: 400px;">
+                    <h3>Impact Transformationnel pour le Maroc</h3>
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-value">500+</div>
+                            <div class="kpi-label">Emplois Directs</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">2,000+</div>
+                            <div class="kpi-label">Emplois Indirects</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">2M</div>
+                            <div class="kpi-label">Ruraux Connectés</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">-40%</div>
+                            <div class="kpi-label">Réduction CO2</div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="mt-3">Contribution aux Objectifs Nationaux</h4>
+                    <ul>
+                        <li class="editable" contenteditable="false">Accélération transformation digitale</li>
+                        <li class="editable" contenteditable="false">Réduction fracture numérique</li>
+                        <li class="editable" contenteditable="false">Attractivité investissements étrangers</li>
+                        <li class="editable" contenteditable="false">Souveraineté infrastructure télécoms</li>
+                    </ul>
+                </div>
+
+                <!-- Slide 8: Appel à l'Action -->
+                <div class="article" style="min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+                    <h3 class="text-center">Rejoignez la Révolution Télécoms du Maroc</h3>
+                    
+                    <div class="text-center mt-3">
+                        <p class="editable" contenteditable="false" style="font-size: 1.2rem;">
+                            <strong>Investissement Recherché:</strong> Partenaires Stratégiques
+                        </p>
+                        <p class="editable" contenteditable="false" style="font-size: 1.1rem;">
+                            Capital Initial: 3 MMAD (Déployé)<br>
+                            Extension: Selon Croissance
+                        </p>
+                    </div>
+                    
+                    <div class="kpi-grid mt-3" style="max-width: 800px; margin: 0 auto;">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Retour sur Investissement</div>
+                            <div class="kpi-value">10,600%</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Valorisation x360</div>
+                            <div class="kpi-value">5 ans</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Exit Stratégique</div>
+                            <div class="kpi-value">IPO/M&A</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Dividendes Annuels</div>
+                            <div class="kpi-value">Dès An 2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <p class="editable" contenteditable="false" style="font-size: 1.1rem; color: var(--bottle-green);">
+                            <strong>Contact:</strong><br>
+                            NOMATIS TOWERS S.A.R.L<br>
+                            Email: invest@nomatis-towers.ma<br>
+                            Tel: +212 5XX XXX XXX
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <button id="backToTop" onclick="scrollToTop()">↑</button>
-
+    <!-- JavaScript -->
     <script>
-        // Le code JavaScript complet sera ici
-        let editMode = false;
-        let originalContent = {};
-
-        document.addEventListener('DOMContentLoaded', function() {
-            loadFromLocalStorage();
-            initializeEventListeners();
-            saveOriginalContent();
-        });
-
-        function switchTab(tabName, button) {
-            document.querySelectorAll('.tab-link').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+        // Tab switching functionality
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-pane');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
             
-            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-            document.getElementById(tabName).classList.add('active');
+            // Remove active class from all tab links
+            const tabLinks = document.querySelectorAll('.tab-link');
+            tabLinks.forEach(link => {
+                link.classList.remove('active');
+            });
             
-            localStorage.setItem('nomatisTowers_activeTab', tabName);
+            // Show selected tab
+            const selectedTab = document.getElementById(tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+            
+            // Add active class to clicked tab link
+            const clickedLink = event.target;
+            if (clickedLink && clickedLink.classList.contains('tab-link')) {
+                clickedLink.classList.add('active');
+            }
+            
+            // Save current tab to localStorage
+            localStorage.setItem('currentTab', tabName);
         }
 
+        // Edit mode functionality
+        let editMode = false;
+        
+        function toggleEditMode() {
+            editMode = !editMode;
+            const editables = document.querySelectorAll('.editable');
+            
+            editables.forEach(element => {
+                element.contentEditable = editMode;
+                if (editMode) {
+                    element.style.border = '1px dashed #ccc';
+                    element.style.padding = '4px';
+                } else {
+                    element.style.border = 'none';
+                    element.style.padding = '2px 4px';
+                }
+            });
+            
+            // Update button text
+            const buttons = document.querySelectorAll('.btn-primary');
+            buttons.forEach(button => {
+                if (button.textContent.includes('Mode')) {
+                    button.textContent = editMode ? 'Mode Lecture' : 'Mode Édition';
+                }
+            });
+            
+            if (!editMode) {
+                saveToLocalStorage();
+            }
+        }
+
+        // Save to localStorage
         function saveToLocalStorage() {
             const content = {};
             const editables = document.querySelectorAll('.editable');
             
             editables.forEach((element, index) => {
-                content[\`editable_\${index}\`] = element.innerHTML;
+                content[`element_${index}`] = element.innerHTML;
             });
             
-            localStorage.setItem('nomatisTowers_content', JSON.stringify(content));
-            localStorage.setItem('nomatisTowers_lastSaved', new Date().toISOString());
+            localStorage.setItem('nomatisTowersContent', JSON.stringify(content));
             showNotification('Contenu sauvegardé avec succès!', 'success');
         }
 
+        // Load from localStorage
         function loadFromLocalStorage() {
-            const savedContent = localStorage.getItem('nomatisTowers_content');
+            const savedContent = localStorage.getItem('nomatisTowersContent');
             if (savedContent) {
                 const content = JSON.parse(savedContent);
                 const editables = document.querySelectorAll('.editable');
                 
                 editables.forEach((element, index) => {
-                    if (content[\`editable_\${index}\`]) {
-                        element.innerHTML = content[\`editable_\${index}\`];
+                    if (content[`element_${index}`]) {
+                        element.innerHTML = content[`element_${index}`];
                     }
                 });
             }
-
-            const savedTab = localStorage.getItem('nomatisTowers_activeTab');
+            
+            // Load saved tab
+            const savedTab = localStorage.getItem('currentTab');
             if (savedTab) {
-                const tabPanes = document.querySelectorAll('.tab-pane');
-                tabPanes.forEach(pane => pane.classList.remove('active'));
-                document.getElementById(savedTab).classList.add('active');
+                // First set all tabs and links to inactive
+                document.querySelectorAll('.tab-pane').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-link').forEach(link => {
+                    link.classList.remove('active');
+                });
                 
-                const tabButtons = document.querySelectorAll('.tab-link');
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                const activeButton = Array.from(tabButtons).find(btn => 
-                    btn.textContent.toLowerCase().includes(savedTab.substring(0, 4))
-                );
-                if (activeButton) activeButton.classList.add('active');
-            }
-        }
-
-        function saveOriginalContent() {
-            const editables = document.querySelectorAll('.editable');
-            editables.forEach((element, index) => {
-                originalContent[\`editable_\${index}\`] = element.innerHTML;
-            });
-        }
-
-        function resetContent() {
-            if (confirm('Êtes-vous sûr de vouloir réinitialiser tout le contenu? Cette action est irréversible.')) {
-                const editables = document.querySelectorAll('.editable');
-                editables.forEach((element, index) => {
-                    if (originalContent[\`editable_\${index}\`]) {
-                        element.innerHTML = originalContent[\`editable_\${index}\`];
+                // Then activate the saved tab
+                const tabElement = document.getElementById(savedTab);
+                if (tabElement) {
+                    tabElement.classList.add('active');
+                }
+                
+                // Find and activate the corresponding tab link
+                document.querySelectorAll('.tab-link').forEach(link => {
+                    if (link.textContent.toLowerCase().includes(savedTab.substring(0, 4))) {
+                        link.classList.add('active');
                     }
                 });
-                localStorage.removeItem('nomatisTowers_content');
-                showNotification('Contenu réinitialisé!', 'warning');
             }
         }
 
-        function toggleEditMode() {
-            editMode = !editMode;
-            const editables = document.querySelectorAll('.editable');
-            const indicator = document.getElementById('editIndicator');
-            
-            editables.forEach(element => {
-                element.contentEditable = editMode;
-            });
-            
-            if (editMode) {
-                indicator.classList.add('active');
-                document.body.classList.add('edit-mode');
-                showNotification('Mode édition activé', 'info');
-            } else {
-                indicator.classList.remove('active');
-                document.body.classList.remove('edit-mode');
-                saveToLocalStorage();
-                showNotification('Mode édition désactivé', 'info');
-            }
-        }
-
-        function exportToHTML() {
+        // Export HTML
+        function exportHTML() {
             const htmlContent = document.documentElement.outerHTML;
             const blob = new Blob([htmlContent], { type: 'text/html' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'nomatis-towers-documentation.html';
+            a.download = 'nomatis_towers_documentation.html';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            showNotification('Document exporté en HTML!', 'success');
+            showNotification('Document HTML exporté!', 'success');
         }
 
-        function exportToPDF() {
-            window.print();
-            showNotification('Utilisez l\'option "Enregistrer en PDF" dans la boîte de dialogue d\'impression', 'info');
+        // Show notification
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 25px;
+                background: ${type === 'success' ? '#48bb78' : type === 'error' ? '#fc8181' : '#4299e1'};
+                color: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
         }
 
-        function initializeEventListeners() {
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFromLocalStorage();
+            
+            // Auto-save on input
             document.addEventListener('input', function(e) {
-                if (e.target.classList.contains('editable') || e.target.closest('.editable')) {
+                if (e.target.classList.contains('editable')) {
                     clearTimeout(window.autoSaveTimeout);
                     window.autoSaveTimeout = setTimeout(saveToLocalStorage, 2000);
                 }
             });
-
-            window.addEventListener('scroll', function() {
-                const backToTop = document.getElementById('backToTop');
-                if (window.pageYOffset > 300) {
-                    backToTop.classList.add('show');
-                } else {
-                    backToTop.classList.remove('show');
-                }
-            });
-
+            
+            // Keyboard shortcuts
             document.addEventListener('keydown', function(e) {
                 if ((e.ctrlKey || e.metaKey) && e.key === 's') {
                     e.preventDefault();
@@ -2067,62 +1761,7 @@
                     toggleEditMode();
                 }
             });
-        }
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        function showNotification(message, type) {
-            const notification = document.createElement('div');
-            notification.style.cssText = \`
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 15px 25px;
-                background: \${type === 'success' ? '#48bb78' : type === 'warning' ? '#f6ad55' : '#4299e1'};
-                color: white;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                z-index: 10000;
-                animation: slideIn 0.3s ease;
-                font-weight: 600;
-            \`;
-            notification.textContent = message;
-            document.body.appendChild(notification);
-
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 3000);
-        }
-
-        const style = document.createElement('style');
-        style.textContent = \`
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-            .edit-mode .editable {
-                cursor: text;
-            }
-            .edit-mode .editable:hover {
-                background: rgba(74, 124, 46, 0.05) !important;
-            }
-        \`;
-        document.head.appendChild(style);
-
-        console.log('NOMATIS TOWERS Documentation App - Loaded Successfully');
-        console.log('Shortcuts: Ctrl+S (Save), Ctrl+E (Edit Mode)');
+        });
     </script>
 </body>
 </html>
