@@ -519,6 +519,7 @@
             <button class="tab-link" onclick="showTab('financier')">Modèle Financier</button>
             <button class="tab-link" onclick="showTab('business')">Business Plan</button>
             <button class="tab-link" onclick="showTab('executive')">Présentation Executive</button>
+            <button class="tab-link" onclick="showTab('settings')">⚙️ Paramètres API</button>
         </div>
     </div>
 
@@ -1142,7 +1143,7 @@
             </div>
         </div>
 
-        <!-- Tab 2: MODÈLE FINANCIER (Données exactes du screenshot) -->
+        <!-- Tab 2: MODÈLE FINANCIER (Mis à jour avec synchronisation Google Sheets) -->
         <div id="financier" class="tab-pane">
             <div class="control-panel">
                 <button class="btn btn-primary" onclick="toggleEditMode()">Mode Édition</button>
@@ -1151,11 +1152,63 @@
                 <button class="btn btn-secondary" onclick="window.print()">Imprimer PDF</button>
             </div>
 
+            <!-- API Sync Controls -->
+            <div class="content-section" style="background: #f7f9fc; border-left: 4px solid var(--primary-navy); margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 15px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div id="api-status-indicator" style="width: 12px; height: 12px; border-radius: 50%; background: #ccc;"></div>
+                        <span id="api-sync-status-text">Non synchronisé avec Google Sheets</span>
+                    </div>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="refreshFinancialData()" id="refresh-financial-btn">
+                            🔄 Synchroniser Google Sheets
+                        </button>
+                    </div>
+                </div>
+                <div id="api-last-update" style="font-size: 13px; color: #666;">
+                    Dernière synchronisation: Jamais
+                </div>
+                <div id="api-alert-container"></div>
+            </div>
+
             <div class="content-section">
                 <div class="section-header">
                     <div class="section-icon">📊</div>
-                    <h2>Modèle Financier Détaillé - Projections 5 Ans</h2>
+                    <h2>Modèle Financier - Synchronisé avec Google Sheets</h2>
                 </div>
+
+                <!-- Section Hypothèses depuis Google Sheets -->
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="color: var(--primary-navy); border-bottom: 2px solid var(--bottle-green); padding-bottom: 10px; margin-bottom: 20px;">
+                        📋 Hypothèses du Modèle (Google Sheets)
+                    </h3>
+                    <div id="hypotheses-google-content" style="overflow-x: auto;">
+                        <p style="text-align: center; padding: 40px; color: #999; background: white; border: 2px dashed #ddd; border-radius: 8px;">
+                            Cliquez sur "Synchroniser Google Sheets" ci-dessus pour charger les hypothèses depuis votre modèle financier.<br>
+                            <small style="display: block; margin-top: 10px;">Configurez d'abord l'URL de l'API dans l'onglet "⚙️ Paramètres API"</small>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section Compte de Résultat depuis Google Sheets -->
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="color: var(--primary-navy); border-bottom: 2px solid var(--bottle-green); padding-bottom: 10px; margin-bottom: 20px;">
+                        📈 Compte de Résultat (Google Sheets)
+                    </h3>
+                    <div id="compte-resultat-google-content" style="overflow-x: auto;">
+                        <p style="text-align: center; padding: 40px; color: #999; background: white; border: 2px dashed #ddd; border-radius: 8px;">
+                            Cliquez sur "Synchroniser Google Sheets" ci-dessus pour charger le compte de résultat.<br>
+                            <small style="display: block; margin-top: 10px;">Les données seront automatiquement formatées et stylisées</small>
+                        </p>
+                    </div>
+                </div>
+
+                <hr style="margin: 3rem 0; border: none; border-top: 2px dashed #ddd;">
+                
+                <h3 style="color: #666; font-style: italic; margin-bottom: 20px;">📚 Données Statiques de Référence (Version précédente)</h3>
+                <p style="color: #666; margin-bottom: 30px; font-style: italic;">
+                    Les tableaux ci-dessous contiennent les données statiques originales pour référence. Les données à jour sont affichées ci-dessus depuis Google Sheets.
+                </p>
 
                 <!-- KPIs Principaux -->
                 <div class="kpi-grid">
@@ -1573,7 +1626,6 @@
             </div>
         </div>
 
-        <!-- Tab 3: BUSINESS PLAN -->
         <div id="business" class="tab-pane">
             <div class="control-panel">
                 <button class="btn btn-primary" onclick="toggleEditMode()">Mode Édition</button>
@@ -2038,10 +2090,114 @@
                     </div>
                 </div>
             </div>
+        <!-- Tab 5: PARAMÈTRES API -->
+        <div id="settings" class="tab-pane">
+            <div class="content-section">
+                <div class="section-header">
+                    <div class="section-icon">⚙️</div>
+                    <h2>Configuration de l'API Google Sheets</h2>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; border: 1px solid #ddd;">
+                    <h3 style="color: var(--primary-navy); margin-bottom: 20px;">Connexion API</h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-navy);">
+                            URL de l'API Google Apps Script:
+                        </label>
+                        <input type="text" id="api-endpoint-input" placeholder="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+                            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px;">
+                        <small style="display: block; margin-top: 8px; color: #666;">
+                            Collez l'URL de déploiement de votre Google Apps Script ici
+                        </small>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox" id="auto-refresh-toggle" style="margin-right: 8px;">
+                            <span style="font-weight: 600; color: var(--primary-navy);">Activer la synchronisation automatique</span>
+                        </label>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-navy);">
+                            Intervalle de synchronisation (minutes):
+                        </label>
+                        <input type="number" id="refresh-interval-input" min="1" max="60" value="5"
+                            style="width: 150px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox" id="offline-mode-toggle" style="margin-right: 8px;">
+                            <span style="font-weight: 600; color: var(--primary-navy);">Mode hors ligne (utiliser le cache uniquement)</span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="saveAPISettings()">💾 Enregistrer les paramètres</button>
+                        <button class="btn btn-secondary" onclick="clearFinancialCache()">🗑️ Effacer le cache</button>
+                        <button class="btn btn-secondary" onclick="testAPIConnection()">🔌 Tester la connexion</button>
+                    </div>
+                </div>
+
+                <div style="background: #fff3cd; padding: 20px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 25px;">
+                    <h3 style="color: #856404; margin-bottom: 15px;">📖 Instructions de Configuration</h3>
+                    
+                    <h4 style="color: var(--primary-navy); margin-top: 20px; margin-bottom: 10px;">Étape 1: Configurer Google Apps Script</h4>
+                    <ol style="line-height: 1.8; margin-left: 20px; color: #333;">
+                        <li>Ouvrez votre <a href="https://docs.google.com/spreadsheets/d/14TfMituXdaozTD-q9cCPMKm0YsbCM1Zbv6rnGnGy0mY/edit" target="_blank" style="color: var(--accent-blue);">Google Sheet NOMATIS TOWERS</a></li>
+                        <li>Allez dans <strong>Extensions → Apps Script</strong></li>
+                        <li>Supprimez tout code existant</li>
+                        <li>Copiez et collez le code du fichier <code>google-apps-script.js</code></li>
+                        <li>Cliquez sur <strong>Déployer → Nouveau déploiement</strong></li>
+                        <li>Sélectionnez le type: <strong>Application Web</strong></li>
+                        <li>Configuration:
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li>Exécuter en tant que: <strong>Moi</strong></li>
+                                <li>Qui a accès: <strong>Tout le monde</strong> (pour accès public)</li>
+                            </ul>
+                        </li>
+                        <li>Cliquez sur <strong>Déployer</strong></li>
+                        <li><strong>IMPORTANT:</strong> Copiez l'URL de l'application web</li>
+                    </ol>
+
+                    <h4 style="color: var(--primary-navy); margin-top: 20px; margin-bottom: 10px;">Étape 2: Configurer cette Application</h4>
+                    <ol style="line-height: 1.8; margin-left: 20px; color: #333;">
+                        <li>Collez l'URL de l'API dans le champ ci-dessus</li>
+                        <li>Configurez les options selon vos préférences</li>
+                        <li>Cliquez sur <strong>"Enregistrer les paramètres"</strong></li>
+                        <li>Retournez à l'onglet <strong>"Modèle Financier"</strong></li>
+                        <li>Cliquez sur <strong>"Synchroniser Google Sheets"</strong></li>
+                    </ol>
+                </div>
+
+                <div style="background: #d1ecf1; padding: 20px; border-radius: 8px; border-left: 4px solid #17a2b8;">
+                    <h3 style="color: #0c5460; margin-bottom: 15px;">💡 Astuces & Bonnes Pratiques</h3>
+                    <ul style="line-height: 1.8; margin-left: 20px; color: #333;">
+                        <li><strong>Cache automatique:</strong> Les données sont sauvegardées localement pour un accès hors ligne</li>
+                        <li><strong>Synchronisation régulière:</strong> Activez la sync automatique pour avoir des données toujours à jour</li>
+                        <li><strong>Test avant réunion:</strong> Testez la connexion avant une présentation importante</li>
+                        <li><strong>Mode hors ligne:</strong> Utile pour les présentations sans connexion Internet</li>
+                        <li><strong>Sécurité:</strong> Ne partagez pas publiquement l'URL de votre API</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 25px; border: 1px solid #ddd;">
+                    <h3 style="color: var(--primary-navy); margin-bottom: 15px;">🔧 État Actuel du Système</h3>
+                    <div id="system-status" style="font-family: monospace; background: #f7f9fc; padding: 15px; border-radius: 5px; font-size: 13px;">
+                        <div><strong>URL API:</strong> <span id="status-api-url">Non configurée</span></div>
+                        <div><strong>Auto-sync:</strong> <span id="status-auto-sync">Désactivé</span></div>
+                        <div><strong>Intervalle:</strong> <span id="status-interval">-</span></div>
+                        <div><strong>Mode hors ligne:</strong> <span id="status-offline">Non</span></div>
+                        <div><strong>Cache disponible:</strong> <span id="status-cache">Non</span></div>
+                        <div><strong>Dernière sync:</strong> <span id="status-last-sync">Jamais</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
     <script>
         // Tab switching functionality
         function showTab(tabName) {
@@ -2137,65 +2293,385 @@
                 // First set all tabs and links to inactive
                 document.querySelectorAll('.tab-pane').forEach(tab => {
                     tab.classList.remove('active');
+
                 });
+                
                 document.querySelectorAll('.tab-link').forEach(link => {
                     link.classList.remove('active');
                 });
                 
-                // Then activate the saved tab
-                const tabElement = document.getElementById(savedTab);
-                if (tabElement) {
-                    tabElement.classList.add('active');
+                // Show the saved tab
+                const savedTabElement = document.getElementById(savedTab);
+                if (savedTabElement) {
+                    savedTabElement.classList.add('active');
                 }
                 
-                // Find and activate the corresponding tab link
-                document.querySelectorAll('.tab-link').forEach(link => {
-                    if (link.textContent.toLowerCase().includes(savedTab.substring(0, 4))) {
-                        link.classList.add('active');
+                // Activate the corresponding tab link
+                const tabButtons = document.querySelectorAll('button.tab-link');
+                tabButtons.forEach(btn => {
+                    const onclickAttr = btn.getAttribute('onclick');
+                    if (onclickAttr && onclickAttr.includes(savedTab)) {
+                        btn.classList.add('active');
                     }
                 });
             }
         }
 
-        // Export HTML
-        function exportHTML() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'nomatis_towers_complete.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showNotification('Document HTML exporté!', 'success');
+        // NEW GOOGLE SHEETS SYNCHRONIZATION FUNCTIONS
+        // ============================================
+
+        const FINANCIAL_CACHE_KEY = 'nomatis-financial-data';
+        const API_SETTINGS_KEY = 'nomatis-api-settings';
+        let autoRefreshIntervalId = null;
+
+        // API Settings Management
+        function loadAPISettings() {
+            const settings = localStorage.getItem(API_SETTINGS_KEY);
+            if (settings) {
+                const parsed = JSON.parse(settings);
+                document.getElementById('api-endpoint-input').value = parsed.apiEndpoint || '';
+                document.getElementById('auto-refresh-toggle').checked = parsed.autoRefresh || false;
+                document.getElementById('refresh-interval-input').value = parsed.refreshInterval || 5;
+                document.getElementById('offline-mode-toggle').checked = parsed.offlineMode || false;
+                
+                updateSystemStatus();
+                
+                if (parsed.autoRefresh) {
+                    startAutoRefresh();
+                }
+            }
         }
 
-        // Show notification
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 15px 25px;
-                background: ${type === 'success' ? '#48bb78' : type === 'error' ? '#fc8181' : '#4299e1'};
-                color: white;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                z-index: 10000;
-                animation: slideIn 0.3s ease;
+        function saveAPISettings() {
+            const settings = {
+                apiEndpoint: document.getElementById('api-endpoint-input').value,
+                autoRefresh: document.getElementById('auto-refresh-toggle').checked,
+                refreshInterval: parseInt(document.getElementById('refresh-interval-input').value),
+                offlineMode: document.getElementById('offline-mode-toggle').checked
+            };
+            
+            localStorage.setItem(API_SETTINGS_KEY, JSON.stringify(settings));
+            showNotification('Paramètres API enregistrés avec succès', 'success');
+            updateSystemStatus();
+            
+            if (settings.autoRefresh) {
+                startAutoRefresh();
+            } else {
+                stopAutoRefresh();
+            }
+        }
+
+        function getAPISettings() {
+            const settings = localStorage.getItem(API_SETTINGS_KEY);
+            return settings ? JSON.parse(settings) : {};
+        }
+
+        function updateSystemStatus() {
+            const settings = getAPISettings();
+            const cached = localStorage.getItem(FINANCIAL_CACHE_KEY);
+            let lastSync = 'Jamais';
+            
+            if (cached) {
+                const cacheData = JSON.parse(cached);
+                lastSync = new Date(cacheData.timestamp).toLocaleString('fr-FR');
+            }
+            
+            document.getElementById('status-api-url').textContent = settings.apiEndpoint ? '✓ Configurée' : '✗ Non configurée';
+            document.getElementById('status-auto-sync').textContent = settings.autoRefresh ? '✓ Activé' : '✗ Désactivé';
+            document.getElementById('status-interval').textContent = settings.autoRefresh ? `${settings.refreshInterval} minutes` : '-';
+            document.getElementById('status-offline').textContent = settings.offlineMode ? '✓ Oui' : '✗ Non';
+            document.getElementById('status-cache').textContent = cached ? '✓ Oui' : '✗ Non';
+            document.getElementById('status-last-sync').textContent = lastSync;
+        }
+
+        // Data Fetching and Synchronization
+        async function refreshFinancialData() {
+            const settings = getAPISettings();
+            const apiEndpoint = settings.apiEndpoint;
+            
+            if (!apiEndpoint || apiEndpoint.trim() === '') {
+                showAPIAlert('Veuillez configurer l\'URL de l\'API dans l\'onglet Paramètres', 'error');
+                return;
+            }
+
+            if (settings.offlineMode) {
+                showAPIAlert('Mode hors ligne activé - utilisation des données en cache', 'info');
+                loadCachedFinancialData();
+                return;
+            }
+
+            updateAPISyncStatus('syncing', 'Synchronisation en cours...');
+            const refreshBtn = document.getElementById('refresh-financial-btn');
+            refreshBtn.disabled = true;
+            refreshBtn.innerHTML = '<span style="display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.3); border-radius: 50%; border-top-color: white; animation: spin 1s linear infinite;"></span> Synchronisation...';
+
+            try {
+                const response = await fetch(apiEndpoint);
+                
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (!data.success) {
+                    throw new Error(data.error || 'Erreur inconnue');
+                }
+
+                const cacheData = {
+                    data: data,
+                    timestamp: new Date().toISOString()
+                };
+                localStorage.setItem(FINANCIAL_CACHE_KEY, JSON.stringify(cacheData));
+
+                renderFinancialData(data.data);
+                updateAPISyncStatus('synced', 'Synchronisé avec Google Sheets');
+                updateAPILastUpdate(new Date());
+                showAPIAlert('Données financières mises à jour avec succès', 'success');
+                updateSystemStatus();
+
+            } catch (error) {
+                console.error('Error fetching financial data:', error);
+                updateAPISyncStatus('error', 'Erreur de synchronisation');
+                showAPIAlert(`Erreur: ${error.message}. Tentative de chargement du cache...`, 'error');
+                loadCachedFinancialData();
+            } finally {
+                refreshBtn.disabled = false;
+                refreshBtn.innerHTML = '🔄 Synchroniser Google Sheets';
+            }
+        }
+
+        function loadCachedFinancialData() {
+            const cached = localStorage.getItem(FINANCIAL_CACHE_KEY);
+            if (cached) {
+                const { data, timestamp } = JSON.parse(cached);
+                renderFinancialData(data.data);
+                updateAPILastUpdate(new Date(timestamp));
+                showAPIAlert('Données chargées depuis le cache local', 'info');
+            } else {
+                showAPIAlert('Aucune donnée en cache. Veuillez vous connecter et synchroniser.', 'error');
+            }
+        }
+
+        function renderFinancialData(data) {
+            if (data.hypotheses) {
+                renderFinancialTable('hypotheses-google-content', data.hypotheses);
+            }
+            
+            if (data.compteResultat) {
+                renderFinancialTable('compte-resultat-google-content', data.compteResultat);
+            }
+        }
+
+        function renderFinancialTable(containerId, sheetData) {
+            const container = document.getElementById(containerId);
+            
+            if (!sheetData || !sheetData.rows || sheetData.rows.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #999;">Aucune donnée disponible</p>';
+                return;
+            }
+
+            let html = '<table class="financial-table"><tbody>';
+            
+            sheetData.rows.forEach((row, rowIndex) => {
+                const isHeaderRow = rowIndex === 0 || (row[0] && row[0].fontWeight === 'bold' && row[0].background !== '#ffffff');
+                
+                html += '<tr>';
+                
+                row.forEach((cell, colIndex) => {
+                    const value = formatFinancialCellValue(cell.value, cell.numberFormat);
+                    const styles = getFinancialCellStyles(cell);
+                    const cellClass = getFinancialCellClass(cell, rowIndex, colIndex);
+                    
+                    if (isHeaderRow || rowIndex === 0) {
+                        html += `<th style="${styles}" class="${cellClass}">${value}</th>`;
+                    } else {
+                        html += `<td style="${styles}" class="${cellClass}">${value}</td>`;
+                    }
+                });
+                
+                html += '</tr>';
+            });
+            
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+
+        function formatFinancialCellValue(value, numberFormat) {
+            if (value === null || value === undefined || value === '') {
+                return '';
+            }
+
+            if (value instanceof Date) {
+                return value.toLocaleDateString('fr-FR');
+            }
+
+            if (typeof value === 'number') {
+                if (numberFormat && numberFormat.includes('%')) {
+                    return (value * 100).toFixed(2) + '%';
+                }
+                if (numberFormat && (numberFormat.includes('Dhs') || numberFormat.includes('MAD'))) {
+                    return value.toLocaleString('fr-FR', {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    }) + ' Dhs';
+                }
+                return value.toLocaleString('fr-FR', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 2
+                });
+            }
+
+            return value.toString();
+        }
+
+        function getFinancialCellStyles(cell) {
+            let styles = [];
+            
+            if (cell.background && cell.background !== '#ffffff') {
+                styles.push(`background-color: ${cell.background}`);
+            }
+            
+            if (cell.fontWeight === 'bold') {
+                styles.push('font-weight: bold');
+            }
+            
+            if (cell.fontColor && cell.fontColor !== '#000000') {
+                styles.push(`color: ${cell.fontColor}`);
+            }
+            
+            return styles.join('; ');
+        }
+
+        function getFinancialCellClass(cell, rowIndex, colIndex) {
+            const classes = [];
+            
+            if (typeof cell.value === 'number') {
+                classes.push('number');
+            } else {
+                classes.push('text-left');
+            }
+            
+            const valueStr = String(cell.value).toLowerCase();
+            if (valueStr.includes('total') || valueStr.includes('somme')) {
+                classes.push('total-row');
+            } else if (valueStr.includes('subtotal') || valueStr.includes('sous-total')) {
+                classes.push('highlight-row');
+            }
+            
+            return classes.join(' ');
+        }
+
+        // Auto-refresh functionality
+        function startAutoRefresh() {
+            stopAutoRefresh();
+            
+            const settings = getAPISettings();
+            if (settings.autoRefresh && settings.refreshInterval) {
+                const intervalMs = settings.refreshInterval * 60 * 1000;
+                autoRefreshIntervalId = setInterval(refreshFinancialData, intervalMs);
+                console.log(`Auto-refresh started: every ${settings.refreshInterval} minutes`);
+            }
+        }
+
+        function stopAutoRefresh() {
+            if (autoRefreshIntervalId) {
+                clearInterval(autoRefreshIntervalId);
+                autoRefreshIntervalId = null;
+                console.log('Auto-refresh stopped');
+            }
+        }
+
+        // UI Helper Functions
+        function updateAPISyncStatus(status, text) {
+            const indicator = document.getElementById('api-status-indicator');
+            const statusText = document.getElementById('api-sync-status-text');
+            
+            const colors = {
+                synced: '#48bb78',
+                syncing: '#ffc107',
+                error: '#fc8181',
+                default: '#ccc'
+            };
+            
+            indicator.style.background = colors[status] || colors.default;
+            indicator.style.animation = status === 'syncing' ? 'pulse 1.5s ease-in-out infinite' : 'none';
+            statusText.textContent = text;
+        }
+
+        function updateAPILastUpdate(date) {
+            const lastUpdateEl = document.getElementById('api-last-update');
+            lastUpdateEl.textContent = `Dernière synchronisation: ${date.toLocaleString('fr-FR')}`;
+        }
+
+        function showAPIAlert(message, type) {
+            const container = document.getElementById('api-alert-container');
+            if (!container) return;
+            
+            const colors = {
+                success: '#d4edda',
+                error: '#f8d7da',
+                info: '#d1ecf1',
+                warning: '#fff3cd'
+            };
+            
+            const alertDiv = document.createElement('div');
+            alertDiv.style.cssText = `
+                margin-top: 15px;
+                padding: 12px 15px;
+                background: ${colors[type] || colors.info};
+                border-left: 4px solid ${type === 'success' ? '#48bb78' : type === 'error' ? '#fc8181' : '#4299e1'};
+                border-radius: 4px;
+                color: #333;
             `;
-            notification.textContent = message;
-            document.body.appendChild(notification);
+            alertDiv.textContent = message;
+            
+            container.appendChild(alertDiv);
             
             setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 3000);
+                alertDiv.remove();
+            }, 5000);
+        }
+
+        function clearFinancialCache() {
+            if (confirm('Êtes-vous sûr de vouloir effacer toutes les données financières en cache ?')) {
+                localStorage.removeItem(FINANCIAL_CACHE_KEY);
+                showNotification('Cache financier effacé avec succès', 'success');
+                
+                document.getElementById('hypotheses-google-content').innerHTML = 
+                    '<p style="text-align: center; padding: 40px; color: #999; background: white; border: 2px dashed #ddd; border-radius: 8px;">Cache effacé - Synchronisez à nouveau</p>';
+                document.getElementById('compte-resultat-google-content').innerHTML = 
+                    '<p style="text-align: center; padding: 40px; color: #999; background: white; border: 2px dashed #ddd; border-radius: 8px;">Cache effacé - Synchronisez à nouveau</p>';
+                
+                updateAPISyncStatus('default', 'Non synchronisé');
+                document.getElementById('api-last-update').textContent = 'Dernière synchronisation: Jamais';
+                updateSystemStatus();
+            }
+        }
+
+        async function testAPIConnection() {
+            const settings = getAPISettings();
+            const apiEndpoint = settings.apiEndpoint;
+            
+            if (!apiEndpoint) {
+                showNotification('Veuillez configurer l\'URL de l\'API d\'abord', 'error');
+                return;
+            }
+
+            showNotification('Test de connexion en cours...', 'info');
+
+            try {
+                const response = await fetch(apiEndpoint);
+                const data = await response.json();
+
+                if (data.success) {
+                    showNotification('✓ Connexion réussie! L\'API fonctionne correctement.', 'success');
+                } else {
+                    showNotification('✗ Connexion établie mais erreur dans les données: ' + (data.error || 'Erreur inconnue'), 'error');
+                }
+            } catch (error) {
+                showNotification('✗ Échec de connexion: ' + error.message, 'error');
+            }
         }
 
         // Add CSS animations
@@ -2209,12 +2685,31 @@
                 from { transform: translateX(0); opacity: 1; }
                 to { transform: translateX(100%); opacity: 0; }
             }
+            @keyframes pulse {
+                0%, 100% { opacity: 1; transform: scale(1); }
+                50% { opacity: 0.6; transform: scale(1.1); }
+            }
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
         `;
         document.head.appendChild(style);
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('NOMATIS TOWERS - Application initialized');
+            
+            // Load existing content
             loadFromLocalStorage();
+            
+            // Load API settings
+            loadAPISettings();
+            
+            // Load cached financial data if available
+            const cached = localStorage.getItem(FINANCIAL_CACHE_KEY);
+            if (cached) {
+                loadCachedFinancialData();
+            }
             
             // Auto-save on input
             document.addEventListener('input', function(e) {
@@ -2235,6 +2730,11 @@
                     toggleEditMode();
                 }
             });
+        });
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            stopAutoRefresh();
         });
     </script>
 </body>
