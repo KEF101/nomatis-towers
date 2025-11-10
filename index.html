@@ -2362,9 +2362,18 @@
         }
 
         function getAPISettings() {
-            const settings = localStorage.getItem(API_SETTINGS_KEY);
-            return settings ? JSON.parse(settings) : {};
-        }
+    const settings = localStorage.getItem(API_SETTINGS_KEY);
+    if (settings) {
+        return JSON.parse(settings);
+    }
+    // Valeurs par défaut si aucun paramètre n'est sauvegardé
+    return {
+        apiEndpoint: 'https://script.google.com/macros/s/AKfycbwlJ2cpXV1gH6f_XfV_sTXJ_LaccqOydNBV2S_1AIpxra-brK66_PUKF2pUCh0mYAc/exec',
+        autoRefresh: false,
+        refreshInterval: 5,
+        offlineMode: false
+    };
+}
 
         function updateSystemStatus() {
             const settings = getAPISettings();
