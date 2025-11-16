@@ -528,11 +528,35 @@
         
         <!-- Tab 1: PROTOCOLE D'ACCORD (Texte exact du PDF) -->
         <div id="protocole" class="tab-pane active">
-            <div class="control-panel">
-                <button class="btn btn-primary" onclick="toggleEditMode()">Mode Édition</button>
-                <button class="btn btn-secondary" onclick="saveToLocalStorage()">Sauvegarder</button>
-                <button class="btn btn-secondary" onclick="exportHTML()">Exporter HTML</button>
-                <button class="btn btn-secondary" onclick="window.print()">Imprimer PDF</button>
+            <!-- BARRE D'OUTILS ÉDITION -->
+            <div class="edit-toolbar" style="position: sticky; top: 140px; z-index: 998; background: white; border-bottom: 2px solid var(--primary-navy); padding: 1rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="saveProtocole()" style="background: var(--success-green); border: none; padding: 0.75rem 1.5rem; font-weight: 600;">
+                            💾 Sauvegarder
+                        </button>
+                        <button class="btn btn-secondary" onclick="window.print()" style="padding: 0.75rem 1.5rem;">
+                            🖨️ Imprimer/Download PDF
+                        </button>
+                        <button class="btn btn-secondary" onclick="restoreOriginalProtocole()" style="padding: 0.75rem 1.5rem; background: var(--warning-yellow); border: none; color: #000;">
+                            🔄 Restaurer version originale
+                        </button>
+                        <button class="btn btn-secondary" onclick="exportProtocoleHTML()" style="padding: 0.75rem 1.5rem;">
+                            📥 Télécharger HTML
+                        </button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem;">
+                        <div id="save-status" style="font-size: 0.9rem; color: var(--dark-gray); font-weight: 500;">
+                            <span id="save-indicator">📄 Version originale</span>
+                        </div>
+                        <div id="last-save-time" style="font-size: 0.8rem; color: #666;">
+                            <!-- Affichera la date/heure de dernière sauvegarde -->
+                        </div>
+                        <div id="unsaved-indicator" style="font-size: 0.85rem; color: var(--warning-yellow); font-weight: 600; display: none;">
+                            ⚠️ Non sauvegardé
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="content-section">
@@ -574,7 +598,7 @@
                     <div class="article-header">1.1. IDENTIFICATION DES PARTIES</div>
                     
                     <h4>1.1.1. NOMATIS S.A.R.L</h4>
-                    <ul class="editable" contenteditable="false">
+                    <ul class="editable" contenteditable="true">
                         <li><strong>Raison sociale :</strong> NOMATIS S.A.R.L</li>
                         <li><strong>Capital social :</strong> 1 000 000 MAD</li>
                         <li><strong>Siège social :</strong> Hassan, Rabat, Maroc</li>
@@ -589,7 +613,7 @@
                     </ul>
                     
                     <h4>1.1.2. KEF INVESTISSEMENTS S.A.R.L</h4>
-                    <ul class="editable" contenteditable="false">
+                    <ul class="editable" contenteditable="true">
                         <li><strong>Raison sociale :</strong> KEF INVESTISSEMENTS (Maroc)</li>
                         <li><strong>Capital social :</strong> 50 mln Dhs</li>
                         <li><strong>Siège social :</strong> Casablanca Marina Business Center, Casablanca, Maroc</li>
@@ -612,19 +636,19 @@
                     <div class="article-header">1.2. CONTEXTE DE MARCHÉ ET OPPORTUNITÉ STRATÉGIQUE</div>
                     
                     <h4>1.2.1. Programme d'investissement dans le marché marocain des télécom de 80 milliards de Dhs en 2025-2030</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         Le secteur des télécommunications au Maroc connaît une transformation majeure avec le déploiement imminent de la technologie 5G sur la période 2025-2030.
                     </p>
-                    <p class="editable mt-2" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true">
                         Les licences 5G ont été attribuées en 2024 aux trois opérateurs historiques : Orange Maroc, Maroc Telecom et inwi.
                     </p>
-                    <p class="editable mt-2" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true">
                         Cette mutation technologique génère des besoins massifs en infrastructure passive de télécommunications. Selon l'article publié par Le360.ma intitulé « 5G au Maroc : les équipementiers se frottent les mains », les investissements dans le secteur sont estimés à 80 milliards de dirhams sur la période 2025-2030.
                     </p>
                     
                     <div class="info-box">
                         <strong>Caractéristiques du marché :</strong>
-                        <ul class="editable" contenteditable="false">
+                        <ul class="editable" contenteditable="true">
                             <li><strong>Taille du marché :</strong> Environ 28 000 sites de télécommunications existants au Maroc</li>
                             <li><strong>Croissance attendue :</strong> Multiplication par 2 à 3 du nombre de sites nécessaires pour une couverture 5G optimale</li>
                             <li><strong>Investissements opérateurs :</strong> 80 milliards MAD annoncés sur 2025-2030</li>
@@ -634,13 +658,13 @@
                     </div>
                     
                     <h4>1.2.2. Tendance globale vers l'externalisation de l'infrastructure passive</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         À l'échelle mondiale, les opérateurs de télécommunications adoptent massivement une stratégie « Asset-Light », consistant à externaliser la propriété et la gestion de leur infrastructure passive (tours, pylônes, équipements d'énergie) vers des sociétés spécialisées appelées « TowerCos » (Tower Companies).
                     </p>
                     
                     <div class="info-box">
                         <strong>Avantages de ce modèle pour les opérateurs :</strong>
-                        <ul class="editable" contenteditable="false">
+                        <ul class="editable" contenteditable="true">
                             <li>Réduction des coûts opérationnels (OPEX) de 20 à 30%</li>
                             <li>Recentrage sur le cœur de métier, c'est-à-dire la fourniture de services de télécommunications et la gestion du réseau actif (équipements 5G, fibre optique)</li>
                             <li>Restructuration du Bilan (Ammo & Immo) & Amélioration des indicateurs financiers (ROE)</li>
@@ -648,7 +672,7 @@
                         </ul>
                     </div>
                     
-                    <p class="editable mt-2" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true">
                         Cette tendance est particulièrement marquée en Afrique, où des TowerCos comme IHS Towers (40 000+ tours), Helios Towers, et American Tower ont connu une croissance exponentielle et des valorisations de plusieurs milliards de dollars.
                     </p>
                     
@@ -669,13 +693,13 @@
                     <div class="article-header">1.3. VISION STRATÉGIQUE COMMUNE ET COMPLÉMENTARITÉS</div>
                     
                     <h4>1.3.1. Vision partagée</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         Les Parties partagent la vision stratégique de créer le leader marocain de l'infrastructure passive de télécommunications, en capitalisant sur la vague de déploiement 5G et la tendance d'externalisation des opérateurs.
                     </p>
                     
                     <div class="info-box">
                         <strong>Objectifs communs :</strong>
-                        <ul class="editable" contenteditable="false">
+                        <ul class="editable" contenteditable="true">
                             <li>Devenir la TowerCo passive de référence au Maroc avec une part de marché de 25% d'ici 2030 (soit 10.000/ 40.000 BTS installées)</li>
                             <li>Déployer et/ou gérer 10 000 sites passifs, de télécommunications, sur 5 ans</li>
                             <li>Établir des relations contractuelles de long terme et <strong>en trésorerie positive</strong> avec les trois opérateurs marocains, mais aussi des opérateurs privés (ONCF, DGSN, autres institutions...), ansi que des opérateurs pure-Data/ IoT</li>
@@ -685,7 +709,7 @@
                     </div>
                     
                     <h4>1.3.2. Complémentarité des apports</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         La force de ce partenariat repose sur la complémentarité parfaite des apports de chaque Partie :
                     </p>
                     
@@ -699,7 +723,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <ul class="editable" contenteditable="false">
+                                    <ul class="editable" contenteditable="true">
                                         <li><strong>Expertise technique :</strong> 19 ans d'expérience déploiement & maintenance infra télécom</li>
                                         <li><strong>Relation Orange privilégiée :</strong> 4 000+ tours IMES & gérées (> 57% parc)</li>
                                         <li><strong>Connaissance besoins opérateurs :</strong> Standards, processus, SLA</li>
@@ -709,7 +733,7 @@
                                     </ul>
                                 </td>
                                 <td>
-                                    <ul class="editable" contenteditable="false">
+                                    <ul class="editable" contenteditable="true">
                                         <li><strong>Origination opportunité :</strong> Identification potentiel TowerCo Maroc</li>
                                         <li><strong>Vision stratégique :</strong> Tendances marché, valorisation, sortie</li>
                                         <li><strong>Ingénieurie d'intégration Industrielle locale</strong> (plug n play)</li>
@@ -731,8 +755,8 @@
                 <!-- ARTICLE 2 : DÉFINITIONS ET INTERPRÉTATION -->
                 <h3>ARTICLE 2 : DÉFINITIONS ET INTERPRÉTATION</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">Dans le présent Protocole, sauf si le contexte l'exige autrement, les termes suivants auront les significations ci-après :</p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">Dans le présent Protocole, sauf si le contexte l'exige autrement, les termes suivants auront les significations ci-après :</p>
+                    <ul class="editable" contenteditable="true">
                         <li>« <strong>SPV</strong> » : désigne la Special Purpose Vehicle, société commune devant être créée sous la dénomination « NOMATIS TOWERS »</li>
                         <li>« <strong>TowerCo</strong> » : désigne une société spécialisée dans la détention, le déploiement et la gestion d'infrastructures passives de télécommunications</li>
                         <li>« <strong>Infrastructure Passive</strong> » : désigne les tours, pylônes, mâts, shelters, équipements d'énergie et tout équipement non-actif nécessaire au fonctionnement d'un site télécom</li>
@@ -759,7 +783,7 @@
                 <h3>ARTICLE 4 : TERMES DE LA SPV "Nomatis Towers"</h3>
                 <div class="article">
                     <h4>4.1. Forme juridique et dénomination</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         La SPV sera constituée sous forme de Société Anonyme (S.A.) de droit marocain, sous la dénomination sociale « NOMATIS TOWERS (Morocco) SA».
                     </p>
                     
@@ -788,8 +812,8 @@
                     </table>
                     
                     <h4>4.3. Objet social</h4>
-                    <p class="editable" contenteditable="false">L'objet social de la SPV comprendra notamment :</p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">L'objet social de la SPV comprendra notamment :</p>
+                    <ul class="editable" contenteditable="true">
                         <li>L'identification, la qualification, l'acquisition/ location et le déploiement de sites pour porter les infrastructures de télécommunications</li>
                         <li>Le déploiement de tours, pylônes et autres infrastructures passives,</li>
                         <li>La conception et le déploiement d'une solution énergétique alimentant les sites (solaire, hybride, batteries)</li>
@@ -805,8 +829,8 @@
                 <!-- ARTICLE 5 : GOUVERNANCE -->
                 <h3>ARTICLE 5 : GOUVERNANCE</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false"><strong>Société Anonyme (privilégiée) :</strong></p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true"><strong>Société Anonyme (privilégiée) :</strong></p>
+                    <ul class="editable" contenteditable="true">
                         <li><strong>Président :</strong> M. Mustapha OURKIYA</li>
                         <li><strong>Direction Générale :</strong> M. Khalid BELKHTOUT</li>
                         <li><strong>Conseil d'Administration :</strong> 4 membres (2 désignés par NOMATIS, 2 par KEF)</li>
@@ -816,12 +840,12 @@
                 <!-- ARTICLE 6 : CONVENTION DE PARTENARIAT AVEC NOMATIS -->
                 <h3>ARTICLE 6 : CONVENTION DE PARTENARIAT AVEC NOMATIS</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         NOMATIS, en sa qualité d'actionnaire et de partenaire technique privilégié, fournira à la SPV les prestations suivantes sous forme de contrat de sous-traitance :
                     </p>
                     
                     <h4>Services fournis par NOMATIS :</h4>
-                    <ul class="editable" contenteditable="false">
+                    <ul class="editable" contenteditable="true">
                         <li><strong>ETUDES</strong>
                             <ul>
                                 <li><strong>RF Planning :</strong> Études de couverture, Qualification et dimensionnement des sites</li>
@@ -842,7 +866,7 @@
                         <li><strong>SUPPORT - commercial :</strong> Facilitation relation Orange Maroc, partage de data stratégique</li>
                     </ul>
                     
-                    <p class="editable mt-2" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true">
                         <strong>Termes & Conditions commerciales :</strong> A définir conformément aux meilleures pratiques internationales
                     </p>
                 </div>
@@ -854,30 +878,30 @@
                     
                     <div class="warning-box">
                         <strong>Principe innovant :</strong>
-                        <ul class="editable" contenteditable="false">
+                        <ul class="editable" contenteditable="true">
                             <li>La SPV encaisse un Dépôt de Garantie Client (ou Caution à 1ère demande), par Site, AVANT de décaisser :</li>
                             <li>Le Dépôt de Garantie Client devra couvrir env 55% de l'investissement à réaliser pour activer le Site</li>
                             <li>Le reliquat est financé par crédit-fournisseur</li>
                         </ul>
                     </div>
                     
-                    <p class="editable mt-2" contenteditable="false"><strong>MODALITES DE VERSEMENT DU DEPÔT DE GARANTIE:</strong></p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true"><strong>MODALITES DE VERSEMENT DU DEPÔT DE GARANTIE:</strong></p>
+                    <ul class="editable" contenteditable="true">
                         <li>30% à la commande (signature Contrat client)</li>
                         <li>40% à mi-parcours (avancement 50%)</li>
                         <li>30% à la réception (livraison du site)</li>
                     </ul>
                     
-                    <p class="editable mt-2" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true">
                         → Le Crédit-Fournisseur (équipements solaires & mat) couvre le le reliquat - 60/ 70% sur 18 lois env → Trésorerie structurellement positive, réduction du BFR, croissance autofinancée
                     </p>
                     
                     <h4>7.2. Projections financières clés</h4>
-                    <p class="editable" contenteditable="false">(Détails complets dans l'onglet Modèle Financier)</p>
+                    <p class="editable" contenteditable="true">(Détails complets dans l'onglet Modèle Financier)</p>
                     
                     <div class="info-box">
                         <strong>Indicateurs de rentabilité exceptionnels :</strong>
-                        <ul class="editable" contenteditable="false">
+                        <ul class="editable" contenteditable="true">
                             <li><strong>ROI 3 ans :</strong> [À définir]</li>
                             <li><strong>Payback :</strong> [À définir]</li>
                             <li><strong>TRI 5 ans :</strong> [À définir]</li>
@@ -928,17 +952,17 @@
                     </table>
                     
                     <h4>8.2. Apports complémentaires</h4>
-                    <p class="editable" contenteditable="false">Au-delà des apports en numéraire, chaque Partie s'engage à :</p>
+                    <p class="editable" contenteditable="true">Au-delà des apports en numéraire, chaque Partie s'engage à :</p>
                     
-                    <p class="editable mt-2" contenteditable="false"><strong>NOMATIS :</strong></p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true"><strong>NOMATIS :</strong></p>
+                    <ul class="editable" contenteditable="true">
                         <li>Mobiliser la relation Orange pour obtenir un MSA initial favorable</li>
                         <li>Fournir les services techniques à tarifs préférentiels</li>
                         <li>Mettre à disposition son expertise, sa Data réseau et ses certifications</li>
                     </ul>
                     
-                    <p class="editable mt-2" contenteditable="false"><strong>KEF INVESTISSEMENTS :</strong></p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true"><strong>KEF INVESTISSEMENTS :</strong></p>
+                    <ul class="editable" contenteditable="true">
                         <li>Structurer juridiquement et financièrement les opérations</li>
                         <li>Développer la vision, la stratégie, le Business plan et les outils de pilotage</li>
                         <li>Mobiliser son réseau pour futures levées de fonds si nécessaire</li>
@@ -948,14 +972,14 @@
                 <!-- ARTICLE 9 : EXCLUSIVITÉ ET NON-CONCURRENCE -->
                 <h3>ARTICLE 9 : EXCLUSIVITÉ ET NON-CONCURRENCE</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">Pendant toute la durée du présent Protocole et de la SPV :</p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">Pendant toute la durée du présent Protocole et de la SPV :</p>
+                    <ul class="editable" contenteditable="true">
                         <li>Les Parties s'engagent à une <strong>exclusivité totale</strong> concernant toute activité TowerCo au Maroc</li>
                         <li>NOMATIS ne pourra développer d'activité TowerCo indépendante ou avec un tiers, autre que KEF Invest/ Karim EL-FEKKAK</li>
                         <li>KEF ne pourra investir dans un projet concurrent dans le secteur des infrastructures télécom passives</li>
                         <li>Cette exclusivité s'étend aux sociétés affiliées et aux dirigeants des Parties</li>
                     </ul>
-                    <p class="editable mt-2" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true">
                         <strong>Clause de non-concurrence post-SPV :</strong> 24 mois après sortie du capital
                     </p>
                 </div>
@@ -963,8 +987,8 @@
                 <!-- ARTICLE 10 : CONDITIONS PREALABLES -->
                 <h3>ARTICLE 10 : CONDITIONS PREALABLES</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">La création définitive de la SPV est soumise aux conditions suspensives suivantes :</p>
-                    <ol class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">La création définitive de la SPV est soumise aux conditions suspensives suivantes :</p>
+                    <ol class="editable" contenteditable="true">
                         <li><strong>Obtention d'une lettre d'intention d'Orange Maroc</strong> confirmant l'intérêt pour un MSA portant sur minimum 500 sites la première année (Délai : 60 jours)</li>
                         <li><strong>Validation conjointe du business plan détaillé</strong> et des projections financières (Délai : 30 jours)</li>
                         <li><strong>Accord sur les statuts définitifs</strong> et le pacte d'associés (Délai : 45 jours)</li>
@@ -979,10 +1003,10 @@
                 <!-- ARTICLE 11 : PROPRIÉTÉ INTELLECTUELLE -->
                 <h3>ARTICLE 11 : PROPRIÉTÉ INTELLECTUELLE</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         Toute propriété intellectuelle développée dans le cadre de la SPV sera la propriété exclusive de NOMATIS TOWERS. Cela inclut notamment :
                     </p>
-                    <ul class="editable" contenteditable="false">
+                    <ul class="editable" contenteditable="true">
                         <li>Les processus et méthodologies développés</li>
                         <li>Les bases de données clients et sites</li>
                         <li>Les outils de gestion et de monitoring</li>
@@ -993,20 +1017,20 @@
                 <!-- ARTICLE 12 : ENGAGEMENTS DES PARTIES -->
                 <h3>ARTICLE 12 : ENGAGEMENTS DES PARTIES</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">[À détailler selon les besoins spécifiques]</p>
+                    <p class="editable" contenteditable="true">[À détailler selon les besoins spécifiques]</p>
                 </div>
 
                 <!-- ARTICLE 13 : RESPONSABILITÉS ET GARANTIES -->
                 <h3>ARTICLE 13 : RESPONSABILITÉS ET GARANTIES</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">Chaque Partie garantit :</p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">Chaque Partie garantit :</p>
+                    <ul class="editable" contenteditable="true">
                         <li>Avoir la capacité juridique de signer le présent Protocole</li>
                         <li>Que la signature et l'exécution du Protocole ne violent aucun engagement existant</li>
                         <li>La véracité des informations fournies dans le cadre de la due diligence</li>
                         <li>Disposer des ressources nécessaires pour honorer ses engagements</li>
                     </ul>
-                    <p class="editable mt-2" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true">
                         <strong>Limitation de responsabilité :</strong> Sauf faute lourde ou dol, la responsabilité de chaque Partie est limitée au montant de son apport en capital.
                     </p>
                 </div>
@@ -1014,7 +1038,7 @@
                 <!-- ARTICLE 14 : TERMES A INTEGRER DANS LE FUTUR PACTE DES ACTIONNAIRES - SORTIE ET CESSION -->
                 <h3>ARTICLE 14 : TERMES A INTEGRER DANS LE FUTUR PACTE DES ACTIONNAIRES - SORTIE ET CESSION</h3>
                 <div class="article">
-                    <ul class="editable" contenteditable="false">
+                    <ul class="editable" contenteditable="true">
                         <li><strong>Drag Along :</strong> Si une offre porte sur 100% du capital et est acceptée par un associé détenant plus de 50%, l'autre associé devra céder dans les mêmes conditions</li>
                         <li><strong>Tag Along :</strong> Si un associé cède ses parts, l'autre peut exiger de céder proportionnellement aux mêmes conditions</li>
                         <li><strong>Lock-up :</strong> Interdiction de cession pendant les 3 premières années sauf accord mutuel</li>
@@ -1029,10 +1053,10 @@
                 <!-- ARTICLE 15 : DURÉE ET RÉSILIATION -->
                 <h3>ARTICLE 15 : DURÉE ET RÉSILIATION</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         Le présent Protocole entre en vigueur à sa signature et prendra fin à la survenance du premier des événements suivants :
                     </p>
-                    <ul class="editable" contenteditable="false">
+                    <ul class="editable" contenteditable="true">
                         <li>Constitution définitive de la SPV</li>
                         <li>31 mars 2026 (sauf prolongation)</li>
                         <li>Accord mutuel de résiliation</li>
@@ -1042,15 +1066,15 @@
                 <!-- ARTICLE 16 : CONFIDENTIALITÉ -->
                 <h3>ARTICLE 16 : CONFIDENTIALITÉ</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">Les Parties s'engagent à maintenir strictement confidentiel :</p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">Les Parties s'engagent à maintenir strictement confidentiel :</p>
+                    <ul class="editable" contenteditable="true">
                         <li>Le contenu du présent Protocole</li>
                         <li>Toutes les informations échangées dans le cadre des négociations</li>
                         <li>Le business plan et les projections financières</li>
                         <li>Les informations commerciales et techniques</li>
                         <li>L'existence même des discussions</li>
                     </ul>
-                    <p class="editable mt-2" contenteditable="false">
+                    <p class="editable mt-2" contenteditable="true">
                         <strong>Durée :</strong> 1 an après la fin du Protocole<br>
                         <strong>Pénalité en cas de non respect</strong>
                     </p>
@@ -1060,11 +1084,11 @@
                 <h3>ARTICLE 17 : LOI APPLICABLE ET RÉSOLUTION DES LITIGES</h3>
                 <div class="article">
                     <h4>17.1. Loi applicable</h4>
-                    <p class="editable" contenteditable="false">Le présent Protocole est régi par le droit marocain.</p>
+                    <p class="editable" contenteditable="true">Le présent Protocole est régi par le droit marocain.</p>
                     
                     <h4>17.2. Résolution des litiges</h4>
-                    <p class="editable" contenteditable="false">En cas de différend :</p>
-                    <ol class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">En cas de différend :</p>
+                    <ol class="editable" contenteditable="true">
                         <li><strong>Phase amiable :</strong> Tentative de résolution amiable pendant 30 jours</li>
                         <li><strong>Médiation :</strong> Médiation par un médiateur agréé pendant 30 jours</li>
                         <li><strong>Arbitrage :</strong> Arbitrage définitif selon le règlement du Centre International de Médiation et d'Arbitrage de Casablanca</li>
@@ -1075,22 +1099,22 @@
                 <h3>ARTICLE 18 : DISPOSITIONS FINALES</h3>
                 <div class="article">
                     <h4>18.1. Intégralité de l'accord</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         Le présent Protocole constitue l'intégralité de l'accord entre les Parties et remplace tous accords antérieurs, écrits ou verbaux.
                     </p>
                     
                     <h4>18.2. Modifications</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         Toute modification du présent Protocole devra faire l'objet d'un avenant écrit signé par les deux Parties.
                     </p>
                     
                     <h4>18.3. Nullité partielle</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         Si une disposition du Protocole est déclarée nulle, les autres dispositions resteront en vigueur.
                     </p>
                     
                     <h4>18.4. Notifications</h4>
-                    <p class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">
                         Toutes les notifications devront être faites par lettre recommandée avec accusé de réception aux adresses indiquées en tête du présent Protocole.
                     </p>
                 </div>
@@ -1098,8 +1122,8 @@
                 <!-- ARTICLE 19 : ANNEXES -->
                 <h3>ARTICLE 19 : ANNEXES</h3>
                 <div class="article">
-                    <p class="editable" contenteditable="false">Font partie intégrante du présent Protocole les annexes suivantes :</p>
-                    <ul class="editable" contenteditable="false">
+                    <p class="editable" contenteditable="true">Font partie intégrante du présent Protocole les annexes suivantes :</p>
+                    <ul class="editable" contenteditable="true">
                         <li><strong>Annexe 1 :</strong> Business Plan initial de la SPV</li>
                         <li><strong>Annexe 2 :</strong> Modèle financier et projections initiales de la SPV</li>
                         <li><strong>Annexe 3 :</strong> Projet de statuts de la SPV</li>
@@ -1110,7 +1134,7 @@
 
                 <!-- SIGNATURES -->
                 <div class="signature-section">
-                    <p class="text-center editable" contenteditable="false">
+                    <p class="text-center editable" contenteditable="true">
                         <strong>SIGNATURES</strong><br>
                         Fait à Casablanca, le _____________________ 2025<br>
                         En deux (2) exemplaires originaux
@@ -1119,7 +1143,7 @@
                     <div class="signature-grid mt-3">
                         <div class="signature-box">
                             <div class="signature-line"></div>
-                            <p class="editable" contenteditable="false">
+                            <p class="editable" contenteditable="true">
                                 <strong>Pour NOMATIS S.A.R.L</strong><br>
                                 M. Mustapha OURKIYA<br>
                                 Gérant unique
@@ -2915,6 +2939,345 @@
         // Cleanup on page unload
         window.addEventListener('beforeunload', function() {
             stopAutoRefresh();
+        });
+
+        // ============================================
+        // SYSTÈME D'ÉDITION PROTOCOLE D'ACCORD
+        // ============================================
+        
+        const PROTOCOLE_STORAGE_KEY = 'nomatis_protocole_content';
+        const PROTOCOLE_TIMESTAMP_KEY = 'nomatis_protocole_timestamp';
+        const ORIGINAL_PROTOCOLE_KEY = 'nomatis_protocole_original';
+        let isProtocoleModified = false;
+        let autoSaveInterval;
+        
+        // Sauvegarder le contenu original au premier chargement
+        function saveOriginalProtocole() {
+            const protocoleTab = document.getElementById('protocole');
+            if (!protocoleTab) return;
+            
+            // Sauvegarder seulement si pas déjà fait
+            if (!localStorage.getItem(ORIGINAL_PROTOCOLE_KEY)) {
+                const contentSection = protocoleTab.querySelector('.content-section');
+                if (contentSection) {
+                    localStorage.setItem(ORIGINAL_PROTOCOLE_KEY, contentSection.innerHTML);
+                }
+            }
+        }
+        
+        // Sauvegarder le protocole
+        function saveProtocole() {
+            try {
+                const protocoleTab = document.getElementById('protocole');
+                if (!protocoleTab) {
+                    showProtocoleNotification('❌ Erreur: Onglet Protocole introuvable', 'error');
+                    return;
+                }
+                
+                const contentSection = protocoleTab.querySelector('.content-section');
+                if (!contentSection) {
+                    showProtocoleNotification('❌ Erreur: Contenu introuvable', 'error');
+                    return;
+                }
+                
+                const content = contentSection.innerHTML;
+                
+                // Validation
+                if (!content || content.trim().length < 100) {
+                    showProtocoleNotification('❌ Le contenu semble vide ou trop court', 'error');
+                    return;
+                }
+                
+                // Sauvegarder dans localStorage
+                const timestamp = new Date().toISOString();
+                localStorage.setItem(PROTOCOLE_STORAGE_KEY, content);
+                localStorage.setItem(PROTOCOLE_TIMESTAMP_KEY, timestamp);
+                
+                // Mettre à jour l'interface
+                updateSaveStatus(timestamp);
+                isProtocoleModified = false;
+                document.getElementById('unsaved-indicator').style.display = 'none';
+                
+                showProtocoleNotification('✅ Sauvegarde réussie!', 'success');
+                
+            } catch (error) {
+                if (error.name === 'QuotaExceededError') {
+                    showProtocoleNotification('❌ Espace de stockage insuffisant. Veuillez libérer de l\'espace.', 'error');
+                } else {
+                    showProtocoleNotification('❌ Erreur lors de la sauvegarde: ' + error.message, 'error');
+                }
+                console.error('Erreur sauvegarde:', error);
+            }
+        }
+        
+        // Charger le protocole sauvegardé
+        function loadProtocole() {
+            try {
+                const savedContent = localStorage.getItem(PROTOCOLE_STORAGE_KEY);
+                const timestamp = localStorage.getItem(PROTOCOLE_TIMESTAMP_KEY);
+                
+                if (savedContent) {
+                    const protocoleTab = document.getElementById('protocole');
+                    if (!protocoleTab) return;
+                    
+                    const contentSection = protocoleTab.querySelector('.content-section');
+                    if (!contentSection) return;
+                    
+                    contentSection.innerHTML = savedContent;
+                    updateSaveStatus(timestamp);
+                    
+                    console.log('✅ Protocole chargé depuis la sauvegarde');
+                } else {
+                    // Pas de sauvegarde, afficher "Version originale"
+                    document.getElementById('save-indicator').innerHTML = '📄 Version originale';
+                    console.log('📄 Aucune sauvegarde trouvée - Version originale affichée');
+                }
+            } catch (error) {
+                showProtocoleNotification('❌ Erreur lors du chargement: ' + error.message, 'error');
+                console.error('Erreur chargement:', error);
+            }
+        }
+        
+        // Restaurer la version originale
+        function restoreOriginalProtocole() {
+            if (!confirm('⚠️ Êtes-vous sûr de vouloir restaurer la version originale?\n\nToutes vos modifications seront perdues définitivement.')) {
+                return;
+            }
+            
+            try {
+                const originalContent = localStorage.getItem(ORIGINAL_PROTOCOLE_KEY);
+                if (!originalContent) {
+                    showProtocoleNotification('❌ Version originale introuvable', 'error');
+                    return;
+                }
+                
+                const protocoleTab = document.getElementById('protocole');
+                if (!protocoleTab) return;
+                
+                const contentSection = protocoleTab.querySelector('.content-section');
+                if (!contentSection) return;
+                
+                contentSection.innerHTML = originalContent;
+                
+                // Supprimer la sauvegarde
+                localStorage.removeItem(PROTOCOLE_STORAGE_KEY);
+                localStorage.removeItem(PROTOCOLE_TIMESTAMP_KEY);
+                
+                // Mettre à jour l'interface
+                document.getElementById('save-indicator').innerHTML = '📄 Version originale';
+                document.getElementById('last-save-time').innerHTML = '';
+                document.getElementById('unsaved-indicator').style.display = 'none';
+                isProtocoleModified = false;
+                
+                showProtocoleNotification('✅ Version originale restaurée!', 'success');
+                
+            } catch (error) {
+                showProtocoleNotification('❌ Erreur lors de la restauration: ' + error.message, 'error');
+                console.error('Erreur restauration:', error);
+            }
+        }
+        
+        // Exporter le protocole en HTML
+        function exportProtocoleHTML() {
+            try {
+                const protocoleTab = document.getElementById('protocole');
+                if (!protocoleTab) return;
+                
+                const contentSection = protocoleTab.querySelector('.content-section');
+                if (!contentSection) return;
+                
+                // Créer un document HTML complet
+                const htmlContent = `<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOMATIS TOWERS - Protocole d'Accord</title>
+    <style>
+        ${document.querySelector('style').innerHTML}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>NOMATIS TOWERS</h1>
+            <div class="header-subtitle">Protocole d'Accord</div>
+        </div>
+    </div>
+    <div style="max-width: 1400px; margin: 2rem auto; padding: 0 2rem;">
+        ${contentSection.innerHTML}
+    </div>
+</body>
+</html>`;
+                
+                // Créer un blob et télécharger
+                const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                
+                const date = new Date();
+                const filename = `25_11_16_Nomatis_Towers_Protocole_${date.getFullYear()}${String(date.getMonth()+1).padStart(2,'0')}${String(date.getDate()).padStart(2,'0')}.html`;
+                a.download = filename;
+                
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                showProtocoleNotification('✅ Fichier HTML téléchargé!', 'success');
+                
+            } catch (error) {
+                showProtocoleNotification('❌ Erreur lors de l\'export: ' + error.message, 'error');
+                console.error('Erreur export:', error);
+            }
+        }
+        
+        // Mettre à jour le statut de sauvegarde
+        function updateSaveStatus(timestamp) {
+            if (!timestamp) return;
+            
+            const date = new Date(timestamp);
+            const dateStr = date.toLocaleDateString('fr-FR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            const timeStr = date.toLocaleTimeString('fr-FR', {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            document.getElementById('save-indicator').innerHTML = '💾 Version sauvegardée';
+            document.getElementById('last-save-time').innerHTML = `Dernière sauvegarde : ${dateStr} à ${timeStr}`;
+        }
+        
+        // Détecter les modifications
+        function setupModificationDetection() {
+            const protocoleTab = document.getElementById('protocole');
+            if (!protocoleTab) return;
+            
+            const editables = protocoleTab.querySelectorAll('[contenteditable="true"]');
+            
+            editables.forEach(element => {
+                element.addEventListener('input', function() {
+                    if (!isProtocoleModified) {
+                        isProtocoleModified = true;
+                        document.getElementById('unsaved-indicator').style.display = 'block';
+                    }
+                });
+            });
+        }
+        
+        // Auto-sauvegarde toutes les 2 minutes
+        function startAutoSave() {
+            // Arrêter l'interval existant si présent
+            if (autoSaveInterval) {
+                clearInterval(autoSaveInterval);
+            }
+            
+            // Auto-sauvegarde toutes les 2 minutes (120000 ms)
+            autoSaveInterval = setInterval(function() {
+                if (isProtocoleModified) {
+                    saveProtocole();
+                    console.log('🔄 Auto-sauvegarde effectuée');
+                }
+            }, 120000); // 2 minutes
+        }
+        
+        // Afficher notification
+        function showProtocoleNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 160px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                background: ${type === 'success' ? 'var(--success-green)' : 'var(--danger-red)'};
+                color: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 9999;
+                font-weight: 600;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.innerHTML = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // Ajouter CSS pour les animations
+        const notifStyle = document.createElement('style');
+        notifStyle.innerHTML = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+            }
+            
+            /* Effet de survol sur les zones éditables */
+            [contenteditable="true"]:hover {
+                background: #f0f7ff;
+                outline: 1px dashed var(--accent-blue);
+                cursor: text;
+            }
+            
+            [contenteditable="true"]:focus {
+                outline: 2px solid var(--accent-blue);
+                background: white;
+            }
+        `;
+        document.head.appendChild(notifStyle);
+        
+        // Initialiser le système au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sauvegarder l'original
+            saveOriginalProtocole();
+            
+            // Charger la version sauvegardée si elle existe
+            loadProtocole();
+            
+            // Configurer la détection de modifications
+            setupModificationDetection();
+            
+            // Démarrer l'auto-sauvegarde
+            startAutoSave();
+            
+            console.log('✅ Système d\'édition Protocole initialisé');
+        });
+        
+        // Arrêter l'auto-sauvegarde au déchargement
+        window.addEventListener('beforeunload', function(e) {
+            if (isProtocoleModified) {
+                e.preventDefault();
+                e.returnValue = 'Vous avez des modifications non sauvegardées. Voulez-vous vraiment quitter?';
+            }
+            
+            if (autoSaveInterval) {
+                clearInterval(autoSaveInterval);
+            }
         });
     </script>
 </body>
